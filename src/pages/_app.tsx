@@ -5,7 +5,7 @@ import { Layout as LayoutBlocks } from 'blocks';
 import theme from '../theme';
 
 import type { AppProps } from 'next/app';
-import { Layout, Header, Footer } from 'components';
+import { Layout } from 'components';
 
 const { AppWrapper, ContentWrapper } = LayoutBlocks;
 
