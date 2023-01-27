@@ -1,14 +1,18 @@
 import { Box, IconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-const HeaderWrapper = styled(Box)({
+const HeaderWrapper = styled(Box)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
   background: '#242424',
-  padding: '16px 16px'
-});
+  padding: '16px 24px',
+
+  [theme.breakpoints.down('sm')]: {
+    padding: '16px 8px'
+  }
+}));
 
 const ButtonWrapper = styled(IconButton)(({ theme }) => ({
   '& svg path, & p': {

@@ -2,7 +2,9 @@ import { Box, Button, Typography } from '@mui/material';
 import { phoneNumber } from '@src/constants';
 import theme from '@src/theme';
 import { Header as HeadersBlocks } from 'blocks';
-import { IconComponent } from '../Common';
+import Link from 'next/link';
+import { IconComponent } from '..';
+import { paths } from 'src/constants';
 
 const { HeaderWrapper, ButtonWrapper } = HeadersBlocks;
 
@@ -11,7 +13,9 @@ export default function Header() {
 
   return (
     <HeaderWrapper component='header'>
-      <IconComponent name='logo' fill='#fff' width={120} />
+      <Link href={paths.main}>
+        <IconComponent name='logo' fill='#fff' height={60} width={90} />
+      </Link>
 
       <Box>
         <ButtonWrapper onClick={phoneCallHandler} sx={{ alignItems: 'center' }}>

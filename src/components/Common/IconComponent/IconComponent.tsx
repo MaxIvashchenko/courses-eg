@@ -9,6 +9,7 @@ import scaleup from 'public/icons/scaleup.svg';
 import arrow from 'public/icons/arrow.svg';
 import telegram from 'public/icons/telegram.svg';
 import telephone from 'public/icons/telephone.svg';
+import close from 'public/icons/close.svg';
 
 type IconTypes = {
   [key: string]: ElementType;
@@ -23,7 +24,8 @@ const iconTypes: IconTypes = {
   marketing,
   arrow,
   telegram,
-  telephone
+  telephone,
+  close
 };
 
 type IconComponentProps = {

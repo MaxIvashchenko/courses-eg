@@ -5,7 +5,7 @@ import { Layout as LayoutBlocks } from 'blocks';
 import theme from '../theme';
 
 import type { AppProps } from 'next/app';
-import { Header, Layout } from 'components';
+import { CookiesAlert, Header, Layout } from 'components';
 
 const { AppWrapper, ContentWrapper } = LayoutBlocks;
 
@@ -24,6 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
             <Layout Component={Component} pageProps={pageProps} />
           </ContentWrapper>
           {/* <Footer /> */}
+          <CookiesAlert />
         </AppWrapper>
       </ThemeProvider>
     </>

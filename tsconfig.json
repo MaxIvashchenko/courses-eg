@@ -42,6 +42,12 @@
     "incremental": true,
     "useUnknownInCatchVariables": false
   },
-  "include": ["next-env.d.ts", "src/pages/**/*", "src/styles/**/*", "src/**/*"],
+  "include": [
+    "next-env.d.ts",
+    "src/pages/**/*",
+    "src/styles/**/*",
+    "src/**/*",
+    "src/**/**/*"
+  ],
   "exclude": ["node_modules", "coverage"]
 }
