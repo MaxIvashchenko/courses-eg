@@ -5,7 +5,7 @@ import { Layout as LayoutBlocks } from 'blocks';
 import theme from '../theme';
 
 import type { AppProps } from 'next/app';
-import { Layout } from 'components';
+import { Header, Layout } from 'components';
 
 const { AppWrapper, ContentWrapper } = LayoutBlocks;
 
@@ -19,7 +19,7 @@ export default function App({ Component, pageProps }: AppProps) {
       <ThemeProvider theme={theme}>
         <CssBaseline />
         <AppWrapper component='main'>
-          {/* <Header /> */}
+          <Header />
           <ContentWrapper>
             <Layout Component={Component} pageProps={pageProps} />
           </ContentWrapper>

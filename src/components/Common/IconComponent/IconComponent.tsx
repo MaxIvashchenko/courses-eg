@@ -7,6 +7,8 @@ import planning from 'public/icons/planning.svg';
 import marketing from 'public/icons/marketing.svg';
 import scaleup from 'public/icons/scaleup.svg';
 import arrow from 'public/icons/arrow.svg';
+import telegram from 'public/icons/telegram.svg';
+import telephone from 'public/icons/telephone.svg';
 
 type IconTypes = {
   [key: string]: ElementType;
@@ -19,7 +21,9 @@ const iconTypes: IconTypes = {
   planning,
   scaleup,
   marketing,
-  arrow
+  arrow,
+  telegram,
+  telephone
 };
 
 type IconComponentProps = {
