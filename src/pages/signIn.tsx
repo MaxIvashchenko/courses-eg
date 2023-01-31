@@ -1,7 +1,7 @@
 import { ChangeEvent, useEffect, useRef } from 'react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
-import { TextField, Button, IconButton, Typography, Box } from '@mui/material';
+import { TextField, Button, IconButton, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import _isEmpty from 'lodash/isEmpty';
 
