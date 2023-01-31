@@ -1,17 +1,17 @@
 interface ICourses {
-  id: number;
+  id: string;
   title: string;
   icon: string;
 }
 
 const courses: ICourses[] = [
   {
-    id: 1111,
+    id: 'gastro',
     title: 'Гастробизнес под ключ в Польше',
     icon: 'restaurant'
   },
   {
-    id: 2222,
+    id: 'beauty',
     title: 'Бьюти крус под ключ в Польше',
     icon: 'salon'
   }

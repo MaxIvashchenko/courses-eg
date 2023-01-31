@@ -15,14 +15,16 @@ const CardActionArea = styled(MuiCardActionArea)(({ theme }) => ({
 }));
 
 const IconWrapper = styled(Box)(({ theme }) => ({
+  padding: 24,
   background: theme.palette.primary.main,
   width: 'auto',
   '& svg': {
-    width: '140px',
-    height: '140px'
+    width: '120px',
+    height: '120px'
   },
 
   [theme.breakpoints.down('sm')]: {
+    padding: 16,
     textAlign: 'center',
     '& svg': {
       width: '100px',

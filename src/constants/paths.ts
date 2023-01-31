@@ -4,7 +4,8 @@ interface IPaths {
   profile: string;
   signIn: string;
   signUp: string;
-  program: string;
+  modules: string;
+  module: string;
 }
 
 const paths: IPaths = {
@@ -13,7 +14,8 @@ const paths: IPaths = {
   profile: '/profile',
   signIn: '/signIn',
   signUp: '/signUp',
-  program: '/program'
+  modules: '/modules',
+  module: '/module'
 };
 
 export default paths;
