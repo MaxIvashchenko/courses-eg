@@ -10,6 +10,8 @@ import arrow from 'public/icons/arrow.svg';
 import telegram from 'public/icons/telegram.svg';
 import telephone from 'public/icons/telephone.svg';
 import close from 'public/icons/close.svg';
+import visible from 'public/icons/visible.svg';
+import notVisible from 'public/icons/notVisible.svg';
 
 type IconTypes = {
   [key: string]: ElementType;
@@ -25,7 +27,9 @@ const iconTypes: IconTypes = {
   arrow,
   telegram,
   telephone,
-  close
+  close,
+  visible,
+  notVisible
 };
 
 type IconComponentProps = {

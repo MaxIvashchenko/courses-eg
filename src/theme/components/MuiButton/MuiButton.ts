@@ -26,7 +26,7 @@ const MuiButton: MuiButtonType = {
   },
   styleOverrides: {
     root: {
-      borderRadius: 40,
+      borderRadius: 10,
       textTransform: 'none',
       color: 'white',
       boxShadow: 'none',

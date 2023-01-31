@@ -5,11 +5,14 @@ import { Header as HeadersBlocks } from 'blocks';
 import Link from 'next/link';
 import { IconComponent } from '..';
 import { paths } from 'src/constants';
+import { useRouter } from 'next/router';
 
 const { HeaderWrapper, ButtonWrapper } = HeadersBlocks;
 
 export default function Header() {
+  const router = useRouter();
   const phoneCallHandler = () => window.open(`tel:${phoneNumber}`);
+  const signInHandler = () => router.push(paths.signIn);
 
   return (
     <HeaderWrapper component='header'>
@@ -26,7 +29,11 @@ export default function Header() {
         <ButtonWrapper sx={{ alignItems: 'center' }}>
           <IconComponent name='telegram' width={32} height={32} />
         </ButtonWrapper>
-        <Button variant='text' sx={{ color: theme.palette.primary.main }}>
+        <Button
+          onClick={signInHandler}
+          variant='text'
+          sx={{ color: theme.palette.primary.main }}
+        >
           Вход
         </Button>
       </Box>
