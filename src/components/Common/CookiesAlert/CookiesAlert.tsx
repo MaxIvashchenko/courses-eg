@@ -1,6 +1,12 @@
 import { useState } from 'react';
 import Link from 'next/link';
-import { IconButton, Box, Slide, Snackbar as MuiSnackbar } from '@mui/material';
+import {
+  IconButton,
+  Box,
+  Slide,
+  Snackbar as MuiSnackbar,
+  Stack
+} from '@mui/material';
 import { SlideProps } from '@mui/material/Slide';
 import { styled } from '@mui/material/styles';
 
@@ -45,24 +51,23 @@ const CookiesAlert = () => {
       anchorOrigin={{ vertical: 'bottom', horizontal: 'center' }}
       TransitionComponent={transition}
       open={isOpen}
-      onClose={handleClose}
       message={
-        <Box>
-          Пользуясь нашим сайтом, вы соглашаетесь с тем, что
-          <Link style={{ marginLeft: 8 }} href={paths.legal}>
-            мы используем cookies
-          </Link>
-        </Box>
-      }
-      action={
-        <IconButton
-          aria-label='close'
-          color='inherit'
-          sx={{ p: 0.5 }}
-          onClick={handleClose}
-        >
-          <IconComponent name='close' width={16} height={16} />
-        </IconButton>
+        <Stack direction='row'>
+          <Box>
+            Пользуясь нашим сайтом, вы соглашаетесь с тем, что
+            <Link style={{ marginLeft: 8 }} href={paths.legal}>
+              мы используем cookies
+            </Link>
+          </Box>
+          <IconButton
+            aria-label='close'
+            color='inherit'
+            sx={{ ml: { xs: 1, md: 3 }, p: 0.5 }}
+            onClick={handleClose}
+          >
+            <IconComponent name='close' width={16} height={16} />
+          </IconButton>
+        </Stack>
       }
     />
   );
