@@ -4,3 +4,4 @@ export { default as Footer } from './Footer';
 export { default as MainPage } from './MainPage';
 export { default as LegalBlock } from './Legal';
 export { default as Auth } from './Auth';
+export { default as Profile } from './Profile';

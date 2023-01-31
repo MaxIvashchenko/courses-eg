@@ -12,6 +12,8 @@ import telephone from 'public/icons/telephone.svg';
 import close from 'public/icons/close.svg';
 import visible from 'public/icons/visible.svg';
 import notVisible from 'public/icons/notVisible.svg';
+import salon from 'public/icons/salon.svg';
+import restaurant from 'public/icons/restaurant.svg';
 
 type IconTypes = {
   [key: string]: ElementType;
@@ -29,7 +31,9 @@ const iconTypes: IconTypes = {
   telephone,
   close,
   visible,
-  notVisible
+  notVisible,
+  salon,
+  restaurant
 };
 
 type IconComponentProps = {

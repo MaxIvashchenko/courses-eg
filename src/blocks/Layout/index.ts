@@ -22,10 +22,27 @@ const LayoutWrapper = styled(Box)({
   height: '100%'
 });
 
+const PageContainer = styled(Box)(({ theme }) => ({
+  padding: '32px 48px',
+  background: '#f5f7f8',
+  height: '100%',
+
+  [theme.breakpoints.up('lg')]: {
+    padding: '32px 64px'
+  },
+  [theme.breakpoints.down('md')]: {
+    padding: '24px 32px'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '8px 16px'
+  }
+}));
+
 const Layout = {
   AppWrapper,
   ContentWrapper,
-  LayoutWrapper
+  LayoutWrapper,
+  PageContainer
 };
 
 export default Layout;

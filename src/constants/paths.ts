@@ -1,17 +1,19 @@
 interface IPaths {
   main: string;
   legal: string;
-  dashboard: string;
+  profile: string;
   signIn: string;
   signUp: string;
+  program: string;
 }
 
 const paths: IPaths = {
   main: '/',
   legal: 'legal',
-  dashboard: '/dashboard',
+  profile: '/profile',
   signIn: '/signIn',
-  signUp: '/signUp'
+  signUp: '/signUp',
+  program: '/program'
 };
 
 export default paths;
