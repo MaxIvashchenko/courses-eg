@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { useEffect } from 'react';
 import Link from 'next/link';
 import {
   Box,
@@ -9,6 +10,8 @@ import {
 } from '@mui/material';
 import { SlideProps } from '@mui/material/Slide';
 import { styled } from '@mui/material/styles';
+import _get from 'lodash/get';
+import { parseCookies, setCookie } from 'nookies';
 import { paths } from 'src/constants';
 
 import { IconComponent } from '..';
@@ -44,7 +47,21 @@ const CookiesAlert = () => {
   const handleClose = () => {
     handleClick(TransitionUp);
     setIsOpen(false);
+    setCookie(null, 'COOKIES_ACCEPTED', JSON.stringify(true), {
+      maxAge: 30 * 24 * 60 * 60,
+      path: '/'
+    });
   };
+
+  useEffect(() => {
+    const cookies = parseCookies();
+    const isAccepted = _get(cookies, 'COOKIES_ACCEPTED', JSON.stringify(false));
+    const state = JSON.parse(isAccepted);
+
+    if (state) {
+      setIsOpen(!state);
+    }
+  }, []);
 
   return (
     <Snackbar
