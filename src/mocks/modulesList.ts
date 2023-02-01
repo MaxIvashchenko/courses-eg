@@ -1,29 +1,30 @@
-interface IModuleRow {
-  id: string;
-  title: string;
-  icon: string;
-}
+import { IModuleRow } from '@src/types';
+import module1 from './module1';
 
 const modulesList: IModuleRow[] = [
   {
     id: 'gastro-module-1',
     title: 'От плана А до точки B',
-    icon: 'cube'
+    icon: 'cube',
+    list: module1
   },
   {
     id: 'gastro-module-2',
     title: 'Module 2',
-    icon: 'cube'
+    icon: 'cube',
+    list: []
   },
   {
     id: 'gastro-module-3',
     title: 'Module 3',
-    icon: 'cube'
+    icon: 'cube',
+    list: []
   },
   {
     id: 'gastro-module-4',
     title: 'Module 4',
-    icon: 'cube'
+    icon: 'cube',
+    list: []
   }
 ];
 

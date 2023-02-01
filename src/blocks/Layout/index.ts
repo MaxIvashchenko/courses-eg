@@ -6,7 +6,8 @@ const AppWrapper = styled(Box)({
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
-  overflowX: 'hidden'
+  overflowX: 'hidden',
+  background: '#f5f7f8'
 });
 
 const ContentWrapper = styled(Box)({
@@ -24,8 +25,6 @@ const LayoutWrapper = styled(Box)({
 
 const PageContainer = styled(Box)(({ theme }) => ({
   padding: '32px 48px',
-  background: '#f5f7f8',
-  height: '100%',
 
   [theme.breakpoints.up('lg')]: {
     padding: '32px 64px'

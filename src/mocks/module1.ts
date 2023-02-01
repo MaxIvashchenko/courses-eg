@@ -1,18 +1,16 @@
-interface IBlock {
-  id: string;
-  title: string;
-  themes: {
-    id: string;
-    title: string;
-    videoLink: string;
-    description: string[];
-  }[];
-}
+import { IBlock } from '@src/types';
+
+import block1 from 'public/images/gastro/module1/block1.jpg';
+import block2 from 'public/images/gastro/module1/block2.jpg';
+import block3 from 'public/images/gastro/module1/block3.jpg';
+import block4 from 'public/images/gastro/module1/block4.jpg';
+import block5 from 'public/images/gastro/module1/block5.jpg';
 
 const module1: IBlock[] = [
   {
     id: 'block-1',
     title: 'Идея',
+    img: block1.src,
     themes: [
       {
         id: 'block-1-t-1',
@@ -73,6 +71,7 @@ const module1: IBlock[] = [
   {
     id: 'block-2',
     title: 'Бюджет',
+    img: block2.src,
     themes: [
       {
         id: 'block-2-t-1',
@@ -110,6 +109,7 @@ const module1: IBlock[] = [
   {
     id: 'block-3',
     title: 'Регистрация фирмы',
+    img: block3.src,
     themes: [
       {
         id: 'block-3-t-1',
@@ -129,6 +129,7 @@ const module1: IBlock[] = [
   {
     id: 'block-4',
     title: 'Полный пакет документов',
+    img: block4.src,
     themes: [
       {
         id: 'block-4-t-1',
@@ -139,6 +140,45 @@ const module1: IBlock[] = [
       {
         id: 'block-4-t-2',
         title: 'Разрешение на помещение',
+        videoLink: '',
+        description: ['']
+      }
+    ]
+  },
+  {
+    id: 'block-5',
+    title: 'Локация',
+    img: block5.src,
+    themes: [
+      {
+        id: 'block-5-t-1',
+        title: 'Локации и техническое состояние помещений',
+        videoLink: '',
+        description: ['']
+      },
+      {
+        id: 'block-5-t-2',
+        title: 'Где искать помещения',
+        videoLink: '',
+        description: ['']
+      },
+      {
+        id: 'block-5-t-3',
+        title:
+          'Локация ( это заведение для центра, спальника или в офисном центре )',
+        videoLink: '',
+        description: ['']
+      },
+      {
+        id: 'block-5-t-4',
+        title:
+          'Входит ли локализация в зону обслуживания доставщиков - (ПРИМЕР ПЛАН А №1)',
+        videoLink: '',
+        description: ['']
+      },
+      {
+        id: 'block-5-t-5',
+        title: 'Какие варианты могут быть помещений',
         videoLink: '',
         description: ['']
       }

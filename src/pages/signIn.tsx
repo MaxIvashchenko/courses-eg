@@ -11,6 +11,7 @@ import { IconComponent, InputWrapper } from 'components';
 import { paths, signInSchema as validationSchema } from 'src/constants';
 
 import { Auth } from 'blocks';
+import { useRouter } from 'next/router';
 
 const { SignInWrapper, Wrapper, BodyWrapper, Body, Footer } = Auth;
 
@@ -26,11 +27,12 @@ const initialValues: FormProps = {
 
 const SignIn = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
+  const router = useRouter();
 
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: () => {}
+    onSubmit: () => router.push(paths.profile)
   });
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {

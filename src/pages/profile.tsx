@@ -26,7 +26,7 @@ const Profile = () => {
     <Layout.PageContainer>
       <Grid container justifyContent='center'>
         <Grid item xs={12} md={8} lg={7} sx={{ mb: { xs: 2, md: 4 } }}>
-          <Typography variant='h1'>{`Курсы (${courses.length}):`}</Typography>
+          <Typography variant='h1'>{`Доступные курсы (${courses.length}):`}</Typography>
         </Grid>
         {courses.map((course) => (
           <Grid key={course.id} item xs={12} md={8} lg={7} mb={2}>

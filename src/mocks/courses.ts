@@ -1,19 +1,15 @@
-interface ICourses {
-  id: string;
-  title: string;
-  icon: string;
-}
+import { ICourses } from '@src/types';
+import fastroCover from 'public/images/gastro/cover.jpg';
 
 const courses: ICourses[] = [
   {
     id: 'gastro',
     title: 'Гастробизнес под ключ в Польше',
-    icon: 'restaurant'
+    img: fastroCover.src
   },
   {
     id: 'beauty',
-    title: 'Бьюти крус под ключ в Польше',
-    icon: 'salon'
+    title: 'Бьюти крус под ключ в Польше'
   }
 ];
 

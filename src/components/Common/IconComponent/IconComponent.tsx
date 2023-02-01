@@ -14,6 +14,7 @@ import visible from 'public/icons/visible.svg';
 import notVisible from 'public/icons/notVisible.svg';
 import salon from 'public/icons/salon.svg';
 import restaurant from 'public/icons/restaurant.svg';
+import image from 'public/icons/image.svg';
 
 type IconTypes = {
   [key: string]: ElementType;
@@ -33,7 +34,8 @@ const iconTypes: IconTypes = {
   visible,
   notVisible,
   salon,
-  restaurant
+  restaurant,
+  image
 };
 
 type IconComponentProps = {

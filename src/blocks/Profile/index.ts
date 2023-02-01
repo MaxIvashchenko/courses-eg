@@ -11,7 +11,18 @@ const CenteredWrapper = styled(Box)({
 const CardActionArea = styled(MuiCardActionArea)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'flex-start',
-  background: theme.palette.common.white
+  background: theme.palette.common.white,
+  '& img': {
+    width: '160px',
+    height: '160px'
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    '& img': {
+      width: '132px',
+      height: '132px'
+    }
+  }
 }));
 
 const IconWrapper = styled(Box)(({ theme }) => ({
@@ -19,8 +30,8 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   background: theme.palette.primary.main,
   width: 'auto',
   '& svg': {
-    width: '120px',
-    height: '120px'
+    width: '112px',
+    height: '112px'
   },
 
   [theme.breakpoints.down('sm')]: {

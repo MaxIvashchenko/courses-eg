@@ -1,21 +1,24 @@
 import { Box, Card, CardContent, Typography } from '@mui/material';
 import { Profile as ProfileBlock } from 'blocks';
+import Image from 'next/image';
 import { IconComponent } from '..';
 
 const { CardActionArea, IconWrapper } = ProfileBlock;
 
 interface ClickableCardProps {
   id: string;
-  icon: string;
   title: string;
-  clickHandler: (id: string) => () => void;
+  img?: string;
+  subTitle?: string;
+  clickHandler?: (id: string) => () => void;
 }
 
 const ClickableCard = ({
   id,
-  icon,
   title,
-  clickHandler
+  img,
+  subTitle,
+  clickHandler = () => () => {}
 }: ClickableCardProps) => (
   <Card
     sx={{
@@ -23,9 +26,13 @@ const ClickableCard = ({
     }}
   >
     <CardActionArea onClick={clickHandler(id)}>
-      <IconWrapper>
-        <IconComponent name={icon} />
-      </IconWrapper>
+      {img ? (
+        <Image src={img} width='160' height='160' alt='cover' />
+      ) : (
+        <IconWrapper>
+          <IconComponent fill='#fff' name='image' />
+        </IconWrapper>
+      )}
       <Box
         sx={{
           p: { xs: 1, md: 3 },
@@ -34,6 +41,9 @@ const ClickableCard = ({
         }}
       >
         <CardContent sx={{ flex: '1 0 auto' }}>
+          <Typography sx={{ mb: 1 }} component='div'>
+            {subTitle}
+          </Typography>
           <Typography component='div' variant='h3'>
             {title}
           </Typography>

@@ -8,11 +8,10 @@ import { courses, modulesList } from '@src/mocks';
 import { Layout } from '@src/blocks';
 import { paths } from '@src/constants';
 import { useCallback } from 'react';
+import { ICourses } from '@src/types';
 
 interface ModulesProps {
-  currentCourse?: {
-    title: string;
-  };
+  currentCourse?: ICourses;
 }
 
 const Modules = ({ currentCourse }: ModulesProps) => {
@@ -35,16 +34,23 @@ const Modules = ({ currentCourse }: ModulesProps) => {
     <EmptyPageMessage message='На данный момент доступных модулей нет' />
   ) : (
     <Layout.PageContainer>
-      <Grid container justifyContent='center'>
-        <Grid item xs={12} md={8} lg={7} sx={{ mb: { xs: 2, md: 4 } }}>
+      <Grid
+        container
+        sx={{ justifyContent: { xs: 'center', lg: 'space-around' } }}
+      >
+        <Grid item xs={12} md={8} lg={12} sx={{ mb: { xs: 2, md: 4 } }}>
           <Typography variant='h1' sx={{ mb: { xs: 1, md: 2 } }}>
             {currentCourse.title}
           </Typography>
           <Typography variant='h3'>{`Доступно ${modulesList.length} из ${modulesList.length}`}</Typography>
         </Grid>
-        {modulesList.map((module) => (
-          <Grid key={module.id} item xs={12} md={8} lg={7} mb={2}>
-            <ClickableCard clickHandler={clickHandler} {...module} />
+        {modulesList.map((module, idx) => (
+          <Grid key={module.id} item xs={12} md={8} lg={5} mb={2}>
+            <ClickableCard
+              clickHandler={clickHandler}
+              {...module}
+              subTitle={`Модуль ${idx + 1}`}
+            />
           </Grid>
         ))}
       </Grid>
