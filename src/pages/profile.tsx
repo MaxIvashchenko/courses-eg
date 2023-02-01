@@ -2,7 +2,7 @@ import { Grid, Typography } from '@mui/material';
 import { ClickableCard, EmptyPageMessage } from '@src/components';
 import { useRouter } from 'next/router';
 import _isEmpty from 'lodash/isEmpty';
-import courses from '@src/mocks/courses';
+import courses from '@src/content/courses';
 
 import { Layout } from '@src/blocks';
 import { paths } from '@src/constants';

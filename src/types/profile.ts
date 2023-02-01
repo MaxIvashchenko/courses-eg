@@ -9,6 +9,7 @@ export interface ICourses {
   id: string;
   title: string;
   img?: string;
+  list: IModuleRow[];
 }
 
 export interface IBlock {

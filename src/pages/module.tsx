@@ -3,7 +3,7 @@ import { ClickableCard, EmptyPageMessage } from '@src/components';
 import _isEmpty from 'lodash/isEmpty';
 import { Layout } from '@src/blocks';
 import { GetServerSideProps } from 'next';
-import { modulesList } from '@src/mocks';
+import { gastroModulesList } from 'src/content';
 import { IBlock } from '@src/types';
 
 interface ModuleProps {
@@ -34,7 +34,9 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;
   const moduleId = query.id;
 
-  const currentModule = modulesList.find((module) => module.id === moduleId);
+  const currentModule = gastroModulesList.find(
+    (module) => module.id === moduleId
+  );
 
   return {
     props: {

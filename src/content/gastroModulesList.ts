@@ -1,7 +1,7 @@
 import { IModuleRow } from '@src/types';
 import module1 from './module1';
 
-const modulesList: IModuleRow[] = [
+const gastroModulesList: IModuleRow[] = [
   {
     id: 'gastro-module-1',
     title: 'От плана А до точки B',
@@ -28,4 +28,4 @@ const modulesList: IModuleRow[] = [
   }
 ];
 
-export default modulesList;
+export default gastroModulesList;
