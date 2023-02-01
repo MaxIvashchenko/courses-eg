@@ -39,7 +39,7 @@ const Modules = ({ modules, courseTitle }: ModulesProps) => {
         container
         sx={{ justifyContent: { xs: 'center', lg: 'space-around' } }}
       >
-        <Grid item xs={12} md={8} lg={12} sx={{ mb: { xs: 2, md: 4 } }}>
+        <Grid item xs={12} md={8} lg={11} sx={{ mb: { xs: 2, md: 4 } }}>
           <Typography variant='h1' sx={{ mb: { xs: 1, md: 2 } }}>
             {courseTitle}
           </Typography>
