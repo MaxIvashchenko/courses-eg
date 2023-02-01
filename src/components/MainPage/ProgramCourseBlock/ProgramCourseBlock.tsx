@@ -1,9 +1,9 @@
-import { Box, Grid, Typography, Stack } from '@mui/material';
-
-import { IconComponent } from 'components';
-import { programCourse } from '@src/constants';
 import { useState } from 'react';
+import { Box, Grid, Stack, Typography } from '@mui/material';
+import { programCourse } from '@src/constants';
+
 import { MainPage } from 'blocks';
+import { IconComponent } from 'components';
 
 const { PaperButton, Line, List } = MainPage;
 

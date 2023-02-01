@@ -1,12 +1,12 @@
 import React, { useCallback, useState } from 'react';
 import {
-  Grid,
   Box,
-  Typography,
-  MenuItem,
+  FormControl,
+  Grid,
   ListSubheader,
+  MenuItem,
   Select,
-  FormControl
+  Typography
 } from '@mui/material';
 import { legalMenu } from '@src/constants';
 

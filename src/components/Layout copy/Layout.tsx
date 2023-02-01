@@ -1,5 +1,6 @@
 import React from 'react';
 import type { AppProps } from 'next/app';
+
 import { Layout as LayoutBlocks } from 'blocks';
 
 const { LayoutWrapper } = LayoutBlocks;

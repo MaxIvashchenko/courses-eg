@@ -1,14 +1,14 @@
+import { useCallback } from 'react';
 import { GetServerSideProps } from 'next';
-import { Grid, Typography } from '@mui/material';
-import { ClickableCard, EmptyPageMessage } from 'components';
 import { useRouter } from 'next/router';
+import { Grid, Typography } from '@mui/material';
+import { Layout } from '@src/blocks';
+import { paths } from '@src/constants';
+import { IModuleRow } from '@src/types';
 import _isEmpty from 'lodash/isEmpty';
 import { courses, gastroModulesList } from 'src/content';
 
-import { Layout } from '@src/blocks';
-import { paths } from '@src/constants';
-import { useCallback } from 'react';
-import { IModuleRow } from '@src/types';
+import { ClickableCard, EmptyPageMessage } from 'components';
 
 interface ModulesProps {
   modules: IModuleRow[];

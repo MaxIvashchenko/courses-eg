@@ -31,7 +31,6 @@
       "context/*": ["src/context/*"],
       "content": ["src/content/index"],
       "hooks": ["src/hooks/index"],
-      "content": ["src/content/index"],
       "theme/*": ["src/theme/*"],
       "types/*": ["src/types/*"],
       "utils": ["src/utils/index"],

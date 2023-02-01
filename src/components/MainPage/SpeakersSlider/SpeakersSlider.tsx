@@ -9,13 +9,12 @@ import {
   IconButton,
   Typography
 } from '@mui/material';
-
 import { speakersList } from '@src/constants';
+
+import { IconComponent } from 'components';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-
-import { IconComponent } from 'components';
 const settings = {
   dots: true,
   infinite: true,

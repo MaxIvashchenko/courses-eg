@@ -1,4 +1,5 @@
 import { IModuleRow } from '@src/types';
+
 import module1 from './module1';
 
 const gastroModulesList: IModuleRow[] = [

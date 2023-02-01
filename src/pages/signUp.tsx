@@ -1,16 +1,13 @@
 import { ChangeEvent, useEffect, useRef, useState } from 'react';
 import { GetServerSideProps } from 'next';
 import Link from 'next/link';
-import { TextField, Button, IconButton, Typography } from '@mui/material';
+import { Button, IconButton, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import _isEmpty from 'lodash/isEmpty';
-
-import _get from 'lodash/get';
-
-import { IconComponent, InputWrapper } from 'components';
 import { paths, signUpSchema as validationSchema } from 'src/constants';
 
 import { Auth } from 'blocks';
+import { IconComponent, InputWrapper } from 'components';
 
 const { SignInWrapper, Wrapper, BodyWrapper, Body, Footer } = Auth;
 
@@ -178,7 +175,7 @@ const SignIn = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () =>
   //   const cookies = nookies.get(context);
   //   const token = _get(cookies, USER_TOKEN, '');
   //   const isExist = Boolean(token);
@@ -192,9 +189,8 @@ export const getServerSideProps: GetServerSideProps = async () => {
   //     };
   //   }
 
-  return {
+  ({
     props: {}
-  };
-};
+  });
 
 export default SignIn;

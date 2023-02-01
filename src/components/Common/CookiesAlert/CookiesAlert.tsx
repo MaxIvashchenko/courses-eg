@@ -1,17 +1,17 @@
 import { useState } from 'react';
 import Link from 'next/link';
 import {
-  IconButton,
   Box,
+  IconButton,
   Slide,
   Snackbar as MuiSnackbar,
   Stack
 } from '@mui/material';
 import { SlideProps } from '@mui/material/Slide';
 import { styled } from '@mui/material/styles';
+import { paths } from 'src/constants';
 
 import { IconComponent } from '..';
-import { paths } from 'src/constants';
 
 const Snackbar = styled(MuiSnackbar)(({ theme }) => ({
   '& a': {
@@ -25,9 +25,9 @@ const Snackbar = styled(MuiSnackbar)(({ theme }) => ({
 
 type TransitionProps = Omit<SlideProps, 'direction'>;
 
-const TransitionUp = (props: TransitionProps) => {
-  return <Slide {...props} direction='left' />;
-};
+const TransitionUp = (props: TransitionProps) => (
+  <Slide {...props} direction='left' />
+);
 
 const CookiesAlert = () => {
   const [isOpen, setIsOpen] = useState<boolean>(true);

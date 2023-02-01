@@ -1,18 +1,18 @@
-import { Grid, Typography } from '@mui/material';
-import { ClickableCard, EmptyPageMessage } from '@src/components';
-import _isEmpty from 'lodash/isEmpty';
-import { Layout } from '@src/blocks';
 import { GetServerSideProps } from 'next';
-import { gastroModulesList } from 'src/content';
+import { Grid, Typography } from '@mui/material';
+import { Layout } from '@src/blocks';
+import { ClickableCard, EmptyPageMessage } from '@src/components';
 import { IBlock } from '@src/types';
+import _isEmpty from 'lodash/isEmpty';
+import { gastroModulesList } from 'src/content';
 
 interface ModuleProps {
   module: IBlock[];
   moduleTitle: string;
 }
 
-const Module = ({ moduleTitle, module }: ModuleProps) => {
-  return _isEmpty(module) ? (
+const Module = ({ moduleTitle, module }: ModuleProps) =>
+  _isEmpty(module) ? (
     <EmptyPageMessage message='Данного модуля не существует или он не доступен' />
   ) : (
     <Layout.PageContainer>
@@ -28,7 +28,6 @@ const Module = ({ moduleTitle, module }: ModuleProps) => {
       </Grid>
     </Layout.PageContainer>
   );
-};
 
 export const getServerSideProps: GetServerSideProps = async (context) => {
   const { query } = context;

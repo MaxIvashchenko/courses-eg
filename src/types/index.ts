@@ -1,1 +1,1 @@
-export type { IModuleRow, ICourses, IBlock } from './profile';
+export type { IBlock, ICourses, IModuleRow } from './profile';

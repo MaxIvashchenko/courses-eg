@@ -1,4 +1,5 @@
 import { Typography } from '@mui/material';
+
 import { Profile as ProfileBlock } from 'blocks';
 
 const { CenteredWrapper } = ProfileBlock;

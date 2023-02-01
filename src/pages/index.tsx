@@ -1,6 +1,5 @@
 import React from 'react';
 import { Box } from '@mui/material';
-
 import { styled } from '@mui/material/styles';
 
 import { IntroBlock, ProgramCourseBlock, SpeakersSlider } from 'components';
@@ -16,16 +15,15 @@ const Container = styled(Box)(({ theme }) => ({
   }
 }));
 
-export default function Home() {
-  return (
-    <Container>
-      <IntroBlock />
-      <ProgramCourseBlock />
+const Home = () => (
+  <Container>
+    <IntroBlock />
+    <ProgramCourseBlock />
 
-      <Box sx={{ background: '#fff' }}>
-        <SpeakersSlider />
-      </Box>
-      {/*       
+    <Box sx={{ background: '#fff' }}>
+      <SpeakersSlider />
+    </Box>
+    {/*       
       <Grid
         container
 
@@ -55,29 +53,7 @@ export default function Home() {
         ))}
 
       </Grid> */}
-    </Container>
-  );
-}
+  </Container>
+);
 
-// const motivationContent = [
-//   {
-//     title: 'ДЛЯ ВСЕХ',
-//     subTitle: 'кто давно мечтает открыть свою кофейню или пекарню и зарабатывать ',
-//     boldSubtitle: 'от 500 тыс.руб в месяц'
-//   },
-//   {
-//     title: 'ДЛЯ ДОМАШНИХ КОНДИТЕРОВ',
-//     subTitle: 'которые устали работать руками и хотели бы зарабатывать больше, выйти на другой уровень - открыть ',
-//     boldSubtitle: 'свое кафе-кондитерскую'
-//   },
-//   {
-//     title: 'ДЛЯ НАЧИНАЮЩИХ ПРЕДПРИНИМАТЕЛЕЙ',
-//     subTitle: 'которые уже наметили план своего бизнеса и возможно даже придумали продукт, но почему-то до сих пор ',
-//     boldSubtitle: 'так и не решились  открыть свое дело'
-//   },
-//   {
-//     title: 'ДЛЯ БИЗНЕСМЕНОВ',
-//     subTitle: 'которые уже открыли свое первое заведение и собираются улучшить или масштабировать бизнес, применив другой опыт',
-//     boldSubtitle: ''
-//   },
-// ]
+export default Home;

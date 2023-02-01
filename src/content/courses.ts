@@ -1,6 +1,8 @@
 import { ICourses } from '@src/types';
-import fastroCover from 'public/images/gastro/cover.jpg';
+
 import gastroModulesList from './gastroModulesList';
+
+import fastroCover from 'public/images/gastro/cover.jpg';
 
 const courses: ICourses[] = [
   {

@@ -1,12 +1,12 @@
-import speaker1 from 'public/speakers/MonaLisa.jpeg';
-import speaker2 from 'public/speakers/bogdana-hmelnickogo.jpeg';
-import speaker3 from 'public/speakers/taras-shechenko.jpeg';
-import speaker4 from 'public/speakers/marilyn-monroe.jpeg';
-import speaker5 from 'public/speakers/winsto-churchill.jpeg';
 import speaker6 from 'public/speakers/arsen-wenger.jpeg';
+import speaker2 from 'public/speakers/bogdana-hmelnickogo.jpeg';
 import speaker7 from 'public/speakers/margaret-thatcher.jpeg';
+import speaker4 from 'public/speakers/marilyn-monroe.jpeg';
+import speaker1 from 'public/speakers/MonaLisa.jpeg';
 import speaker8 from 'public/speakers/nelson-mandela.jpeg';
 import speaker9 from 'public/speakers/nikolai_2.webp';
+import speaker3 from 'public/speakers/taras-shechenko.jpeg';
+import speaker5 from 'public/speakers/winsto-churchill.jpeg';
 
 type ISpeaker = {
   id: string;

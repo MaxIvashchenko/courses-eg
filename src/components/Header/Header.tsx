@@ -1,15 +1,15 @@
-import { Box, Button, Typography } from '@mui/material';
-import { phoneNumber } from '@src/constants';
-import theme from '@src/theme';
-import { Header as HeadersBlocks } from 'blocks';
 import Link from 'next/link';
-import { IconComponent } from '..';
-import { paths } from 'src/constants';
 import { useRouter } from 'next/router';
+import { Box, Button, Typography } from '@mui/material';
+import { phoneNumber, paths } from '@src/constants';
+import theme from '@src/theme';
+
+import { Header as HeadersBlocks } from 'blocks';
+import { IconComponent } from '..';
 
 const { HeaderWrapper, ButtonWrapper } = HeadersBlocks;
 
-export default function Header() {
+const Header = () => {
   const router = useRouter();
   const phoneCallHandler = () => window.open(`tel:${phoneNumber}`);
   const signInHandler = () => router.push(paths.signIn);
@@ -39,4 +39,6 @@ export default function Header() {
       </Box>
     </HeaderWrapper>
   );
-}
+};
+
+export default Header;

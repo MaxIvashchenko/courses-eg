@@ -1,12 +1,11 @@
-import { Grid, Typography } from '@mui/material';
-import { ClickableCard, EmptyPageMessage } from '@src/components';
-import { useRouter } from 'next/router';
-import _isEmpty from 'lodash/isEmpty';
-import courses from '@src/content/courses';
-
-import { Layout } from '@src/blocks';
-import { paths } from '@src/constants';
 import { useCallback } from 'react';
+import { useRouter } from 'next/router';
+import { Grid, Typography } from '@mui/material';
+import { Layout } from '@src/blocks';
+import { ClickableCard, EmptyPageMessage } from '@src/components';
+import { paths } from '@src/constants';
+import courses from '@src/content/courses';
+import _isEmpty from 'lodash/isEmpty';
 
 const Profile = () => {
   const router = useRouter();

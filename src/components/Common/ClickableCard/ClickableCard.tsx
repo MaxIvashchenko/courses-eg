@@ -1,6 +1,7 @@
-import { Box, Card, CardContent, Typography } from '@mui/material';
-import { Profile as ProfileBlock } from 'blocks';
 import Image from 'next/image';
+import { Box, Card, CardContent, Typography } from '@mui/material';
+
+import { Profile as ProfileBlock } from 'blocks';
 import { IconComponent } from '..';
 
 const { CardActionArea, IconWrapper } = ProfileBlock;

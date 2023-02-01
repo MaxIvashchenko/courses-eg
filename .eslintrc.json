@@ -31,6 +31,7 @@
   },
   "parser": "@typescript-eslint/parser",
   "rules": {
+    "@typescript-eslint/no-explicit-any": "off",
     "react/jsx-filename-extension": [
       1,
       {
@@ -106,7 +107,6 @@
       "error",
       {
         "groups": [
-          // React, Next, PropTypes, Mui imports and other global imports of libraries
           [
             "^react",
             "^next",
@@ -116,7 +116,6 @@
             "@mui/icons",
             "^@?\\w"
           ],
-          // Imports of 'custom' modules -> apis, constants, helpers/utils, hooks and mock data
           [
             "^api",
             "^constant",
@@ -126,13 +125,9 @@
             "^content",
             "^content"
           ],
-          // Theme imports
           ["^theme"],
-          // Context folder
           ["^context"],
-          // Types
           ["^types"],
-          // Imports of components and related to components stuff.
           [
             "^blocks",
             "^(@|components)(/.*|$)",
@@ -143,9 +138,7 @@
             "^\\.(?!/?$)",
             "^\\./?$"
           ],
-          // Imports from public/static folders -> images, svg, ...
           ["^public", "^static"],
-          // Style imports.
           ["^.+\\.?(css)$"]
         ]
       }
