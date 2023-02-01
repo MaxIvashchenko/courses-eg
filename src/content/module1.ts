@@ -99,7 +99,7 @@ const module1: IBlock[] = [
         description: ['']
       },
       {
-        id: 'gastro-module-1-block-2-t-4',
+        id: 'gastro-module-1-block-2-t-5',
         title: 'Калькулятор, который поможет посчитать стартовый бюджет',
         videoLink: '',
         description: ['']

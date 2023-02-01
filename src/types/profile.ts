@@ -12,14 +12,16 @@ export interface ICourses {
   list: IModuleRow[];
 }
 
+export interface IBlockTheme {
+  id: string;
+  title: string;
+  videoLink: string;
+  description: string[];
+}
+
 export interface IBlock {
   id: string;
   title: string;
   img?: string;
-  themes: {
-    id: string;
-    title: string;
-    videoLink: string;
-    description: string[];
-  }[];
+  themes: IBlockTheme[];
 }

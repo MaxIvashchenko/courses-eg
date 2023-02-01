@@ -6,6 +6,7 @@ interface IPaths {
   signUp: string;
   modules: string;
   module: string;
+  block: string;
 }
 
 const paths: IPaths = {
@@ -15,7 +16,8 @@ const paths: IPaths = {
   signIn: '/signIn',
   signUp: '/signUp',
   modules: '/modules',
-  module: '/module'
+  module: '/module',
+  block: '/block'
 };
 
 export default paths;

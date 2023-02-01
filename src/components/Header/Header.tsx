@@ -1,7 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Box, Button, Typography } from '@mui/material';
-import { phoneNumber, paths } from '@src/constants';
+import { paths, phoneNumber } from '@src/constants';
 import theme from '@src/theme';
 
 import { Header as HeadersBlocks } from 'blocks';

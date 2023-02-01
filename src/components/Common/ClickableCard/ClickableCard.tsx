@@ -1,5 +1,6 @@
 import Image from 'next/image';
 import { Box, Card, CardContent, Typography } from '@mui/material';
+import { IBlockTheme } from '@src/types';
 
 import { Profile as ProfileBlock } from 'blocks';
 import { IconComponent } from '..';
@@ -11,6 +12,7 @@ interface ClickableCardProps {
   title: string;
   img?: string;
   subTitle?: string;
+  themes?: IBlockTheme[];
   clickHandler?: (id: string) => () => void;
 }
 
@@ -19,6 +21,7 @@ const ClickableCard = ({
   title,
   img,
   subTitle,
+  themes,
   clickHandler = () => () => {}
 }: ClickableCardProps) => (
   <Card
@@ -48,6 +51,14 @@ const ClickableCard = ({
           <Typography component='div' variant='h3'>
             {title}
           </Typography>
+          <ul style={{ paddingLeft: 4 }}>
+            {themes &&
+              themes.map((theme) => (
+                <li key={theme.id}>
+                  <Typography component='div'>{theme.title}</Typography>
+                </li>
+              ))}
+          </ul>
         </CardContent>
       </Box>
     </CardActionArea>
