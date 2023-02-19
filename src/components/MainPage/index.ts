@@ -1,3 +1,4 @@
+export { AboutUs } from './AboutUs';
+export { CourseTarget } from './CourseTarget';
 export { IntroBlock } from './IntroBlock';
-export { ProgramCourseBlock } from './ProgramCourseBlock';
 export { SpeakersSlider } from './SpeakersSlider';

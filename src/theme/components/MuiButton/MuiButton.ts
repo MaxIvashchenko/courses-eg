@@ -26,7 +26,7 @@ const MuiButton: MuiButtonType = {
   },
   styleOverrides: {
     root: {
-      borderRadius: 10,
+      borderRadius: 4,
       textTransform: 'none',
       color: 'white',
       boxShadow: 'none',
@@ -62,7 +62,7 @@ const MuiButton: MuiButtonType = {
       lineHeight: '20px'
     },
     contained: ({ theme }) => ({
-      background: theme.palette.primary.main,
+      background: '#554a43',
 
       '&:hover': {
         background: theme.palette.primary.light

@@ -1,39 +1,30 @@
-import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { Box, Button, Typography } from '@mui/material';
-import { paths, phoneNumber } from '@src/constants';
-import theme from '@src/theme';
+import { paths } from '@src/constants';
 
 import { Header as HeadersBlocks } from 'blocks';
-import { IconComponent } from '..';
 
-const { HeaderWrapper, ButtonWrapper } = HeadersBlocks;
+const { HeaderWrapper } = HeadersBlocks;
+
+const headerList: string[] = ['О нас', 'Курс'];
 
 const Header = () => {
   const router = useRouter();
-  const phoneCallHandler = () => window.open(`tel:${phoneNumber}`);
+  // const phoneCallHandler = () => window.open(`tel:${phoneNumber}`);
   const signInHandler = () => router.push(paths.signIn);
 
   return (
     <HeaderWrapper component='header'>
-      <Link href={paths.main}>
-        <IconComponent name='logo' fill='#fff' height={60} width={90} />
-      </Link>
+      <Box sx={{ display: 'flex' }}>
+        {headerList.map((link) => (
+          <Typography variant='h4' key={link} mr={2}>
+            {link}
+          </Typography>
+        ))}
+      </Box>
 
       <Box>
-        <ButtonWrapper onClick={phoneCallHandler} sx={{ alignItems: 'center' }}>
-          <IconComponent name='telephone' width={32} height={32} />
-          <Typography p={1}>{phoneNumber}</Typography>
-        </ButtonWrapper>
-
-        <ButtonWrapper sx={{ alignItems: 'center' }}>
-          <IconComponent name='telegram' width={32} height={32} />
-        </ButtonWrapper>
-        <Button
-          onClick={signInHandler}
-          variant='text'
-          sx={{ color: theme.palette.primary.main }}
-        >
+        <Button onClick={signInHandler} variant='text'>
           Вход
         </Button>
       </Box>

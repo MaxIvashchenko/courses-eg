@@ -13,6 +13,7 @@ import scaleup from 'public/icons/scaleup.svg';
 import stats from 'public/icons/stats.svg';
 import telegram from 'public/icons/telegram.svg';
 import telephone from 'public/icons/telephone.svg';
+import triangle from 'public/icons/triangle.svg';
 import visible from 'public/icons/visible.svg';
 import logo from 'public/logo.svg';
 
@@ -35,7 +36,8 @@ const iconTypes: IconTypes = {
   notVisible,
   salon,
   restaurant,
-  image
+  image,
+  triangle
 };
 
 type IconComponentProps = {

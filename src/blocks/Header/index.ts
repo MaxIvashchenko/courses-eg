@@ -1,4 +1,4 @@
-import { Box, IconButton } from '@mui/material';
+import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const HeaderWrapper = styled(Box)(({ theme }) => ({
@@ -6,31 +6,24 @@ const HeaderWrapper = styled(Box)(({ theme }) => ({
   justifyContent: 'space-between',
   alignItems: 'center',
   width: '100%',
-  background: '#242424',
-  padding: '16px 24px',
+  zIndex: 10,
+  position: 'fixed',
+  borderBottom: `2px solid #40404070`,
+  padding: '32px 32px',
 
-  [theme.breakpoints.down('sm')]: {
-    padding: '16px 8px'
-  }
-}));
-
-const ButtonWrapper = styled(IconButton)(({ theme }) => ({
-  '& svg path, & p': {
-    fill: theme.palette.primary.main,
-    color: theme.palette.primary.main
+  [theme.breakpoints.up('lg')]: {
+    padding: '16px 48px'
   },
-
-  '&:hover': {
-    '& svg path, & p': {
-      fill: theme.palette.primary.dark,
-      color: theme.palette.primary.dark
-    }
+  [theme.breakpoints.down('md')]: {
+    padding: '16px 32px'
+  },
+  [theme.breakpoints.down('sm')]: {
+    padding: '8px 16px'
   }
 }));
 
 const Header = {
-  HeaderWrapper,
-  ButtonWrapper
+  HeaderWrapper
 };
 
 export default Header;

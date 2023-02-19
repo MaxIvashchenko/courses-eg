@@ -15,7 +15,6 @@ const ContentWrapper = styled(Box)({
   flexDirection: 'column',
   margin: '0 auto',
   width: '100%',
-  maxWidth: 1440,
   height: '100%'
 });
 
