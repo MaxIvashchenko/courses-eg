@@ -2,11 +2,11 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const SignInWrapper = styled(Box)({
+  height: '100vh',
   display: 'flex',
   flexDirection: 'column',
   alignItems: 'center',
   justifyContent: 'center',
-  height: '100%',
   backgroundColor: '#f5f7f8'
 });
 

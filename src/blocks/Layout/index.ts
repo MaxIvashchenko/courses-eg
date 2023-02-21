@@ -2,7 +2,6 @@ import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const AppWrapper = styled(Box)({
-  height: '100vh',
   display: 'flex',
   flexDirection: 'column',
   justifyContent: 'space-between',
@@ -11,6 +10,7 @@ const AppWrapper = styled(Box)({
 });
 
 const ContentWrapper = styled(Box)({
+  flex: 1,
   display: 'flex',
   flexDirection: 'column',
   margin: '0 auto',

@@ -4,6 +4,7 @@ import arrow from 'public/icons/arrow.svg';
 import close from 'public/icons/close.svg';
 import cube from 'public/icons/cube.svg';
 import downArrow from 'public/icons/down-arrow.svg';
+import facebook from 'public/icons/facebook.svg';
 import image from 'public/icons/image.svg';
 import marketing from 'public/icons/marketing.svg';
 import notVisible from 'public/icons/notVisible.svg';
@@ -31,6 +32,7 @@ const iconTypes: IconTypes = {
   marketing,
   arrow,
   telegram,
+  facebook,
   telephone,
   close,
   visible,
