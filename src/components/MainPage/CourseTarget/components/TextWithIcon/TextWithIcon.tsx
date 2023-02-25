@@ -3,10 +3,10 @@ import { Box, Typography as MuiTypography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
 
-const Container = styled(Box)<{ isMirror: boolean }>(({ theme, isMirror }) => ({
+const Container = styled(Box)<{ mirror: number }>(({ theme, mirror }) => ({
   display: 'flex',
   alignItems: 'center',
-  flexDirection: isMirror ? 'row-reverse' : 'row',
+  flexDirection: Boolean(mirror)  ? 'row-reverse' : 'row',
 
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'row',
@@ -14,10 +14,10 @@ const Container = styled(Box)<{ isMirror: boolean }>(({ theme, isMirror }) => ({
   }
 }));
 
-const IconWrapper = styled(Box)<{ isMirror: boolean }>(
-  ({ theme, isMirror }) => ({
-    marginRight: isMirror ? 0 : 48,
-    marginLeft: isMirror ? 48 : 0,
+const IconWrapper = styled(Box)<{ mirror: number }>(
+  ({ theme, mirror }) => ({
+    marginRight: Boolean(mirror) ? 0 : 48,
+    marginLeft: Boolean(mirror) ? 48 : 0,
 
     '& svg': {
       height: 160,
@@ -36,11 +36,11 @@ const IconWrapper = styled(Box)<{ isMirror: boolean }>(
   })
 );
 
-const Typography = styled(MuiTypography)<{ isMirror: boolean }>(
-  ({ theme, isMirror }) => ({
+const Typography = styled(MuiTypography)<{ mirror: number }>(
+  ({ theme, mirror }) => ({
     textTransform: 'uppercase',
     maxWidth: 650,
-    textAlign: isMirror ? 'right' : 'left',
+    textAlign: Boolean(mirror)  ? 'right' : 'left',
 
     [theme.breakpoints.down('sm')]: {
       textAlign: 'left'
@@ -49,17 +49,17 @@ const Typography = styled(MuiTypography)<{ isMirror: boolean }>(
 );
 
 interface TextWithIconProps {
-  isMirror?: boolean;
+  mirror?: boolean;
   icon: string;
   text: string;
 }
 
-const TextWithIcon = ({ isMirror = false, icon, text }: TextWithIconProps) => (
-  <Container isMirror={isMirror}>
-    <IconWrapper isMirror={isMirror}>
+const TextWithIcon = ({ mirror = false, icon, text }: TextWithIconProps) => (
+  <Container mirror={Number(mirror)}>
+    <IconWrapper mirror={Number(mirror)}>
       <IconComponent fill='#5a6f49' name={icon} />
     </IconWrapper>
-    <Typography sx={{ px: { xs: 0, md: 4 } }} isMirror={isMirror} variant='h4'>
+    <Typography sx={{ px: { xs: 0, md: 4 } }} mirror={Number(mirror)} variant='h4'>
       {text}
     </Typography>
   </Container>

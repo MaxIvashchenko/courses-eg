@@ -34,21 +34,21 @@ const SmallGreyLayer = styled(Box)(({ theme }) => ({
   }
 }));
 
-const content: { text: string; icon: string; isMirror: boolean }[] = [
+const content: { text: string; icon: string; mirror: boolean }[] = [
   {
     text: 'Для всех, кто мечтает открыть гастробизнес и зарабатывать на нем',
     icon: 'man',
-    isMirror: false
+    mirror: false
   },
   {
     text: 'Для действующих предпринимателей, которые уже открыли свое первое заведение и собираются улучшить или масштабировать бизнес, применив новые знания',
     icon: 'cafe',
-    isMirror: true
+    mirror: true
   },
   {
     text: 'Для тех,кто в поиске себя и своей ниши',
     icon: 'loop',
-    isMirror: false
+    mirror: false
   }
 ];
 
