@@ -1,18 +1,18 @@
 import React from 'react';
 
 import {
-  AboutUs,
   CourseTarget,
   IntroBlock,
   Programs,
-  SpeakersSlider
+  SpeakersSlider,
+  YourGain
 } from 'components';
 
 const Home = () => (
   <>
     <IntroBlock />
     <CourseTarget />
-    <AboutUs />
+    <YourGain />
     <SpeakersSlider />
     <Programs />
   </>

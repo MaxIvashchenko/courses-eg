@@ -15,7 +15,7 @@ const SmallLayer = styled(Box)(({ theme }) => ({
 }));
 
 const GridContainer = styled(Grid)(({ theme }) => ({
-  maxWidth: 1440,
+  maxWidth: 1680,
   margin: '0 auto',
   minHeight: '100vh',
   position: 'relative',

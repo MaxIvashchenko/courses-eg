@@ -97,7 +97,7 @@ const SpeakersSlider = () => {
         py={5}
         sx={{
           alignItems: 'center',
-          maxWidth: 1440,
+          maxWidth: 1680,
           margin: '0 auto'
         }}
       >

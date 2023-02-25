@@ -118,7 +118,7 @@ const Programs = () => {
       </TopGreyLayer> */}
       <Box
         sx={{
-          maxWidth: 1440,
+          maxWidth: 1680,
           margin: '0 auto',
           zIndex: 20,
           px: { xs: 1, sm: 8 },

@@ -58,7 +58,7 @@ const CourseTarget = () => (
       container
       sx={{
         py: { xs: 2, md: 5 },
-        maxWidth: 1440,
+        maxWidth: 1680,
         margin: '0 auto'
       }}
     >
