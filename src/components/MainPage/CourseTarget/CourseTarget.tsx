@@ -2,13 +2,27 @@ import Image from 'next/image';
 import { Box, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
-import image2 from '../../../../public/images/image2.jpg';
+import { TextWithIcon } from './components';
+
+const CourseTargetContainer = styled(Box)(({ theme }) => ({
+  background: '#fff',
+  backgroundImage: 'url(images/layer4.svg)',
+  backgroundPosition: 'bottom',
+  position: 'relative',
+  backgroundRepeat: 'no-repeat',
+  backgroundSize: 'contain',
+
+  [theme.breakpoints.up('xl')]: {
+    backgroundSize: 'cover',
+    backgroundPosition: 'left'
+  }
+}));
 
 const SmallGreyLayer = styled(Box)(({ theme }) => ({
   '& img': {
     position: 'absolute',
     top: 0,
-    right: 0
+    right: -5
   },
   [theme.breakpoints.down('sm')]: {
     '& img': {
@@ -20,41 +34,30 @@ const SmallGreyLayer = styled(Box)(({ theme }) => ({
   }
 }));
 
-const ImageWrapper = styled(Box)(({ theme }) => ({
-  height: '100%',
-  width: '100%',
-  textAlign: 'end',
-  [theme.breakpoints.down('sm')]: {
-    textAlign: 'center',
-    marginTop: 20,
-
-    '& img': {
-      height: 450,
-      width: 300
-    }
+const content: { text: string; icon: string; isMirror: boolean }[] = [
+  {
+    text: 'Для всех, кто мечтает открыть гастробизнес и зарабатывать на нем',
+    icon: 'man',
+    isMirror: false
+  },
+  {
+    text: 'Для действующих предпринимателей, которые уже открыли свое первое заведение и собираются улучшить или масштабировать бизнес, применив новые знания',
+    icon: 'cafe',
+    isMirror: true
+  },
+  {
+    text: 'Для тех,кто в поиске себя и своей ниши',
+    icon: 'loop',
+    isMirror: false
   }
-}));
+];
 
 const CourseTarget = () => (
-  <Box
-    sx={{
-      // minHeight: 850,
-      background: '#fff',
-
-      backgroundImage: 'url(images/layer4.svg)',
-      backgroundPosition: 'bottom',
-      position: 'relative',
-      backgroundRepeat: 'no-repeat'
-      // px: { xs: 4, sm: 8 },
-      // pt: { xs: 8, sm: 10 },
-      // pb: { xs: 2, sm: 4 }
-    }}
-  >
+  <CourseTargetContainer>
     <Grid
       container
       py={5}
       sx={{
-        alignItems: 'center',
         maxWidth: 1440,
         margin: '0 auto'
       }}
@@ -69,31 +72,35 @@ const CourseTarget = () => (
         />
       </SmallGreyLayer>
 
-      <Grid item xs={12} md={6} sx={{ position: 'sticky' }}>
-        <ImageWrapper>
-          <Image src={image2} alt='girl' width={500} height={800} />
-        </ImageWrapper>
-      </Grid>
-      <Grid item xs={12} md={6} p={2} mb={4} sx={{ position: 'sticky' }}>
-        <Typography my={2} fontWeight='700' color='primary.black' variant='h1'>
+      <Grid
+        item
+        xs={12}
+        md={4}
+        sx={{
+          position: 'sticky',
+          backgroundImage: 'url(/images/image2.svg)',
+          backgroundPosition: 'top',
+          backgroundRepeat: 'no-repeat',
+          backgroundSize: 'contain'
+        }}
+      ></Grid>
+      <Grid
+        item
+        xs={12}
+        md={8}
+        px={2}
+        sx={{ position: 'sticky', textAlign: { xs: 'center', md: 'left' } }}
+      >
+        <Typography mb={2} fontWeight='700' color='primary.black' variant='h1'>
           ДЛЯ КОГО КУРС
         </Typography>
-        {[
-          'Для всех, кто мечтает открыть гастробизнес и зарабатывать на нем',
-          'Для действующих предпринимателей, которые уже открыли свое первое заведение и собираются улучшить или масштабировать бизнес, применив новые знания',
-          'Для тех,кто в поиске себя и своей ниши'
-        ].map((row, idx) => (
-          <Typography key={row} variant='h5' py={1}>{`${
-            idx + 1
-          }) ${row}`}</Typography>
+
+        {content.map((row) => (
+          <TextWithIcon key={row.text} {...row} />
         ))}
-        <Typography mt={2} variant='h5'>
-          От идеи к успешному бизнесу : Пошаговый план открытия — бизнес план —
-          финансовая модель — поддержка на всех этапах — реальный результат
-        </Typography>
       </Grid>
     </Grid>
-  </Box>
+  </CourseTargetContainer>
 );
 
 export default CourseTarget;

@@ -10,9 +10,7 @@ const theme: Theme = createTheme({
     MuiTypography
   },
   typography: {
-    fontFamily: ['Raleway', 'Helvetica', 'Arial', 'Lucida', 'sans-serif'].join(
-      ','
-    )
+    fontFamily: ['Maven Pro', 'sans-serif'].join(',')
   }
 });
 
