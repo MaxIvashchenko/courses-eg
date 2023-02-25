@@ -56,8 +56,8 @@ const CourseTarget = () => (
   <CourseTargetContainer>
     <Grid
       container
-      py={5}
       sx={{
+        py: { xs: 2, md: 5 },
         maxWidth: 1440,
         margin: '0 auto'
       }}
@@ -79,7 +79,7 @@ const CourseTarget = () => (
         sx={{
           position: 'sticky',
           backgroundImage: 'url(/images/image2.svg)',
-          backgroundPosition: 'top',
+          backgroundPosition: 'inherit',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain'
         }}

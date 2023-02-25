@@ -4,8 +4,8 @@ import createEmotionServer from '@emotion/server/create-instance';
 
 import createEmotionCache from 'theme/createEmotionCache';
 
-const title = 'Ester Candles';
-const description = 'Ester Candles description';
+const title = 'Emi Grant';
+const description = 'Emi Grant description';
 const image = ``;
 const keywords = '';
 

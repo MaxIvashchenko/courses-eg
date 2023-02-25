@@ -6,7 +6,7 @@ import { IconComponent } from '@src/components/Common';
 const Container = styled(Box)<{ mirror: number }>(({ theme, mirror }) => ({
   display: 'flex',
   alignItems: 'center',
-  flexDirection: Boolean(mirror)  ? 'row-reverse' : 'row',
+  flexDirection: mirror ? 'row-reverse' : 'row',
 
   [theme.breakpoints.down('sm')]: {
     flexDirection: 'row',
@@ -14,33 +14,31 @@ const Container = styled(Box)<{ mirror: number }>(({ theme, mirror }) => ({
   }
 }));
 
-const IconWrapper = styled(Box)<{ mirror: number }>(
-  ({ theme, mirror }) => ({
-    marginRight: Boolean(mirror) ? 0 : 48,
-    marginLeft: Boolean(mirror) ? 48 : 0,
+const IconWrapper = styled(Box)<{ mirror: number }>(({ theme, mirror }) => ({
+  marginRight: mirror ? 0 : 48,
+  marginLeft: mirror ? 48 : 0,
+
+  '& svg': {
+    height: 160,
+    width: 160
+  },
+
+  [theme.breakpoints.down('sm')]: {
+    marginRight: 16,
+    marginLeft: 0,
 
     '& svg': {
-      height: 160,
-      width: 160
-    },
-
-    [theme.breakpoints.down('sm')]: {
-      marginRight: 16,
-      marginLeft: 0,
-
-      '& svg': {
-        height: 48,
-        width: 48
-      }
+      height: 48,
+      width: 48
     }
-  })
-);
+  }
+}));
 
 const Typography = styled(MuiTypography)<{ mirror: number }>(
   ({ theme, mirror }) => ({
     textTransform: 'uppercase',
     maxWidth: 650,
-    textAlign: Boolean(mirror)  ? 'right' : 'left',
+    textAlign: mirror ? 'right' : 'left',
 
     [theme.breakpoints.down('sm')]: {
       textAlign: 'left'
@@ -59,7 +57,11 @@ const TextWithIcon = ({ mirror = false, icon, text }: TextWithIconProps) => (
     <IconWrapper mirror={Number(mirror)}>
       <IconComponent fill='#5a6f49' name={icon} />
     </IconWrapper>
-    <Typography sx={{ px: { xs: 0, md: 4 } }} mirror={Number(mirror)} variant='h4'>
+    <Typography
+      sx={{ px: { xs: 0, md: 4 } }}
+      mirror={Number(mirror)}
+      variant='h4'
+    >
       {text}
     </Typography>
   </Container>
