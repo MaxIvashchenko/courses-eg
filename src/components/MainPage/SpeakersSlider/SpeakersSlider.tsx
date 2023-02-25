@@ -84,32 +84,47 @@ const SpeakersSlider = () => {
       sx={{
         background: '#fff',
         backgroundImage: 'url(images/layer5.svg)',
-        backgroundPosition: 'center',
+        backgroundPosition: 'bottom',
         backgroundSize: 'cover',
         position: 'relative',
         backgroundRepeat: 'no-repeat',
         px: { xs: 4, sm: 8 },
-        pt: { xs: 8, sm: 10 },
+        // pt: { xs: 1, sm: 4 },
         pb: { xs: 2, sm: 4 }
       }}
     >
       <Box
-        py={5}
+        py={2}
         sx={{
           alignItems: 'center',
           maxWidth: 1680,
           margin: '0 auto'
         }}
       >
+        <Box
+          sx={{
+            maxWidth: 700,
+            height: 400,
+            background: 'grey',
+            display: 'flex',
+            justifyContent: 'center',
+            alignItems: 'center',
+            margin: '0 auto',
+            mt: { xs: 3, md: 6 },
+            mb: { xs: 3, md: 10 }
+          }}
+        >
+          <Typography variant='h1'>Video</Typography>
+        </Box>
+
         <Typography
-          my={6}
-          pb={6}
+          sx={{ my: { xs: 1, md: 6 } }}
           textAlign='center'
           fontWeight='700'
           color='primary.black'
           variant='h1'
         >
-          СПИКЕРЫ КУРСА
+          НАСТАВНИКИ КУРСА
         </Typography>
         <Box
           sx={{
@@ -150,7 +165,12 @@ const SpeakersSlider = () => {
                   />
                   <CardContent
                     sx={{
-                      color: '#fff'
+                      color: '#fff',
+                      minHeight: 88,
+                      alignItems: 'center',
+                      display: 'flex',
+                      justifyContent: 'center',
+                      flexDirection: 'column'
                     }}
                   >
                     <Typography
@@ -161,9 +181,13 @@ const SpeakersSlider = () => {
                     >
                       {item.name}
                     </Typography>
-                    <Typography variant='body2' color='text.secondary'>
-                      {item.description}
-                    </Typography>
+                    {item.description.map((text) => (
+                      <li key={text}>
+                        <Typography variant='body2' color='common.white'>
+                          {text}
+                        </Typography>
+                      </li>
+                    ))}
                   </CardContent>
                 </Card>
               </Box>

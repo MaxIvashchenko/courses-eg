@@ -47,12 +47,16 @@ const PointLine = styled(Box)<{ direct: string }>(({ theme, direct }) => ({
   }
 }));
 
-const ContentWrapper = styled(Box)<{ direct: string }>(({ direct }) => ({
+const ContentWrapper = styled(Box)<{ direct: string }>(({ theme, direct }) => ({
   position: 'relative',
   display: 'flex',
   minHeight: 100,
   alignItems: 'center',
-  justifyContent: direct
+  justifyContent: direct,
+
+  [theme.breakpoints.down('md')]: {
+    minHeight: 0
+  }
 }));
 
 const YourGain = () => (
@@ -61,7 +65,8 @@ const YourGain = () => (
     sx={{
       minHeight: 400,
       backgroundColor: '#fff',
-      px: { xs: 2, sm: 4 }
+      px: { xs: 2, sm: 4 },
+      py: { xs: 1, sm: 4 }
     }}
   >
     <Grid item xs={12}>

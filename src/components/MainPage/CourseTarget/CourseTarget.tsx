@@ -11,6 +11,7 @@ const CourseTargetContainer = styled(Box)(({ theme }) => ({
   position: 'relative',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'contain',
+  minHeight: 500,
 
   [theme.breakpoints.up('xl')]: {
     backgroundSize: 'cover',
