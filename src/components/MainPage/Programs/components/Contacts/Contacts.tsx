@@ -1,5 +1,6 @@
 import { Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { redirectToTelegramPrivateLink } from '@src/utils';
 
 const ContactButtons = styled(Button)<{ background: string }>(
   ({ theme, background }) => ({
@@ -29,7 +30,12 @@ const Contacts = () => (
         my: { xs: 3, md: 2, lg: 0 }
       }}
     >
-      <ContactButtons background='#524a49'>Оставить заявку</ContactButtons>
+      <ContactButtons
+        onClick={redirectToTelegramPrivateLink}
+        background='#524a49'
+      >
+        Оставить заявку
+      </ContactButtons>
     </Grid>
   </Grid>
 );

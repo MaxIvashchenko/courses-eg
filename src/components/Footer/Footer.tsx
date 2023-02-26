@@ -1,4 +1,10 @@
-import { email, phoneNumber } from '@src/constants';
+import {
+  redirectToEmail,
+  redirectToInstagram,
+  redirectToPhone,
+  redirectToTelegramChannel,
+  redirectToYoutube
+} from '@src/utils';
 
 import { Footer as FooterBlocks } from 'blocks';
 import { IconComponent } from '../Common';
@@ -8,23 +14,23 @@ const { FooterWrapper, IconButton } = FooterBlocks;
 const footerContent: { name: string; onClick: () => void }[] = [
   {
     name: 'youtube',
-    onClick: () => {}
+    onClick: redirectToYoutube
   },
   {
     name: 'instagram',
-    onClick: () => {}
+    onClick: redirectToInstagram
   },
   {
     name: 'telegram',
-    onClick: () => window.open('https://t.me/+dos73xV2vQExMmNk')
+    onClick: redirectToTelegramChannel
   },
   {
     name: 'telephone',
-    onClick: () => window.open(`tel:${phoneNumber}`)
+    onClick: redirectToPhone
   },
   {
     name: 'email',
-    onClick: () => window.open(`mailto:${email}`)
+    onClick: redirectToEmail
   }
 ];
 

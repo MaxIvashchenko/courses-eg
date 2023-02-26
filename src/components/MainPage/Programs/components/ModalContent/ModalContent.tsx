@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography } from '@mui/material';
-import { coursesModal } from '@src/content';
 import { styled } from '@mui/material/styles';
+import { coursesModal } from '@src/content';
 
 const ModalWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: '#fff',
@@ -12,7 +12,7 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
   border: '32px solid #fff',
 
   [theme.breakpoints.down('md')]: {
-    height: '85%',
+    height: '85%'
   }
 }));
 
@@ -24,7 +24,7 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
   const course = coursesModal[num - 1];
 
   return (
-    <ModalWrapper >
+    <ModalWrapper>
       <Typography
         variant='h1'
         textAlign='center'

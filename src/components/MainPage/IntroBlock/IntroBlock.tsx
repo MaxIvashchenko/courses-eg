@@ -1,6 +1,7 @@
 import Image from 'next/image';
 import { Box, Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { redirectToTelegramPrivateLink } from '@src/utils';
 
 const SmallLayer = styled(Box)(({ theme }) => ({
   '& img': {
@@ -101,10 +102,20 @@ const IntroBlock = () => (
             width: { xs: '100%', sm: 400 }
           }}
         >
-          <Button size='large' variant='contained' sx={{ width: 300, my: 1 }}>
+          <Button
+            size='large'
+            variant='contained'
+            onClick={redirectToTelegramPrivateLink}
+            sx={{ width: 300, my: 1 }}
+          >
             Купитиь Курс
           </Button>
-          <Button size='large' variant='contained' sx={{ width: 300, my: 1 }}>
+          <Button
+            size='large'
+            variant='contained'
+            onClick={redirectToTelegramPrivateLink}
+            sx={{ width: 300, my: 1 }}
+          >
             У меня есть вопросы
           </Button>
         </Box>
