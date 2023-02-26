@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { ForwardedRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { coursesModal } from '@src/content';
@@ -18,6 +18,7 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
 
 interface ModalContent {
   num?: number;
+  forwardedRef?: ForwardedRef<unknown>;
 }
 
 const ModalContent = ({ num = 1 }: ModalContent) => {
@@ -65,4 +66,6 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
   );
 };
 
-export default ModalContent;
+export default React.forwardRef((props: ModalContent, ref) => (
+  <ModalContent {...props} forwardedRef={ref} />
+));

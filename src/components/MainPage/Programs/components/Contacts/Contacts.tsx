@@ -24,7 +24,7 @@ const Contacts = () => (
       item
       xs={12}
       md={6}
-      lg={8}
+      lg={4}
       sx={{
         textAlign: 'center',
         my: { xs: 3, md: 2, lg: 0 }

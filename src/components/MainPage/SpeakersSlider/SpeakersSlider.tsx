@@ -188,12 +188,17 @@ const SpeakersSlider = () => {
                       gutterBottom
                       variant='h3'
                       color='#fff'
-                      sx={{ m: 0 }}
+                      sx={{ mb: 1, fontStyle: 'italic' }}
                     >
                       {item.name}
                     </Typography>
-                    {item.description.map((text) => (
-                      <li key={text}>
+                    {item.description.map((text, idx) => (
+                      <li
+                        style={{
+                          listStyleType: idx === 0 ? 'none' : 'inherit'
+                        }}
+                        key={text}
+                      >
                         <Typography variant='body2' color='common.white'>
                           {text}
                         </Typography>
