@@ -100,7 +100,6 @@ const SpeakersSlider = () => {
         position: 'relative',
         backgroundRepeat: 'no-repeat',
         px: { xs: 4, sm: 8 },
-        // pt: { xs: 1, sm: 4 },
         pb: { xs: 2, sm: 4 }
       }}
     >
@@ -185,14 +184,27 @@ const SpeakersSlider = () => {
                       flexDirection: 'column'
                     }}
                   >
-                    <Typography
-                      gutterBottom
-                      variant='h3'
-                      color='#fff'
-                      sx={{ mb: 1, fontStyle: 'italic' }}
+                    <Box
+                      sx={{
+                        display: 'flex',
+                        minHeight: 60,
+                        alignItems: 'center',
+                        mb: { xs: 1, md: 2 }
+                      }}
                     >
-                      {item.name}
-                    </Typography>
+                      <Typography
+                        gutterBottom
+                        variant='h3'
+                        color='#fff'
+                        sx={{
+                          textTransform: 'uppercase',
+                          lineHeight: 1.25
+                        }}
+                      >
+                        {item.name}
+                      </Typography>
+                    </Box>
+
                     {item.description.map((text, idx) => (
                       <li
                         style={{
