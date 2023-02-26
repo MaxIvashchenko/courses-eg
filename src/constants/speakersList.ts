@@ -57,8 +57,11 @@ const speakersList: ISpeaker[] = [
   {
     id: 'speaker-5',
     photo: speaker5.src,
-    name: 'Таня',
-    description: []
+    name: 'Анастасия Свистунова',
+    description: [
+      'Специалист по разработке ТТК и закупкам',
+      'Опыт в общепите более 5 лет'
+    ]
   },
   {
     id: 'speaker-6',
