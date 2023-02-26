@@ -1,8 +1,8 @@
 import speaker1 from 'public/images/speakers/speaker1.jpg';
 import speaker2 from 'public/images/speakers/speaker2.jpg';
 import speaker3 from 'public/images/speakers/speaker3.jpg';
-import speaker4 from 'public/images/speakers/speaker5.jpg';
 import speaker5 from 'public/images/speakers/speaker4.jpg';
+import speaker4 from 'public/images/speakers/speaker5.jpg';
 import speaker6 from 'public/images/speakers/speaker6.jpg';
 
 type ISpeaker = {

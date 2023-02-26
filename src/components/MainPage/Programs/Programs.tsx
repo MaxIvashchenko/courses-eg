@@ -2,8 +2,9 @@ import { useCallback, useState } from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
+import { coursesModal } from '@src/content';
 
-import { Contacts, CustomAccordion, Layers } from './components';
+import { Contacts, CustomAccordion, Layers, Modal } from './components';
 
 const ProgramsContainer = styled(Box)(() => ({
   backgroundImage: 'url(images/layer7.svg)',
@@ -14,7 +15,6 @@ const ProgramsContainer = styled(Box)(() => ({
   width: '100%',
   position: 'relative',
   overflow: 'hidden'
-  // zIndex: 20
 }));
 
 const IconWrapper = styled(Box)(({ theme }) => ({
@@ -57,47 +57,32 @@ const CoursesGridItem = styled(Grid)(({ theme }) => ({
   }
 }));
 
-interface ICourse {
-  icon: string;
-  title: string;
-  subTitle: string;
-}
-
 interface IPlan {
   title: string;
   descriptions: string[];
   backgroundColor: string;
 }
 
-const courses: ICourse[] = [
-  {
-    icon: 'shuttle',
-    title: 'Для начинающего бизнеса',
-    subTitle: 'Открой свой бизнес с нуля'
-  },
-  {
-    icon: 'suitcase',
-    title: 'Для действующего бизнеса',
-    subTitle: 'Развивай и масштабируй'
-  }
-];
-
 const plans: IPlan[] = [
   {
     title: 'Start',
     descriptions: [
+      'Один курс',
       '1 консультация с наставником',
       'Чат с обратной связью от всех наставников на 3 месяца',
-      'Сообщество единомышленников'
+      'Сообщество единомышленников',
+      '- 750$ (цена со скидкой 500$)'
     ],
     backgroundColor: '#a35817'
   },
   {
     title: 'Duet',
     descriptions: [
+      'Два курса',
       '2 консультации с наставником',
       'Чат с обратной связью от всех наставников на 6 месяцев',
-      'Сообщество единомышленников'
+      'Сообщество единомышленников',
+      '1250$ (цена со скидкой 950$)'
     ],
     backgroundColor: '#5b6b46'
   },
@@ -114,6 +99,8 @@ const plans: IPlan[] = [
 const Programs = () => {
   const [currentBlockOpen, setCurrentBlockOpen] = useState<number | null>(null);
 
+  const [modalNum, setModalNum] = useState<number | null>(null);
+
   const switchHandler = useCallback(
     (num: number) => () => {
       setCurrentBlockOpen(num === currentBlockOpen ? null : num);
@@ -121,12 +108,17 @@ const Programs = () => {
     [currentBlockOpen]
   );
 
+  const courseHandler = useCallback((num: number) => {
+    setModalNum(num);
+  }, []);
+
+  const closeModal = () => setModalNum(null);
+
   return (
     <ProgramsContainer id='courses'>
       <Layers />
       <Box
         sx={{
-          // position: 'sticky',
           maxWidth: 1680,
           margin: '0 auto',
           zIndex: 20,
@@ -137,8 +129,12 @@ const Programs = () => {
       >
         <Grid container justifyContent='start' mb={4}>
           <CoursesGridItem item xs={12} md={8}>
-            {courses.map(({ icon, title, subTitle }) => (
-              <CourseButton key={title} variant='text'>
+            {coursesModal.map(({ icon, title, subTitle }, idx) => (
+              <CourseButton
+                onClick={() => courseHandler(idx + 1)}
+                key={title}
+                variant='text'
+              >
                 <IconWrapper>
                   <IconComponent
                     fill='#a25919'
@@ -188,6 +184,8 @@ const Programs = () => {
 
         <Contacts />
       </Box>
+
+      <Modal modalNum={modalNum} closeModal={closeModal} />
     </ProgramsContainer>
   );
 };

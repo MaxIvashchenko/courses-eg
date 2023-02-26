@@ -9,7 +9,7 @@ const HeaderWrapper = styled(Box)<{ scrolled: number }>(({ scrolled }) => ({
   zIndex: 10,
   position: 'fixed',
   transition: 'background 0.5s ease-out',
-  background: Boolean(scrolled) ? '#ffffffe6' : ''
+  background: scrolled ? '#ffffffe6' : ''
 }));
 
 const PaddingWrapper = styled(Box)(({ theme }) => ({

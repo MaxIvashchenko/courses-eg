@@ -5,6 +5,7 @@ import cafe from 'public/icons/cafe.svg';
 import close from 'public/icons/close.svg';
 import cube from 'public/icons/cube.svg';
 import downArrow from 'public/icons/down-arrow.svg';
+import email from 'public/icons/email.svg';
 import facebook from 'public/icons/facebook.svg';
 import image from 'public/icons/image.svg';
 import instagram from 'public/icons/instagram.svg';
@@ -57,6 +58,7 @@ const iconTypes: IconTypes = {
   suitcase,
   youtube,
   instagram,
+  email,
   menu
 };
 

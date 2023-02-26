@@ -5,7 +5,7 @@ import { styled } from '@mui/material/styles';
 const SmallLayer = styled(Box)(({ theme }) => ({
   '& img': {
     position: 'absolute',
-    top: -160,
+    top: -190,
     left: -100,
 
     [theme.breakpoints.down('md')]: {
