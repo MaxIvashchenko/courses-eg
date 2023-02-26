@@ -53,6 +53,17 @@ const settings = {
   ]
 };
 
+const Video = () => (
+  <iframe
+    width='700'
+    height='350'
+    src='https://www.youtube.com/embed/SAxe3xunxLk'
+    title='YouTube video player'
+    frameborder='0'
+    allowfullscreen
+  ></iframe>
+);
+
 const IconButtonWrapper = styled(IconButton)<{ position: string }>(
   ({ theme, position }) => ({
     position: 'absolute',
@@ -103,18 +114,14 @@ const SpeakersSlider = () => {
       >
         <Box
           sx={{
-            maxWidth: 700,
-            height: 400,
-            background: 'grey',
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            margin: '0 auto',
             mt: { xs: 3, md: 6 },
             mb: { xs: 3, md: 10 }
           }}
         >
-          <Typography variant='h1'>Video</Typography>
+          <Video />
         </Box>
 
         <Typography
