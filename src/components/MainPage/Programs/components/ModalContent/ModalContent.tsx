@@ -15,6 +15,7 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
   backgroundSize: 'cover',
   backgroundRepeat: 'no-repeat',
   padding: 32,
+  borderRadius: 10,
 
   [theme.breakpoints.down('md')]: {
     height: '85%'
