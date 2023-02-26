@@ -106,9 +106,9 @@ const IntroBlock = () => (
             size='large'
             variant='contained'
             onClick={redirectToTelegramPrivateLink}
-            sx={{ minWidth: 300, my: 1, fontSize: 32 }}
+            sx={{ minWidth: 300, my: 1, fontSize: 24 }}
           >
-            Оставить Заявку
+            Оставить заявку
           </Button>
           <Button
             size='large'
