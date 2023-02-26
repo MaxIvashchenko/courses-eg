@@ -1,0 +1,1 @@
+export {default as CourseTwo} from './CourseTwo';

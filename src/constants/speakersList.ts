@@ -1,8 +1,8 @@
 import speaker1 from 'public/images/speakers/speaker1.jpg';
 import speaker2 from 'public/images/speakers/speaker2.jpg';
 import speaker3 from 'public/images/speakers/speaker3.jpg';
-import speaker4 from 'public/images/speakers/speaker4.jpg';
-import speaker5 from 'public/images/speakers/speaker5.jpg';
+import speaker4 from 'public/images/speakers/speaker5.jpg';
+import speaker5 from 'public/images/speakers/speaker4.jpg';
 import speaker6 from 'public/images/speakers/speaker6.jpg';
 
 type ISpeaker = {
@@ -47,8 +47,12 @@ const speakersList: ISpeaker[] = [
   {
     id: 'speaker-4',
     photo: speaker4.src,
-    name: 'Лера',
-    description: []
+    name: 'Жбанкова Ольга',
+    description: [
+      'Специалист по легализации и трудоустройству в Польше',
+      'Консультант по открытию бизнеса',
+      'Блогер'
+    ]
   },
   {
     id: 'speaker-5',

@@ -4,7 +4,7 @@ import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
 
 import { Layout as LayoutBlocks } from 'blocks';
-import { CookiesAlert, Footer, Header, Layout } from 'components';
+import { Footer, Header, Layout } from 'components';
 import theme from '../theme';
 
 const { AppWrapper, ContentWrapper } = LayoutBlocks;
@@ -12,7 +12,7 @@ const { AppWrapper, ContentWrapper } = LayoutBlocks;
 const App = ({ Component, pageProps }: AppProps) => (
   <>
     <Head>
-      <title>Ester Candles</title>
+      <title>Emi Grant</title>
       <meta name='viewport' content='initial-scale=1, width=device-width' />
     </Head>
     <ThemeProvider theme={theme}>
@@ -23,7 +23,7 @@ const App = ({ Component, pageProps }: AppProps) => (
           <Layout Component={Component} pageProps={pageProps} />
         </ContentWrapper>
         <Footer />
-        <CookiesAlert />
+        {/* <CookiesAlert /> */}
       </AppWrapper>
     </ThemeProvider>
   </>

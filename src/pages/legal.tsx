@@ -69,7 +69,8 @@ const Legal = () => {
     <Grid
       container
       sx={{
-        my: { xs: 2, md: 4 },
+        minHeight: '100vh',
+        mt: '90px',
         px: { xs: 1, md: 5 }
       }}
     >
