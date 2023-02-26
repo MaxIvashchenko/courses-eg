@@ -132,7 +132,7 @@ const SpeakersSlider = () => {
           }}
           textAlign='center'
           fontWeight='700'
-          color='primary.black'
+          color='common.white'
           variant='h1'
         >
           НАСТАВНИКИ КУРСА
@@ -173,6 +173,7 @@ const SpeakersSlider = () => {
                     alt='green iguana'
                     height='280'
                     image={item.photo}
+                    sx={{ objectPosition: 'top' }}
                   />
                   <CardContent
                     sx={{

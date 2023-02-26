@@ -106,17 +106,17 @@ const IntroBlock = () => (
             size='large'
             variant='contained'
             onClick={redirectToTelegramPrivateLink}
-            sx={{ width: 300, my: 1 }}
+            sx={{ minWidth: 300, my: 1, fontSize: 32 }}
           >
-            Купитиь Курс
+            Оставить Заявку
           </Button>
           <Button
             size='large'
             variant='contained'
             onClick={redirectToTelegramPrivateLink}
-            sx={{ width: 300, my: 1 }}
+            sx={{ minWidth: 300, my: 1, fontSize: 24 }}
           >
-            У меня есть вопросы
+            Связаться с менеджером
           </Button>
         </Box>
       </Grid>

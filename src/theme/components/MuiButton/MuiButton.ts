@@ -65,7 +65,7 @@ const MuiButton: MuiButtonType = {
       background: '#554a43',
 
       '&:hover': {
-        background: theme.palette.primary.light
+        background: '#a35817'
       },
 
       '&.Mui-disabled': {
