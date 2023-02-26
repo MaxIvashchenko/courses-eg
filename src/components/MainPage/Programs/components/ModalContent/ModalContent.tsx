@@ -9,7 +9,12 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
   height: '60%',
   margin: '10% auto 10%',
   overflow: 'scroll',
-  border: '32px solid #fff',
+  background: '#fff',
+  backgroundImage: 'url(images/modalLayer.svg)',
+  backgroundPosition: 'bottom',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  padding: 32,
 
   [theme.breakpoints.down('md')]: {
     height: '85%'
