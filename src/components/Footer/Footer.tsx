@@ -9,6 +9,14 @@ const footerContent: { name: string; link: string }[] = [
     link: ''
   },
   {
+    name: 'youtube',
+    link: ''
+  },
+  {
+    name: 'instagram',
+    link: ''
+  },
+  {
     name: 'telegram',
     link: ''
   }

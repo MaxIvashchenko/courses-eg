@@ -1,13 +1,11 @@
 import { useCallback, useState } from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { boxShadow } from '@src/styles';
-import { phoneNumber } from 'src/constants';
+import { IconComponent } from '@src/components/Common';
 
-import { CustomAccordion } from './components';
+import { Contacts, CustomAccordion, Layers } from './components';
 
-const ProgramsContainer = styled(Box)(({ theme }) => ({
-  minHeight: '1200px',
+const ProgramsContainer = styled(Box)(() => ({
   backgroundImage: 'url(images/layer7.svg)',
   backgroundColor: '#fff',
   backgroundRepeat: 'no-repeat',
@@ -15,37 +13,53 @@ const ProgramsContainer = styled(Box)(({ theme }) => ({
   backgroundPosition: 'bottom',
   width: '100%',
   position: 'relative',
-
-  [theme.breakpoints.down('sm')]: {}
+  overflow: 'hidden'
 }));
 
-// const TopGreyLayer = styled(Box)(({ theme }) => ({
-//   width: '100%',
+const IconWrapper = styled(Box)(({ theme }) => ({
+  marginRight: 24,
 
-//   '& img': {
-//     position: 'absolute',
-//     top: -100,
-//     width: '100%',
-//     height: 'auto',
+  [theme.breakpoints.down('sm')]: {
+    marginRight: 16,
 
-//     [theme.breakpoints.down('sm')]: {}
-//   }
-// }));
+    '& svg': {
+      width: 48,
+      height: 48
+    }
+  }
+}));
 
-const ContactButtons = styled(Button)<{ background: string }>(
-  ({ theme, background }) => ({
-    background,
-    minWidth: 350,
-    margin: '8px 0',
+const CourseButton = styled(Button)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'start',
+  alignItems: 'center',
+  '&:hover': {
+    opacity: 0.9,
+    '& svg path': {
+      fill: 'black'
+    }
+  },
 
-    [theme.breakpoints.down('sm')]: {}
-  })
-);
+  [theme.breakpoints.down('sm')]: {
+    padding: 8,
+    justifyContent: 'center'
+  }
+}));
+
+const CoursesGridItem = styled(Grid)(({ theme }) => ({
+  display: 'flex',
+  justifyContent: 'start',
+  flexDirection: 'column',
+
+  [theme.breakpoints.down('sm')]: {
+    justifyContent: 'center'
+  }
+}));
 
 interface ICourse {
+  icon: string;
   title: string;
-  description: string;
-  backgroundColor: string;
+  subTitle: string;
 }
 
 interface IPlan {
@@ -56,14 +70,14 @@ interface IPlan {
 
 const courses: ICourse[] = [
   {
-    title: 'Открой свой бизнес с нуля',
-    description: 'содержание курса',
-    backgroundColor: '#a65813'
+    icon: 'shuttle',
+    title: 'Для начинающего бизнеса',
+    subTitle: 'Открой свой бизнес с нуля'
   },
   {
-    title: 'Развивай и масштабируй',
-    description: 'содержание курса',
-    backgroundColor: '#dd964c'
+    icon: 'suitcase',
+    title: 'Для действующего бизнеса',
+    subTitle: 'Развивай и масштабируй'
   }
 ];
 
@@ -108,16 +122,10 @@ const Programs = () => {
 
   return (
     <ProgramsContainer>
-      {/* <TopGreyLayer>
-        <Image
-         fill
-         style={{top: -200, zIndex: 1}}
-          src='/images/layer6.svg'
-          alt='blue layer small'
-        />
-      </TopGreyLayer> */}
+      <Layers />
       <Box
         sx={{
+          position: 'sticky',
           maxWidth: 1680,
           margin: '0 auto',
           zIndex: 20,
@@ -126,91 +134,45 @@ const Programs = () => {
           pb: { xs: 2, sm: 4 }
         }}
       >
-        <Typography
-          py={6}
-          sx={{ width: '100%' }}
-          textAlign='center'
-          fontWeight='700'
-          color='primary.black'
-          variant='h1'
-        >
-          ПРОГРАММА МОДУЛЕЙ
-        </Typography>
-        <Grid container justifyContent='space-around' mb={4}>
-          {courses.map((course, idx) => (
-            <Grid item sx={boxShadow} key={course.title}>
-              <Box
-                sx={{
-                  width: 400,
-                  height: 400,
-                  background: course.backgroundColor,
-                  alignItems: 'center',
-                  display: 'flex',
-                  justifyContent: 'center'
-                }}
-              >
-                <Typography color='#fff' variant='h1' fontSize={148}>
-                  {idx + 1}
-                </Typography>
-              </Box>
-              <Box
-                sx={{
-                  minHeight: 100,
-                  textAlign: 'center',
-                  background: '#fff',
-                  width: 400
-                }}
-              >
-                <Typography
-                  p={2}
-                  variant='h3'
-                  color='#000'
-                  sx={{ textTransform: 'uppercase' }}
-                >
-                  {course.title}
-                </Typography>
-                <Typography p={1} variant='h5' sx={{}}>
-                  {course.description}
-                </Typography>
-              </Box>
-            </Grid>
-          ))}
+        <Grid container justifyContent='start' mb={4}>
+          <CoursesGridItem item xs={12} md={8}>
+            {courses.map(({ icon, title, subTitle }) => (
+              <CourseButton key={title} variant='text'>
+                <IconWrapper>
+                  <IconComponent
+                    fill='#a25919'
+                    name={icon}
+                    width={80}
+                    height={80}
+                  />
+                </IconWrapper>
+                <Box textAlign='left'>
+                  <Typography variant='h1' py={1}>
+                    {title}
+                  </Typography>
+                  <Typography variant='h3' py={1}>
+                    {subTitle}
+                  </Typography>
+                </Box>
+              </CourseButton>
+            ))}
+          </CoursesGridItem>
         </Grid>
 
         <Grid container my={7}>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              padding: 2,
-              display: 'flex',
-              alignItems: 'center',
-              textAlign: { xs: 'center', md: 'end' },
-              flexDirection: 'column',
-              justifyContent: 'center'
-            }}
-          >
+          <Grid item xs={12} justifyContent='center'>
             <Typography
+              textAlign='center'
               fontWeight='700'
               color='primary.black'
               variant='h1'
               fontSize={56}
-              sx={{ width: '100%', pb: 1 }}
             >
-              ТАРИФНЫЙ
-            </Typography>
-            <Typography
-              fontWeight='700'
-              color='primary.black'
-              variant='h1'
-              fontSize={56}
-              sx={{ width: '100%', pt: 1 }}
-            >
-              ПЛАН
+              ТАРИФЫ
             </Typography>
           </Grid>
-          <Grid item xs={12} md={6} p={2}>
+          <Grid item xs={12} sm={2} md={3} lg={4} />
+          <Grid item xs={12} sm={8} md={6} lg={4} p={2}>
             {plans.map((plan, idx) => (
               <CustomAccordion
                 switchHandler={switchHandler(idx)}
@@ -222,46 +184,10 @@ const Programs = () => {
           </Grid>
         </Grid>
 
-        <Grid container my={3}>
-          <Grid
-            item
-            xs={12}
-            md={6}
-            alignItems='center'
-            sx={{
-              textAlign: 'end'
-            }}
-          >
-            <ContactButtons background='#524a49'>
-              СВЯЗАТЬСЯ С МЕНЕДЖЕРОМ
-            </ContactButtons>
-            <ContactButtons background='#ad733a'>
-              ЗАПОЛНИИТЬ ФОРМУ
-            </ContactButtons>
-          </Grid>
-
-          <Grid
-            item
-            xs={12}
-            md={6}
-            sx={{
-              textAlign: 'center',
-              alignSelf: 'center',
-              pl: 2
-            }}
-          >
-            <Typography variant='h1' py={2}>
-              КОНТАКТЫ
-            </Typography>
-            <Typography variant='h2'>{phoneNumber}</Typography>
-          </Grid>
-        </Grid>
+        <Contacts />
       </Box>
     </ProgramsContainer>
   );
 };
 
 export default Programs;
-
-//
-//

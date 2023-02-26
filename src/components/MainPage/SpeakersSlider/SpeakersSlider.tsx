@@ -59,8 +59,8 @@ const Video = () => (
     height='350'
     src='https://www.youtube.com/embed/SAxe3xunxLk'
     title='YouTube video player'
-    frameborder='0'
-    allowfullscreen
+    frameBorder='0'
+    allowFullScreen
   ></iframe>
 );
 

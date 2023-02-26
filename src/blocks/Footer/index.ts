@@ -3,7 +3,7 @@ import { styled } from '@mui/material/styles';
 
 const FooterWrapper = styled(Box)(() => ({
   padding: '24px 16px',
-  background: '#ad733c',
+  background: '#69381e',
   minHeight: 80,
   display: 'flex',
   justifyContent: 'center',
