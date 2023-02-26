@@ -60,6 +60,7 @@ const title: string[] = ['ГАСТРОБИЗНЕС', 'ПОД КЛЮЧ', 'В ПО
 
 const IntroBlock = () => (
   <Box
+    id='top'
     sx={{
       background: '#e4e4dc',
       width: '100%',

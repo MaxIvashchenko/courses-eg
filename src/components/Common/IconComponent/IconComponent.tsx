@@ -11,6 +11,7 @@ import instagram from 'public/icons/instagram.svg';
 import loop from 'public/icons/loop.svg';
 import man from 'public/icons/man.svg';
 import marketing from 'public/icons/marketing.svg';
+import menu from 'public/icons/menu.svg';
 import notVisible from 'public/icons/notVisible.svg';
 import planning from 'public/icons/planning.svg';
 import restaurant from 'public/icons/restaurant.svg';
@@ -55,7 +56,8 @@ const iconTypes: IconTypes = {
   shuttle,
   suitcase,
   youtube,
-  instagram
+  instagram,
+  menu
 };
 
 type IconComponentProps = {

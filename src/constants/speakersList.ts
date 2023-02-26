@@ -37,26 +37,34 @@ const speakersList: ISpeaker[] = [
   {
     id: 'speaker-3',
     photo: speaker3.src,
-    name: 'Taras Shevchenko',
-    description: []
+    name: 'Александра Сепсяк ',
+    description: [
+      'Предприниматель. Создатель и управляющая ресторана итальянский кухни PLAN A в Гданьске',
+      'Автор и спикер курса «Гастробизнес под ключ в Польше»',
+      'Организатор социально-культурных мероприятий для иммигрантов'
+    ]
   },
   {
     id: 'speaker-4',
     photo: speaker4.src,
-    name: 'Marilyn Monroe',
+    name: 'Лера',
     description: []
   },
   {
     id: 'speaker-5',
     photo: speaker5.src,
-    name: 'Winston Churchill',
+    name: 'Таня',
     description: []
   },
   {
     id: 'speaker-6',
     photo: speaker6.src,
-    name: 'Arsène Wenger',
-    description: []
+    name: 'Антон Сепсяк',
+    description: [
+      'Создатель и шеф-повар ресторана итальянский кухни PLAN A в Гданьске',
+      '8 лет опыта в гастрономии ,прошел весь путь от помощника до шефа',
+      'Моя фишка в разработке неповторимого авторского меню'
+    ]
   }
 ];
 

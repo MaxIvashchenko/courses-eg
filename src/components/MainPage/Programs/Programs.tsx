@@ -14,6 +14,7 @@ const ProgramsContainer = styled(Box)(() => ({
   width: '100%',
   position: 'relative',
   overflow: 'hidden'
+  // zIndex: 20
 }));
 
 const IconWrapper = styled(Box)(({ theme }) => ({
@@ -121,11 +122,11 @@ const Programs = () => {
   );
 
   return (
-    <ProgramsContainer>
+    <ProgramsContainer id='courses'>
       <Layers />
       <Box
         sx={{
-          position: 'sticky',
+          // position: 'sticky',
           maxWidth: 1680,
           margin: '0 auto',
           zIndex: 20,
@@ -167,6 +168,7 @@ const Programs = () => {
               color='primary.black'
               variant='h1'
               fontSize={56}
+              sx={{ position: 'sticky' }}
             >
               ТАРИФЫ
             </Typography>

@@ -1,1 +1,2 @@
-export { default as useWindowDimensions } from './useWindowDimensions';
+export { default as useMobile } from './useMobile';
+export { default as useScroll } from './useScroll';

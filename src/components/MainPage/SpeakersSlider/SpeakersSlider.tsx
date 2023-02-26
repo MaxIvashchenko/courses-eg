@@ -125,7 +125,11 @@ const SpeakersSlider = () => {
         </Box>
 
         <Typography
-          sx={{ my: { xs: 1, md: 6 } }}
+          id='speakers'
+          sx={{
+            my: { xs: 1, md: 6 },
+            py: { xs: 1, md: 2 }
+          }}
           textAlign='center'
           fontWeight='700'
           color='primary.black'

@@ -32,6 +32,7 @@ const GirlsLayer = styled(Box)(({ theme }) => ({
   }
 }));
 const VerandaLayer = styled(Box)(({ theme }) => ({
+  zIndex: 10,
   '& img': {
     position: 'absolute',
     top: 0,
@@ -67,6 +68,7 @@ const VerandaLayer = styled(Box)(({ theme }) => ({
   }
 }));
 const GreyLayer = styled(Box)(({ theme }) => ({
+  zIndex: 10,
   width: '100%',
   '& img': {
     position: 'absolute',

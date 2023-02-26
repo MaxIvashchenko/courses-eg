@@ -1,3 +1,3 @@
-export const phoneNumber = '+48 000-000-000';
+export const phoneNumber = '+48 534 470 057';
 
 export const address = 'Poland';
