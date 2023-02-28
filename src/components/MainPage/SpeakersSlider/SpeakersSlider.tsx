@@ -53,16 +53,16 @@ const settings = {
   ]
 };
 
-const Video = () => (
-  <iframe
-    width='700'
-    height='350'
-    src='https://www.youtube.com/embed/SAxe3xunxLk'
-    title='YouTube video player'
-    frameBorder='0'
-    allowFullScreen
-  ></iframe>
-);
+// const Video = () => (
+//   <iframe
+//     width='700'
+//     height='350'
+//     src='https://www.youtube.com/embed/SAxe3xunxLk'
+//     title='YouTube video player'
+//     frameBorder='0'
+//     allowFullScreen
+//   ></iframe>
+// );
 
 const IconButtonWrapper = styled(IconButton)<{ position: string }>(
   ({ theme, position }) => ({
@@ -111,7 +111,7 @@ const SpeakersSlider = () => {
           margin: '0 auto'
         }}
       >
-        <Box
+        {/* <Box
           sx={{
             display: 'flex',
             justifyContent: 'center',
@@ -121,7 +121,7 @@ const SpeakersSlider = () => {
           }}
         >
           <Video />
-        </Box>
+        </Box> */}
 
         <Typography
           id='speakers'
@@ -131,7 +131,8 @@ const SpeakersSlider = () => {
           }}
           textAlign='center'
           fontWeight='700'
-          color='common.white'
+          // color='common.white'
+          color='common.black'
           variant='h1'
         >
           НАСТАВНИКИ КУРСА
