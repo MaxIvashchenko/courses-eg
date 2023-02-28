@@ -4,7 +4,7 @@ interface ICoursesModal {
   subTitle: string;
   content: {
     title: string;
-    subBlocks: string[] | (string | string[])[]
+    subBlocks: string[] | (string | string[])[];
   }[];
 }
 
@@ -12,7 +12,7 @@ const coursesModal: ICoursesModal[] = [
   {
     icon: 'shuttle',
     title: ' Курс для начинающего бизнеса',
-    subTitle: 'Открой свой бизнес с нуля',
+    subTitle: 'Открой свой гастробизнес с нуля',
     content: [
       {
         title: 'Блок 1 Идея',
@@ -121,7 +121,7 @@ const coursesModal: ICoursesModal[] = [
           'Урок 2 - NPS. Учимся держать руку на пульсе по качеству своего заведения/продукта',
           ['+ шаблон анкеты ОС'],
           'Урок 3 - Маркетинговая воронка продвижения',
-          'Урок 4 -  Маркетинговые гипотезы, как их проверить и применить',
+          'Урок 4 -  Маркетинговые гипотезы, как их проверить и применить'
         ]
       },
       {

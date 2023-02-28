@@ -1,4 +1,4 @@
-import { useCallback, useState } from 'react';
+import React, { ReactElement, useCallback, useState } from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
@@ -34,10 +34,12 @@ const CourseButton = styled(Button)(({ theme }) => ({
   display: 'flex',
   justifyContent: 'start',
   alignItems: 'center',
+  margin: '8px 0',
   '&:hover': {
-    opacity: 0.9,
+    // opacity: 0.9,
+    background: '#ffffff4d',
     '& svg path': {
-      fill: 'black'
+      fill: '#a358174d'
     }
   },
 
@@ -59,8 +61,9 @@ const CoursesGridItem = styled(Grid)(({ theme }) => ({
 
 interface IPlan {
   title: string;
-  descriptions: string[];
+  descriptions: any[];
   backgroundColor: string;
+  price: ReactElement;
 }
 
 const plans: IPlan[] = [
@@ -70,10 +73,21 @@ const plans: IPlan[] = [
       'Один курс',
       '1 консультация с наставником',
       'Чат с обратной связью от всех наставников на 3 месяца',
-      'Сообщество единомышленников',
-      '- 750$ (цена со скидкой 500$)'
+      'Сообщество единомышленников'
     ],
-    backgroundColor: '#a35817'
+    backgroundColor: '#a35817',
+    price: (
+      <Typography variant='h4' py={1} textAlign='center'>
+        <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
+          750$
+        </span>
+        {` (цена со скидкой`}
+        <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
+          {` 500$ `}
+        </span>
+        {`)`}
+      </Typography>
+    )
   },
   {
     title: 'Duet',
@@ -81,18 +95,35 @@ const plans: IPlan[] = [
       'Два курса',
       '2 консультации с наставником',
       'Чат с обратной связью от всех наставников на 6 месяцев',
-      'Сообщество единомышленников',
-      '1250$ (цена со скидкой 950$)'
+      'Сообщество единомышленников'
     ],
-    backgroundColor: '#5b6b46'
+    backgroundColor: '#5b6b46',
+    price: (
+      <Typography variant='h4' py={1} textAlign='center'>
+        <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
+          1250$
+        </span>
+        {` (цена со скидкой`}
+        <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
+          {` 950$ `}
+        </span>
+        {`)`}
+      </Typography>
+    )
   },
   {
     title: 'Mentor',
-    descriptions: [
-      'Консультация наставника 50$',
-      'Индивидуальное наставничество 30 ч - 700$'
-    ],
-    backgroundColor: '#99c8dc'
+    descriptions: ['Консультация наставника 50$'],
+    backgroundColor: '#99c8dc',
+    price: (
+      <Typography variant='h4' py={1} textAlign='center'>
+        Индивидуальное наставничество
+        <span style={{ fontSize: 28 }}>{` 30 часов `}</span>
+        <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
+          {` 700$ `}
+        </span>
+      </Typography>
+    )
   }
 ];
 

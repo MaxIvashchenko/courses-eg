@@ -1,4 +1,4 @@
-import { memo } from 'react';
+import { memo, ReactElement } from 'react';
 import {
   Box,
   Button,
@@ -60,6 +60,7 @@ interface CustomAccordionProps {
   backgroundColor: string;
   switchHandler: () => void;
   checked: boolean;
+  price: ReactElement;
 }
 
 const CustomAccordion = ({
@@ -67,7 +68,8 @@ const CustomAccordion = ({
   descriptions,
   backgroundColor,
   switchHandler,
-  checked
+  checked,
+  price
 }: CustomAccordionProps) => (
   <>
     <ClickBox
@@ -100,6 +102,7 @@ const CustomAccordion = ({
             </li>
           ))}
         </ul>
+        <Box>{price}</Box>
       </Box>
     </Collapse>
   </>

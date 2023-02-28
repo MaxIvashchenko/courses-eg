@@ -7,6 +7,7 @@ const ContactButtons = styled(Button)<{ background: string }>(
     background,
     minWidth: 350,
     margin: '8px 0',
+    textTransform: 'uppercase',
 
     [theme.breakpoints.down('md')]: {
       minWidth: 400
