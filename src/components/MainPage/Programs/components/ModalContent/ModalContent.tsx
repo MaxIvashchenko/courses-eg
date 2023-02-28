@@ -1,4 +1,5 @@
 import React, { ForwardedRef } from 'react';
+import _isArray from 'lodash/isArray';
 import { Box, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { coursesModal } from '@src/content';
@@ -61,11 +62,22 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
           <Typography variant='h3' sx={{ mb: 1 }}>
             {title}
           </Typography>
-          {subBlocks.map((text) => (
-            <Typography key={text} variant='h5'>
-              {text}
-            </Typography>
-          ))}
+          {subBlocks.map((text) =>
+            _isArray(text) ?
+              <ul style={{ margin: '0 12px' }}>
+                {text.map(subText => (
+                  <li key={subText}>
+                    <Typography variant='h5'>
+                      {subText}
+                    </Typography>
+                  </li>
+                ))}
+              </ul>
+              :
+              <Typography key={text} variant='h5'>
+                {text}
+              </Typography>
+          )}
         </Box>
       ))}
     </ModalWrapper>
