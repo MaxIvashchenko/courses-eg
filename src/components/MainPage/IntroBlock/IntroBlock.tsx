@@ -1,7 +1,8 @@
+import { memo } from 'react';
 import Image from 'next/image';
 import { Box, Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { useScreenHeight } from '@src/hooks';
+import { useMobile, useScreenHeight } from '@src/hooks';
 import { redirectToTelegramPrivateLink } from '@src/utils';
 
 const SmallLayer = styled(Box)(({ theme }) => ({
@@ -64,8 +65,9 @@ const title: string[] = ['ГАСТРОБИЗНЕС', 'ПОД КЛЮЧ', 'В ПО
 
 const IntroBlock = () => {
   const screenHeight: number = useScreenHeight();
+  const isMobile = useMobile();
   const smallScreen = screenHeight < 900;
-  const minHeight = smallScreen ? 915 : '100vh';
+  const minHeight = !isMobile && smallScreen ? 915 : '100vh';
 
   return (
     <Box
@@ -114,7 +116,12 @@ const IntroBlock = () => {
               size='large'
               variant='contained'
               onClick={redirectToTelegramPrivateLink}
-              sx={{ minWidth: 300, my: 1, fontSize: 24 }}
+              sx={{
+                minWidth: { xs: 0, md: 450 },
+                my: 1,
+                fontSize: 24,
+                textTransform: 'uppercase'
+              }}
             >
               Оставить заявку
             </Button>
@@ -122,7 +129,12 @@ const IntroBlock = () => {
               size='large'
               variant='contained'
               onClick={redirectToTelegramPrivateLink}
-              sx={{ minWidth: 300, my: 1, fontSize: 24 }}
+              sx={{
+                minWidth: { xs: 0, md: 450 },
+                my: 1,
+                fontSize: 24,
+                textTransform: 'uppercase'
+              }}
             >
               Связаться с менеджером
             </Button>
@@ -132,4 +144,4 @@ const IntroBlock = () => {
     </Box>
   );
 };
-export default IntroBlock;
+export default memo(IntroBlock);
