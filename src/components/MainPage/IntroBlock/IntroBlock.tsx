@@ -119,7 +119,7 @@ const IntroBlock = () => {
             <Button
               size='large'
               variant='contained'
-              onClick={redirectToTelegramPrivateLink}
+              onClick={modalHandler}
               sx={{
                 minWidth: { xs: 0, md: 450 },
                 my: 1,
@@ -132,7 +132,7 @@ const IntroBlock = () => {
             <Button
               size='large'
               variant='contained'
-              onClick={modalHandler}
+              onClick={redirectToTelegramPrivateLink}
               sx={{
                 minWidth: { xs: 0, md: 450 },
                 my: 1,
