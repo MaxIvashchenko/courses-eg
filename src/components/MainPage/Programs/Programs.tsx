@@ -4,7 +4,13 @@ import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
 import { coursesModal } from '@src/content';
 
-import { Contacts, CustomAccordion, Layers, Modal } from './components';
+import {
+  Contacts,
+  CustomAccordion,
+  Layers,
+  Modal,
+  ModalContent
+} from './components';
 
 const ProgramsContainer = styled(Box)(() => ({
   backgroundImage: 'url(images/layer7.svg)',
@@ -216,7 +222,9 @@ const Programs = () => {
         <Contacts />
       </Box>
 
-      <Modal modalNum={modalNum} closeModal={closeModal} />
+      <Modal modalNum={modalNum} closeModal={closeModal}>
+        <ModalContent num={modalNum || 1} closeModal={closeModal} />
+      </Modal>
     </ProgramsContainer>
   );
 };

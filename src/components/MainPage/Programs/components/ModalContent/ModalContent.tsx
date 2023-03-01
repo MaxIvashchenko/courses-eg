@@ -1,15 +1,16 @@
 import React, { ForwardedRef } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, IconButton, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { IconComponent } from '@src/components/Common';
 import { coursesModal } from '@src/content';
 import _isArray from 'lodash/isArray';
 
 const ModalWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: '#fff',
-  width: '80%',
+  maxWidth: '600px',
+  width: '60%',
   height: '60%',
   margin: '10% auto 10%',
-  overflow: 'scroll',
   background: '#fff',
   backgroundImage: 'url(images/modalLayer.svg)',
   backgroundPosition: 'bottom',
@@ -17,22 +18,39 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
   backgroundRepeat: 'no-repeat',
   padding: 32,
   borderRadius: 10,
-
+  position: 'relative',
+  overflow: 'hidden',
+  display: 'flex',
+  flexDirection: 'column',
+  
   [theme.breakpoints.down('md')]: {
-    height: '85%'
+    height: '85%',
+    width: '95%',
+    padding: 24
   }
 }));
 
 interface ModalContent {
   num?: number;
   forwardedRef?: ForwardedRef<unknown>;
+  closeModal: () => void;
 }
 
-const ModalContent = ({ num = 1 }: ModalContent) => {
+const ModalContent = ({ num = 1, closeModal }: ModalContent) => {
   const course = coursesModal[num - 1];
 
   return (
     <ModalWrapper>
+      <IconButton
+        onClick={closeModal}
+        sx={{
+          position: 'absolute',
+          top: 4,
+          right: 4
+        }}
+      >
+        <IconComponent name='close' width={18} height={18} />
+      </IconButton>
       <Typography
         variant='h1'
         textAlign='center'
@@ -52,33 +70,41 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
       >
         {course.subTitle}
       </Typography>
-      {course.content.map(({ title, subBlocks }) => (
-        <Box
-          key={title}
-          sx={{
-            pb: { xs: 1, md: 2 }
-          }}
-        >
-          <Typography variant='h3' sx={{ mb: 1 }}>
-            {title}
-          </Typography>
-          {subBlocks.map((text, idx) =>
-            _isArray(text) ? (
-              <ul key={`subBlocks=${idx}`} style={{ margin: '0 12px' }}>
-                {text.map((subText) => (
-                  <li key={subText}>
-                    <Typography variant='h5'>{subText}</Typography>
-                  </li>
-                ))}
-              </ul>
-            ) : (
-              <Typography key={text} variant='h5'>
-                {text}
-              </Typography>
-            )
-          )}
-        </Box>
-      ))}
+      <Box
+        sx={{
+          overflow: 'scroll',
+
+          flex: 1
+        }}
+      >
+        {course.content.map(({ title, subBlocks }) => (
+          <Box
+            key={title}
+            sx={{
+              pb: { xs: 1, md: 2 }
+            }}
+          >
+            <Typography variant='h3' sx={{ mb: 1 }}>
+              {title}
+            </Typography>
+            {subBlocks.map((text, idx) =>
+              _isArray(text) ? (
+                <ul key={`subBlocks=${idx}`} style={{ margin: '0 12px' }}>
+                  {text.map((subText) => (
+                    <li key={subText}>
+                      <Typography variant='h5'>{subText}</Typography>
+                    </li>
+                  ))}
+                </ul>
+              ) : (
+                <Typography key={text} variant='h5'>
+                  {text}
+                </Typography>
+              )
+            )}
+          </Box>
+        ))}
+      </Box>
     </ModalWrapper>
   );
 };

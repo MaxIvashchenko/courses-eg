@@ -1,14 +1,13 @@
 import React from 'react';
 import { Modal as MuiModal } from '@mui/material';
 
-import { ModalContent } from '../ModalContent';
-
 interface ModalProps {
   modalNum: number | null;
   closeModal: () => void;
+  children: JSX.Element;
 }
 
-const Modal = ({ modalNum, closeModal }: ModalProps) => (
+const Modal = ({ modalNum, closeModal, children }: ModalProps) => (
   <MuiModal
     open={Boolean(modalNum)}
     onClose={closeModal}
@@ -19,7 +18,7 @@ const Modal = ({ modalNum, closeModal }: ModalProps) => (
     aria-labelledby='modal-modal-title'
     aria-describedby='modal-modal-description'
   >
-    <ModalContent num={modalNum || 1} />
+    {children}
   </MuiModal>
 );
 
