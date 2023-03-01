@@ -14,7 +14,7 @@ const getMessageTemplate = ({
 <b>Имя: ${name}</b>
 <b>Имейл: ${email}</b>
 <b>Номер телефона: ${phone || '-'}</b>
-<b>Сообщение: ${message || 'Сообщения нетт'}</b>
+<b>Сообщение: ${message || 'Сообщения нет'}</b>
 `;
 
 export const sendRequest = async (values: IRequestFormState) =>

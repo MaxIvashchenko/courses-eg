@@ -72,7 +72,8 @@ const ContactForm = ({ modalHandler }: ContactFormProps) => {
             background: '#808080a1',
             alignItems: 'center',
             display: 'flex',
-            justifyContent: 'center'
+            justifyContent: 'center',
+            zIndex: 10
           }}
         >
           <Loader fill='#a35817' />
