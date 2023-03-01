@@ -1,16 +1,10 @@
 import React, { ReactElement, useCallback, useState } from 'react';
 import { Box, Button, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { IconComponent } from '@src/components/Common';
+import { IconComponent, Modal } from '@src/components';
 import { coursesModal } from '@src/content';
 
-import {
-  Contacts,
-  CustomAccordion,
-  Layers,
-  Modal,
-  ModalContent
-} from './components';
+import { Contacts, CustomAccordion, Layers, ModalContent } from './components';
 
 const ProgramsContainer = styled(Box)(() => ({
   backgroundImage: 'url(images/layer7.svg)',
@@ -223,7 +217,7 @@ const Programs = () => {
       </Box>
 
       <Modal modalNum={modalNum} closeModal={closeModal}>
-        <ModalContent num={modalNum || 1} closeModal={closeModal} />
+        <ModalContent num={modalNum || 1} />
       </Modal>
     </ProgramsContainer>
   );
