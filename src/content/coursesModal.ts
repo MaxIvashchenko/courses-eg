@@ -14,7 +14,7 @@ const coursesModal: ICoursesModal[] = [
     icon: 'shuttle',
     title: ' Курс для начинающего бизнеса',
     subTitle: 'Открой свой гастробизнес с нуля',
-    startDate: '17 февраля 2023',
+    startDate: '17 марта 2023',
     content: [
       {
         title: 'Блок 1 Идея',
@@ -97,7 +97,7 @@ const coursesModal: ICoursesModal[] = [
     icon: 'suitcase',
     title: 'Курс для действующего бизнеса',
     subTitle: 'Развивай и масштабируй',
-    startDate: '30 февраля 2023',
+    startDate: '30 марта 2023',
     content: [
       {
         title: 'Блок 1  Финансовая грамотность',

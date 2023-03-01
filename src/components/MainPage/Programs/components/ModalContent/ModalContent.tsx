@@ -23,6 +23,9 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
       >
         {course.title}
       </Typography>
+      <Typography variant='h2' textAlign='center' pb={1}>
+        {course.subTitle}
+      </Typography>
       <Typography
         variant='h2'
         textAlign='center'
@@ -30,7 +33,7 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
           pb: { xs: 1, md: 3 }
         }}
       >
-        {course.subTitle}
+        {`Старт: ${course.startDate}`}
       </Typography>
       <Box
         sx={{

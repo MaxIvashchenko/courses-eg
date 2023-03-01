@@ -181,7 +181,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
       >
         <Grid container justifyContent='start' mb={4}>
           <CoursesGridItem item xs={12} md={8}>
-            {coursesModal.map(({ icon, title, subTitle }, idx) => (
+            {coursesModal.map(({ icon, title, subTitle, startDate }, idx) => (
               <CourseButton
                 onClick={() => courseHandler(idx + 1)}
                 key={title}
@@ -202,6 +202,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                   <Typography variant='h3' py={1}>
                     {subTitle}
                   </Typography>
+                  <Typography variant='h5'>{`Старт: ${startDate}`}</Typography>
                 </Box>
               </CourseButton>
             ))}

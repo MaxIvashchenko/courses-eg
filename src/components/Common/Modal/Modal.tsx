@@ -7,7 +7,7 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
   backgroundColor: '#fff',
   maxWidth: '600px',
   width: '60%',
-  height: '60%',
+  height: '70%',
   margin: '10% auto 10%',
   background: '#fff',
   backgroundImage: 'url(images/modalLayer.svg)',
