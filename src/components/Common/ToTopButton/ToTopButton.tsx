@@ -21,8 +21,8 @@ const ToTopButton = () => {
       <IconButton
         sx={{
           position: 'fixed',
-          bottom: { xs: 24, md: 48 },
-          right: { xs: 24, md: 48 },
+          bottom: { xs: 90, sm: 48 },
+          right: { xs: 20, md: 48 },
           transform: 'scale(1, -1)',
           backgroundColor: '#ad733a',
           cursor: 'pointer',
