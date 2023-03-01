@@ -2,7 +2,8 @@
 const nextConfig = {
   reactStrictMode: false,
   env: {
-    // HOST: process.env.HOST,
+    TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
+    TELEGRAM_CHAD_ID: process.env.TELEGRAM_CHAD_ID
   },
   eslint: {
     ignoreDuringBuilds: true
@@ -14,10 +15,7 @@ const nextConfig = {
     });
     return config;
   },
-  images: {
-    // TODO replace with own domian
-    domains: ['thumb.tildacdn.com']
-  }
+  images: {}
 };
 
 module.exports = nextConfig;

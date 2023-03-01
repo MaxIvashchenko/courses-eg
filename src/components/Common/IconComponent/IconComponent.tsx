@@ -9,6 +9,7 @@ import email from 'public/icons/email.svg';
 import facebook from 'public/icons/facebook.svg';
 import image from 'public/icons/image.svg';
 import instagram from 'public/icons/instagram.svg';
+import loader from 'public/icons/loader.svg';
 import loop from 'public/icons/loop.svg';
 import man from 'public/icons/man.svg';
 import marketing from 'public/icons/marketing.svg';
@@ -59,7 +60,8 @@ const iconTypes: IconTypes = {
   youtube,
   instagram,
   email,
-  menu
+  menu,
+  loader
 };
 
 type IconComponentProps = {

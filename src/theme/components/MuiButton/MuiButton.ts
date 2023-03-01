@@ -61,7 +61,7 @@ const MuiButton: MuiButtonType = {
       fontSize: 14,
       lineHeight: '20px'
     },
-    contained: ({ theme }) => ({
+    contained: () => ({
       background: '#554a43',
 
       '&:hover': {
@@ -69,7 +69,7 @@ const MuiButton: MuiButtonType = {
       },
 
       '&.Mui-disabled': {
-        background: theme.palette.primary.dark
+        background: 'grey'
       }
     }),
     outlined: ({ theme }) => ({

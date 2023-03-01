@@ -22,21 +22,21 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
   flexDirection: 'column',
 
   [theme.breakpoints.down('md')]: {
-    height: '85%',
+    marginTop: '25%',
     width: '95%',
     padding: 24
   }
 }));
 
 interface ModalProps {
-  modalNum: number | null;
+  isOpen: boolean;
   closeModal: () => void;
   children: JSX.Element | JSX.Element[];
 }
 
-const Modal = ({ modalNum, closeModal, children }: ModalProps) => (
+const Modal = ({ isOpen, closeModal, children }: ModalProps) => (
   <MuiModal
-    open={Boolean(modalNum)}
+    open={isOpen}
     onClose={closeModal}
     sx={{
       position: 'fixed',

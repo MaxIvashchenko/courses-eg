@@ -216,7 +216,7 @@ const Programs = () => {
         <Contacts />
       </Box>
 
-      <Modal modalNum={modalNum} closeModal={closeModal}>
+      <Modal isOpen={Boolean(modalNum)} closeModal={closeModal}>
         <ModalContent num={modalNum || 1} />
       </Modal>
     </ProgramsContainer>
