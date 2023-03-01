@@ -25,7 +25,13 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
     marginTop: '25%',
     width: '95%',
     padding: 24
-  }
+  },
+  [theme.breakpoints.down('sm')]: {
+    marginTop: '15%',
+    width: '95%',
+    padding: 24,
+    height: '80%'
+  },
 }));
 
 interface ModalProps {
