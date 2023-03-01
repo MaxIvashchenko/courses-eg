@@ -31,7 +31,7 @@ const ModalWrapper = styled(Box)(({ theme }) => ({
     width: '95%',
     padding: 24,
     height: '80%'
-  },
+  }
 }));
 
 interface ModalProps {

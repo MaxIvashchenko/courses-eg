@@ -1,3 +1,5 @@
+import { Typography } from '@mui/material';
+import { email, phoneNumber } from '@src/constants';
 import {
   redirectToEmail,
   redirectToInstagram,
@@ -39,6 +41,16 @@ const Footer = () => (
     {footerContent.map(({ name, onClick }) => (
       <IconButton key={name} onClick={onClick}>
         <IconComponent fill='#fff' name={name} />
+        {name === 'telephone' && (
+          <Typography color='#fff' ml={2}>
+            {phoneNumber}
+          </Typography>
+        )}
+        {name === 'email' && (
+          <Typography color='#fff' ml={2}>
+            {email}
+          </Typography>
+        )}
       </IconButton>
     ))}
   </FooterWrapper>
