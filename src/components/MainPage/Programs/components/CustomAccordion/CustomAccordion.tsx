@@ -102,7 +102,7 @@ const CustomAccordion = ({
             </li>
           ))}
         </ul>
-        <Box>{price}</Box>
+        <Box mb={2}>{price}</Box>
       </Box>
     </Collapse>
   </>

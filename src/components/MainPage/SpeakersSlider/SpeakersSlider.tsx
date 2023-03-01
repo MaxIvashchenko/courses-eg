@@ -207,16 +207,24 @@ const SpeakersSlider = () => {
                     </Box>
 
                     {item.description.map((text, idx) => (
-                      <li
-                        style={{
-                          listStyleType: idx === 0 ? 'none' : 'inherit'
-                        }}
-                        key={text}
-                      >
-                        <Typography variant='body2' color='common.white'>
+                      <>
+                        {idx !== 0 && (
+                          <IconComponent
+                            name='circle'
+                            fill='#fff'
+                            width={8}
+                            height={8}
+                          />
+                        )}
+                        <Typography
+                          my={1}
+                          key={text}
+                          variant='body2'
+                          color='common.white'
+                        >
                           {text}
                         </Typography>
-                      </li>
+                      </>
                     ))}
                   </CardContent>
                 </Card>

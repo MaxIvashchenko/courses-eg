@@ -2,6 +2,7 @@ import { ElementType } from 'react';
 
 import arrow from 'public/icons/arrow.svg';
 import cafe from 'public/icons/cafe.svg';
+import circle from 'public/icons/circle.svg';
 import close from 'public/icons/close.svg';
 import cube from 'public/icons/cube.svg';
 import downArrow from 'public/icons/down-arrow.svg';
@@ -61,6 +62,7 @@ const iconTypes: IconTypes = {
   instagram,
   email,
   menu,
+  circle,
   loader
 };
 
