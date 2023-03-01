@@ -1,6 +1,5 @@
 import { Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { redirectToTelegramPrivateLink } from '@src/utils';
 
 const ContactButtons = styled(Button)<{ background: string }>(
   ({ theme, background }) => ({
@@ -18,7 +17,11 @@ const ContactButtons = styled(Button)<{ background: string }>(
   })
 );
 
-const Contacts = () => (
+interface ContactsProps {
+  modalHandler: () => void;
+}
+
+const Contacts = ({ modalHandler }: ContactsProps) => (
   <Grid container my={3}>
     <Grid item xs={12} md={3} lg={4} />
     <Grid
@@ -31,10 +34,7 @@ const Contacts = () => (
         my: { xs: 3, md: 2, lg: 0 }
       }}
     >
-      <ContactButtons
-        onClick={redirectToTelegramPrivateLink}
-        background='#524a49'
-      >
+      <ContactButtons onClick={modalHandler} background='#524a49'>
         Оставить заявку
       </ContactButtons>
     </Grid>

@@ -1,5 +1,5 @@
 import React, { ReactElement, useCallback, useState } from 'react';
-import { Box, Button, Grid, Typography } from '@mui/material';
+import { Box, Button, Grid, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconComponent, Modal } from '@src/components';
 import { coursesModal } from '@src/content';
@@ -77,16 +77,18 @@ const plans: IPlan[] = [
     ],
     backgroundColor: '#a35817',
     price: (
-      <Typography variant='h4' py={1} textAlign='center'>
-        <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
-          750$
-        </span>
-        {` (цена со скидкой`}
-        <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
-          {` 500$ `}
-        </span>
-        {`)`}
-      </Typography>
+      <Stack justifyContent='center' direction='row' px={2}>
+        <Typography variant='h4' textAlign='center'>
+          <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
+            750$
+          </span>
+        </Typography>
+        <Typography variant='h4' ml={2} textAlign='center'>
+          <span style={{ fontSize: 34, color: '#5e9b0d', padding: '14px 0' }}>
+            {` 500$ `}
+          </span>
+        </Typography>
+      </Stack>
     )
   },
   {
@@ -99,35 +101,54 @@ const plans: IPlan[] = [
     ],
     backgroundColor: '#5b6b46',
     price: (
-      <Typography variant='h4' py={1} textAlign='center'>
-        <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
-          1250$
-        </span>
-        {` (цена со скидкой`}
-        <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
-          {` 950$ `}
-        </span>
-        {`)`}
-      </Typography>
+      <Stack justifyContent='center' direction='row' px={2}>
+        <Typography variant='h4' textAlign='center'>
+          <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
+            1250$
+          </span>
+        </Typography>
+        <Typography variant='h4' ml={2} textAlign='center'>
+          <span style={{ fontSize: 34, color: '#5e9b0d', padding: '14px 0' }}>
+            {` 950$ `}
+          </span>
+        </Typography>
+      </Stack>
     )
   },
   {
     title: 'Mentor',
-    descriptions: ['Консультация наставника 50$'],
+    descriptions: [],
     backgroundColor: '#99c8dc',
     price: (
-      <Typography variant='h4' py={1} textAlign='center'>
-        Индивидуальное наставничество
-        <span style={{ fontSize: 28 }}>{` 30 часов `}</span>
-        <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
-          {` 700$ `}
-        </span>
-      </Typography>
+      <>
+        <Typography variant='h4' textAlign='center'>
+          Консультация наставника
+        </Typography>
+        <Typography variant='h4' textAlign='center'>
+          <span style={{ fontSize: 28 }}>{` 1 час `}</span>
+          <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
+            {` 50$ `}
+          </span>
+        </Typography>
+        <Typography pt={1} variant='h4' textAlign='center'>
+          Индивидуальное наставничество
+        </Typography>
+        <Typography variant='h4' textAlign='center'>
+          <span style={{ fontSize: 28 }}>{` 30 часов `}</span>
+          <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
+            {` 700$ `}
+          </span>
+        </Typography>
+      </>
     )
   }
 ];
 
-const Programs = () => {
+interface ProgramsProps {
+  modalHandler: () => void;
+}
+
+const Programs = ({ modalHandler }: ProgramsProps) => {
   const [currentBlockOpen, setCurrentBlockOpen] = useState<number | null>(null);
 
   const [modalNum, setModalNum] = useState<number | null>(null);
@@ -213,7 +234,7 @@ const Programs = () => {
           </Grid>
         </Grid>
 
-        <Contacts />
+        <Contacts modalHandler={modalHandler} />
       </Box>
 
       <Modal isOpen={Boolean(modalNum)} closeModal={closeModal}>

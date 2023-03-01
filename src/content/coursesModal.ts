@@ -2,6 +2,7 @@ interface ICoursesModal {
   icon: string;
   title: string;
   subTitle: string;
+  startDate: string;
   content: {
     title: string;
     subBlocks: string[] | (string | string[])[];
@@ -13,6 +14,7 @@ const coursesModal: ICoursesModal[] = [
     icon: 'shuttle',
     title: ' Курс для начинающего бизнеса',
     subTitle: 'Открой свой гастробизнес с нуля',
+    startDate: '17 февраля 2023',
     content: [
       {
         title: 'Блок 1 Идея',
@@ -95,6 +97,7 @@ const coursesModal: ICoursesModal[] = [
     icon: 'suitcase',
     title: 'Курс для действующего бизнеса',
     subTitle: 'Развивай и масштабируй',
+    startDate: '30 февраля 2023',
     content: [
       {
         title: 'Блок 1  Финансовая грамотность',
@@ -138,7 +141,7 @@ const coursesModal: ICoursesModal[] = [
         ]
       },
       {
-        title: 'Блок 4 Пакет документов для открытия',
+        title: 'Блок 4 Развитие',
         subBlocks: [
           'Урок 1 - Работа с посредниками',
           'Урок 2 - Продвижение и визуализация соц. сетей',

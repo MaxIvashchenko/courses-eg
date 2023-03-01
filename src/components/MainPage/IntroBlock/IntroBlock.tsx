@@ -1,8 +1,7 @@
-import { memo, useState } from 'react';
+import { memo } from 'react';
 import Image from 'next/image';
 import { Box, Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { ContactForm, Modal } from '@src/components';
 import { useMobile, useScreenHeight } from '@src/hooks';
 import { redirectToTelegramPrivateLink } from '@src/utils';
 
@@ -64,14 +63,15 @@ const SubTitle = styled('p')(({ theme }) => ({
 
 const title: string[] = ['ГАСТРОБИЗНЕС', 'ПОД КЛЮЧ', 'В ПОЛЬШЕ'];
 
-const IntroBlock = () => {
-  const [isOpen, setIsOpen] = useState<boolean>(false);
+interface IntroBlockProps {
+  modalHandler: () => void;
+}
+
+const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
   const screenHeight: number = useScreenHeight();
   const isMobile = useMobile();
   const smallScreen = screenHeight < 900;
   const minHeight = !isMobile && smallScreen ? 915 : '100vh';
-
-  const modalHandler = () => setIsOpen((prev) => !prev);
 
   return (
     <Box
@@ -145,10 +145,6 @@ const IntroBlock = () => {
           </Box>
         </Grid>
       </GridContainer>
-
-      <Modal isOpen={isOpen} closeModal={modalHandler}>
-        <ContactForm modalHandler={modalHandler} />
-      </Modal>
     </Box>
   );
 };

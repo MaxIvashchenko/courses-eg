@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useState } from 'react';
+import { ContactForm, Modal } from '@src/components';
 
 import {
   CourseTarget,
@@ -8,14 +9,23 @@ import {
   YourGain
 } from 'components';
 
-const Home = () => (
-  <>
-    <IntroBlock />
-    <CourseTarget />
-    <YourGain />
-    <SpeakersSlider />
-    <Programs />
-  </>
-);
+const Home = () => {
+  const [isOpen, setIsOpen] = useState<boolean>(false);
 
+  const modalHandler = () => setIsOpen((prev) => !prev);
+
+  return (
+    <>
+      <IntroBlock modalHandler={modalHandler} />
+      <CourseTarget />
+      <YourGain />
+      <SpeakersSlider />
+      <Programs modalHandler={modalHandler} />
+
+      <Modal isOpen={isOpen} closeModal={modalHandler}>
+        <ContactForm modalHandler={modalHandler} />
+      </Modal>
+    </>
+  );
+};
 export default Home;
