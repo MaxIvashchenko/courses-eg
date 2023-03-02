@@ -1,9 +1,12 @@
 import { memo } from 'react';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Box, Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { useMobile, useScreenHeight } from '@src/hooks';
 import { redirectToTelegramPrivateLink } from '@src/utils';
+
+const Title = dynamic(() => import('./components/Title/Title'), { ssr: false });
 
 const SmallLayer = styled(Box)(({ theme }) => ({
   '& img': {
@@ -37,31 +40,6 @@ const GridContainer = styled(Grid)<{ minHeight: string | number }>(
     }
   })
 );
-const BigTitle = styled('p')(({ theme }) => ({
-  textTransform: 'uppercase',
-  fontWeight: 600,
-  fontSize: 72,
-  lineHeight: 0,
-  marginBottom: 16,
-
-  [theme.breakpoints.down('sm')]: {
-    fontSize: 32
-  }
-}));
-const SubTitle = styled('p')(({ theme }) => ({
-  textTransform: 'uppercase',
-  fontWeight: 400,
-  fontSize: 72,
-  lineHeight: 1,
-  marginBottom: 16,
-
-  [theme.breakpoints.down('sm')]: {
-    fontSize: 32,
-    marginBottom: 8
-  }
-}));
-
-const title: string[] = ['ГАСТРОБИЗНЕС', 'ПОД КЛЮЧ', 'В ПОЛЬШЕ'];
 
 interface IntroBlockProps {
   modalHandler: () => void;
@@ -103,11 +81,7 @@ const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
             alignSelf: 'end'
           }}
         >
-          {title.map((text) => (
-            <BigTitle key={text}>{text}</BigTitle>
-          ))}
-
-          <SubTitle>Онлайн-курс</SubTitle>
+          <Title />
 
           <Box
             sx={{

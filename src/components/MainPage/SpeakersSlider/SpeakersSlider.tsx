@@ -1,4 +1,4 @@
-import { useRef } from 'react';
+import React, { useRef } from 'react';
 import Slider from 'react-slick';
 import {
   Box,
@@ -207,7 +207,7 @@ const SpeakersSlider = () => {
                     </Box>
 
                     {item.description.map((text, idx) => (
-                      <>
+                      <React.Fragment key={text}>
                         {idx !== 0 && (
                           <IconComponent
                             name='circle'
@@ -216,15 +216,10 @@ const SpeakersSlider = () => {
                             height={8}
                           />
                         )}
-                        <Typography
-                          my={1}
-                          key={text}
-                          variant='body2'
-                          color='common.white'
-                        >
+                        <Typography my={1} variant='body2' color='common.white'>
                           {text}
                         </Typography>
-                      </>
+                      </React.Fragment>
                     ))}
                   </CardContent>
                 </Card>
