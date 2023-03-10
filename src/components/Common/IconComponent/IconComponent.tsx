@@ -26,6 +26,7 @@ import suitcase from 'public/icons/suitcase.svg';
 import telegram from 'public/icons/telegram.svg';
 import telephone from 'public/icons/telephone.svg';
 import triangle from 'public/icons/triangle.svg';
+import user from 'public/icons/user.svg';
 import visible from 'public/icons/visible.svg';
 import youtube from 'public/icons/youtube.svg';
 import logo from 'public/logo.svg';
@@ -63,6 +64,7 @@ const iconTypes: IconTypes = {
   email,
   menu,
   circle,
+  user,
   loader
 };
 

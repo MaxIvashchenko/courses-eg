@@ -5,6 +5,7 @@ import { useMobile, useScroll } from '@src/hooks';
 
 import { Header as HeadersBlocks } from 'blocks';
 import { IconComponent } from '../Common';
+import { AuthenticationButton } from './components';
 
 const { HeaderWrapper, PaddingWrapper, IconWrapper } = HeadersBlocks;
 
@@ -22,7 +23,6 @@ const headerList: { link: string; name: string }[] = [
 const Header = () => {
   const isScrolled = useScroll();
   const isMobile = useMobile();
-  // const [isOpen, setIsOpen] = useState<boolean>(false);
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
   const handleClick = (event: React.MouseEvent<HTMLButtonElement>) => {
@@ -31,6 +31,7 @@ const Header = () => {
   const handleClose = () => {
     setAnchorEl(null);
   };
+
   return (
     <HeaderWrapper scrolled={Number(isScrolled)} component='header'>
       <IconWrapper>
@@ -39,11 +40,12 @@ const Header = () => {
       <PaddingWrapper>
         {isMobile ? (
           <>
+            <AuthenticationButton />
             <IconButton sx={{ p: 2 }} onClick={handleClick}>
               <IconComponent name='menu' />
             </IconButton>
             <Menu
-              id='basic-menu'
+              id='links-menu'
               anchorEl={anchorEl}
               open={open}
               onClose={handleClose}
@@ -55,9 +57,8 @@ const Header = () => {
                 <Box
                   key={link}
                   sx={{
-                    marginRight: { xs: 1, md: 2 },
-                    textTransform: 'uppercase',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    textAlign: 'center'
                   }}
                 >
                   <Button variant='text'>
@@ -86,7 +87,8 @@ const Header = () => {
                   sx={{
                     marginRight: { xs: 1, md: 2 },
                     textTransform: 'uppercase',
-                    cursor: 'pointer'
+                    cursor: 'pointer',
+                    textAlign: 'center'
                   }}
                 >
                   <Button variant='text'>
@@ -104,10 +106,8 @@ const Header = () => {
                 </Box>
               ))}
             </Box>
-            {/* 
-            <Box>
-              <Button variant='text'>Вход</Button>
-            </Box> */}
+            {/* <AccessToken /> */}
+            <AuthenticationButton />
           </>
         )}
       </PaddingWrapper>

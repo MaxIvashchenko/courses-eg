@@ -1,7 +1,6 @@
 import { ChangeEvent, useEffect, useRef } from 'react';
-import { GetServerSideProps } from 'next';
 import Link from 'next/link';
-import { useRouter } from 'next/router';
+import { signIn } from 'next-auth/react';
 import { Button, IconButton, TextField, Typography } from '@mui/material';
 import { useFormik } from 'formik';
 import _isEmpty from 'lodash/isEmpty';
@@ -24,12 +23,18 @@ const initialValues: FormProps = {
 
 const SignIn = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const router = useRouter();
 
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: () => router.push(paths.profile)
+    onSubmit: async ({ email, password }) => {
+      await signIn('credentials', {
+        email,
+        password,
+        redirect: false
+      });
+      // router.push(paths.profile)
+    }
   });
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -142,22 +147,13 @@ const SignIn = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () =>
-  //   const cookies = nookies.get(context);
-  //   const token = _get(cookies, USER_TOKEN, '');
-  //   const isExist = Boolean(token);
+// export const getServerSideProps: GetServerSideProps = async ({
+//   req,
+//   res,
+// }) => {
+//   const session = await getServerSession(req, res);
 
-  //   if (isExist) {
-  //     return {
-  //       redirect: {
-  //         permanent: false,
-  //         destination: routes.profile
-  //       }
-  //     };
-  //   }
-
-  ({
-    props: {}
-  });
+//   return { props: {} };
+// };
 
 export default SignIn;
