@@ -1,11 +1,12 @@
 import React, { useCallback, useState } from 'react';
+import Image from 'next/image';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Box, Button, IconButton, Menu } from '@mui/material';
 
 import { IconComponent } from 'components';
 
 const AuthenticationButton = () => {
-  const { status } = useSession();
+  const { data, status } = useSession();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
@@ -25,7 +26,17 @@ const AuthenticationButton = () => {
     if (status === 'authenticated') {
       return (
         <IconButton onClick={handleClick}>
-          <IconComponent name='user' width={30} height={30} />
+          {data?.user?.image ? (
+            <Image
+              src={data.user.image}
+              width={38}
+              height={38}
+              alt='avatar'
+              style={{ borderRadius: '50%', border: '3px solid #fff' }}
+            />
+          ) : (
+            <IconComponent name='user' width={30} height={30} />
+          )}
         </IconButton>
       );
     }
@@ -35,7 +46,7 @@ const AuthenticationButton = () => {
         Вход
       </Button>
     );
-  }, [status]);
+  }, [status, data?.user?.image]);
 
   return (
     <>

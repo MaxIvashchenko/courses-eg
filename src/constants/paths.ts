@@ -3,10 +3,11 @@ interface IPaths {
   legal: string;
   profile: string;
   signIn: string;
-  signUp: string;
   modules: string;
   module: string;
   block: string;
+  verifyRequest: string;
+  authError: string;
 }
 
 const paths: IPaths = {
@@ -14,10 +15,11 @@ const paths: IPaths = {
   legal: 'legal',
   profile: '/profile',
   signIn: '/signIn',
-  signUp: '/signUp',
   modules: '/modules',
   module: '/module',
-  block: '/block'
+  block: '/block',
+  verifyRequest: '/verify-request',
+  authError: '/auth-error'
 };
 
 export default paths;

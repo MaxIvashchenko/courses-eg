@@ -8,6 +8,7 @@ import cube from 'public/icons/cube.svg';
 import downArrow from 'public/icons/down-arrow.svg';
 import email from 'public/icons/email.svg';
 import facebook from 'public/icons/facebook.svg';
+import home from 'public/icons/home.svg';
 import image from 'public/icons/image.svg';
 import instagram from 'public/icons/instagram.svg';
 import loader from 'public/icons/loader.svg';
@@ -17,6 +18,7 @@ import marketing from 'public/icons/marketing.svg';
 import menu from 'public/icons/menu.svg';
 import notVisible from 'public/icons/notVisible.svg';
 import planning from 'public/icons/planning.svg';
+import repeat from 'public/icons/repeat.svg';
 import restaurant from 'public/icons/restaurant.svg';
 import salon from 'public/icons/salon.svg';
 import scaleup from 'public/icons/scaleup.svg';
@@ -65,7 +67,9 @@ const iconTypes: IconTypes = {
   menu,
   circle,
   user,
-  loader
+  loader,
+  repeat,
+  home
 };
 
 type IconComponentProps = {

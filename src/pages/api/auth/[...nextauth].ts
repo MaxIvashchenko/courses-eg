@@ -1,46 +1,46 @@
 import NextAuth, { NextAuthOptions } from 'next-auth';
-import CredentialsProvider from 'next-auth/providers/credentials';
+import EmailProvider from 'next-auth/providers/email';
+import FacebookProvider from 'next-auth/providers/facebook';
+import GoogleProvider from 'next-auth/providers/google';
+import { PrismaAdapter } from '@next-auth/prisma-adapter';
+import { paths } from '@src/constants';
+
+import prisma from '../../../lib/prismadb';
+import CustomsendVerificationRequest from './signinemail';
 
 const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt'
   },
+  adapter: PrismaAdapter(prisma),
   providers: [
-    CredentialsProvider({
-      type: 'credentials',
-      credentials: {},
-      authorize(credentials) {
-        const { email, password } = credentials as {
-          email: string;
-          password: string;
-        };
-        // perform you login logic
-        // find out user from db
-        if (email !== 'prosto_max@mail.ru' || password !== '123456') {
-          throw new Error('invalid credentials');
+    FacebookProvider({
+      clientId: process.env.FACEBOOK_CLIENT_ID as string,
+      clientSecret: process.env.FACEBOOK_CLIENT_SECRET as string
+    }),
+    GoogleProvider({
+      clientId: process.env.GOOGLE_CLIENT_ID as string,
+      clientSecret: process.env.GOOGLE_CLIENT_SECRET as string
+    }),
+    EmailProvider({
+      server: {
+        host: process.env.EMAIL_SERVER_HOST as string,
+        port: process.env.EMAIL_SERVER_PORT as number | undefined,
+        auth: {
+          user: process.env.EMAIL_SERVER_USER as string,
+          pass: process.env.EMAIL_SERVER_PASSWORD
         }
-
-        // if everything is fine
-        return {
-          id: '1234',
-          name: 'Max Iv',
-          email: 'prosto_max@mail.ru',
-          role: 'admin'
-        };
+      },
+      from: process.env.EMAIL_FROM,
+      sendVerificationRequest({ identifier, url, provider }) {
+        CustomsendVerificationRequest({ identifier, url, provider });
       }
     })
   ],
   pages: {
-    signIn: '/signIn'
-    // error: '/auth/error',
-    // signOut: '/auth/signout'
-  },
-  callbacks: {
-    jwt(params) {
-      // update token
-      // return final_token
-      return params.token;
-    }
+    signIn: paths.signIn,
+    verifyRequest: paths.verifyRequest,
+    error: paths.authError
   }
 };
 
