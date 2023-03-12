@@ -1,12 +1,19 @@
-import NextAuth, { NextAuthOptions } from 'next-auth';
+import NextAuth, { DefaultSession, NextAuthOptions } from 'next-auth';
 import EmailProvider from 'next-auth/providers/email';
 import FacebookProvider from 'next-auth/providers/facebook';
 import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { paths } from '@src/constants';
+import { IUserDetails } from '@src/types';
 
 import prisma from '../../../lib/prismadb';
 import CustomsendVerificationRequest from './signinemail';
+
+declare module 'next-auth' {
+  interface Session extends DefaultSession {
+    user?: IUserDetails;
+  }
+}
 
 const authOptions: NextAuthOptions = {
   session: {
@@ -41,6 +48,20 @@ const authOptions: NextAuthOptions = {
     signIn: paths.signIn,
     verifyRequest: paths.verifyRequest,
     error: paths.authError
+  },
+  callbacks: {
+    async jwt({ token, user }) {
+      user && (token.user = user);
+      return token;
+    },
+    session: async ({ session, token }) => {
+      if (session?.user) {
+        const user = token.user;
+        // @ts-ignore
+        session.user = user;
+      }
+      return Promise.resolve(session);
+    }
   }
 };
 

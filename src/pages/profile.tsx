@@ -23,7 +23,7 @@ const Profile = () => {
     [router]
   );
 
-  return _isEmpty(courses) ? (
+  return _isEmpty([]) ? (
     <EmptyPageMessage message='На данный момент ни один курс не доступен' />
   ) : (
     <Layout.PageContainer sx={{ minHeight: '100%' }}>

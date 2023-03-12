@@ -8,6 +8,7 @@ interface IPaths {
   block: string;
   verifyRequest: string;
   authError: string;
+  admin: string;
 }
 
 const paths: IPaths = {
@@ -19,7 +20,8 @@ const paths: IPaths = {
   module: '/module',
   block: '/block',
   verifyRequest: '/verify-request',
-  authError: '/auth-error'
+  authError: '/auth-error',
+  admin: '/admin'
 };
 
 export default paths;

@@ -1,11 +1,14 @@
 import React, { useCallback, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Box, Button, IconButton, Menu } from '@mui/material';
+import { paths } from '@src/constants';
 
 import { IconComponent } from 'components';
 
 const AuthenticationButton = () => {
+  const router = useRouter();
   const { data, status } = useSession();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
@@ -19,25 +22,41 @@ const AuthenticationButton = () => {
 
   const signInHandler = () => signIn();
   const signOutHandler = () => signOut();
+  const toAdmminPanel = useCallback(() => router.push(paths.admin), [router]);
+  const toProfile = () => router.push(paths.profile);
+
+  const renderAdmminButton = useCallback(
+    () => (
+      <IconButton onClick={toAdmminPanel} sx={{ mr: { xs: 0, md: 2 } }}>
+        <IconComponent name='group' width={40} height={40} />
+      </IconButton>
+    ),
+    [toAdmminPanel]
+  );
 
   const renderAuthBtn = useCallback(() => {
     if (status === 'loading') return null;
 
     if (status === 'authenticated') {
+      const isAdmin = data?.user?.role === 'ADMIN';
+
       return (
-        <IconButton onClick={handleClick}>
-          {data?.user?.image ? (
-            <Image
-              src={data.user.image}
-              width={38}
-              height={38}
-              alt='avatar'
-              style={{ borderRadius: '50%', border: '3px solid #fff' }}
-            />
-          ) : (
-            <IconComponent name='user' width={30} height={30} />
-          )}
-        </IconButton>
+        <Box>
+          {isAdmin && renderAdmminButton()}
+          <IconButton onClick={handleClick}>
+            {data?.user?.image ? (
+              <Image
+                src={data.user.image}
+                width={38}
+                height={38}
+                alt='avatar'
+                style={{ borderRadius: '50%', border: '3px solid #fff' }}
+              />
+            ) : (
+              <IconComponent name='user' width={30} height={30} />
+            )}
+          </IconButton>
+        </Box>
       );
     }
 
@@ -46,7 +65,7 @@ const AuthenticationButton = () => {
         Вход
       </Button>
     );
-  }, [status, data?.user?.image]);
+  }, [status, data?.user?.image, data?.user?.role, renderAdmminButton]);
 
   return (
     <>
@@ -58,7 +77,9 @@ const AuthenticationButton = () => {
         onClose={handleClose}
       >
         <Box textAlign='center'>
-          <Button variant='text'>Мои курсы</Button>
+          <Button variant='text' onClick={toProfile}>
+            Мои курсы
+          </Button>
         </Box>
         <Box textAlign='center'>
           <Button onClick={signOutHandler} variant='text'>

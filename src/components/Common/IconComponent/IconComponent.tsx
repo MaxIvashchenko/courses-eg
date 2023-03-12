@@ -5,9 +5,11 @@ import cafe from 'public/icons/cafe.svg';
 import circle from 'public/icons/circle.svg';
 import close from 'public/icons/close.svg';
 import cube from 'public/icons/cube.svg';
+import doubleRight from 'public/icons/doubleRight.svg';
 import downArrow from 'public/icons/down-arrow.svg';
 import email from 'public/icons/email.svg';
 import facebook from 'public/icons/facebook.svg';
+import group from 'public/icons/group.svg';
 import home from 'public/icons/home.svg';
 import image from 'public/icons/image.svg';
 import instagram from 'public/icons/instagram.svg';
@@ -20,8 +22,10 @@ import notVisible from 'public/icons/notVisible.svg';
 import planning from 'public/icons/planning.svg';
 import repeat from 'public/icons/repeat.svg';
 import restaurant from 'public/icons/restaurant.svg';
+import right from 'public/icons/right.svg';
 import salon from 'public/icons/salon.svg';
 import scaleup from 'public/icons/scaleup.svg';
+import settings from 'public/icons/settings.svg';
 import shuttle from 'public/icons/shuttle.svg';
 import stats from 'public/icons/stats.svg';
 import suitcase from 'public/icons/suitcase.svg';
@@ -69,6 +73,10 @@ const iconTypes: IconTypes = {
   user,
   loader,
   repeat,
+  group,
+  settings,
+  right,
+  doubleRight,
   home
 };
 
@@ -77,16 +85,25 @@ type IconComponentProps = {
   width?: number;
   height?: number;
   fill?: string;
+  isMirror?: boolean;
 };
 
 const IconComponent = ({
   name,
   width = 24,
   height = 24,
+  isMirror = false,
   fill
 }: IconComponentProps) => {
   const Icon = iconTypes[name];
-  return <Icon fill={fill} width={width} height={height} />;
+  return (
+    <Icon
+      style={{ transform: isMirror ? 'rotate(180deg)' : 'rotate(0)' }}
+      fill={fill}
+      width={width}
+      height={height}
+    />
+  );
 };
 
 export default IconComponent;
