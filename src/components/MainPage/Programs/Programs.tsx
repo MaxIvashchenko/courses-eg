@@ -202,7 +202,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                   <Typography variant='h3' py={1}>
                     {subTitle}
                   </Typography>
-                  <Typography variant='h5'>{`Старт: ${startDate}`}</Typography>
+                  {/* <Typography variant='h5'>{`Старт: ${startDate}`}</Typography> */}
                 </Box>
               </CourseButton>
             ))}
