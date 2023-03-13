@@ -181,7 +181,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
       >
         <Grid container justifyContent='start' mb={4}>
           <CoursesGridItem item xs={12} md={8}>
-            {coursesModal.map(({ icon, title, subTitle, startDate }, idx) => (
+            {coursesModal.map(({ icon, title, subTitle }, idx) => (
               <CourseButton
                 onClick={() => courseHandler(idx + 1)}
                 key={title}
