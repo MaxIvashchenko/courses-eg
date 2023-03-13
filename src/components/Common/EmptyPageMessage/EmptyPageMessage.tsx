@@ -17,7 +17,14 @@ const EmptyPageMessage = ({ message }: EmptyPageMessageProps) => {
 
   return (
     <CenteredWrapper>
-      <Typography variant='h3' textAlign='center' sx={{ mb: 8 }}>
+      <Typography
+        variant='h3'
+        textAlign='center'
+        sx={{
+          mb: 2,
+          p: { xs: 1, md: 4 }
+        }}
+      >
         {message}
       </Typography>
       <Button

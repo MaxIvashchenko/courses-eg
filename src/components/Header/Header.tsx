@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll/modules';
 import { useRouter } from 'next/router';
-import { Box, Button, Menu } from '@mui/material';
+import { Box, Button, IconButton as MuiIconButton, Menu } from '@mui/material';
 import { paths } from '@src/constants';
 import { useMobile, useScroll } from '@src/hooks';
 
@@ -44,9 +44,9 @@ const Header = () => {
         {isMobile ? (
           <>
             <AuthenticationButton />
-            <IconButton sx={{ p: 2 }} onClick={handleClick}>
+            <MuiIconButton sx={{ p: 2 }} onClick={handleClick}>
               <IconComponent name='menu' />
-            </IconButton>
+            </MuiIconButton>
             <Menu
               id='links-menu'
               anchorEl={anchorEl}

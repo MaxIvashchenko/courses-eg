@@ -47,25 +47,47 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   }
 }));
 
-const IconButton = styled(MuiIconButton)(() => ({
-  position: 'absolute',
-  zIndex: 91,
+const IconButton = styled(MuiIconButton)(({ theme }) => ({
+  [theme.breakpoints.up('md')]: {
+    position: 'absolute',
+    zIndex: 91,
 
-  '& svg': {
-    width: 110,
-    height: 110,
-    transition: 'all 0.2s ease-out'
-  },
-
-  '&:hover': {
-    background: 'none',
     '& svg': {
-      width: 125,
-      height: 125,
+      width: 110,
+      height: 110,
       transition: 'all 0.2s ease-out'
     },
-    '& path': {
-      fill: '#69381e'
+    '&:hover': {
+      background: 'none',
+      '& svg': {
+        width: 125,
+        height: 125,
+        transition: 'all 0.2s ease-out'
+      },
+      '& path': {
+        fill: '#69381e'
+      }
+    }
+  },
+  [theme.breakpoints.down('md')]: {
+    position: 'absolute',
+    zIndex: 91,
+
+    '& svg': {
+      width: 90,
+      height: 90,
+      transition: 'none'
+    },
+    '&:hover': {
+      background: 'none',
+      '& svg': {
+        transition: 'none',
+        width: 90,
+        height: 90
+      },
+      '& path': {
+        fill: '#69381e'
+      }
     }
   }
 }));

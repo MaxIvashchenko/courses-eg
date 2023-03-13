@@ -47,7 +47,9 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
 
   let users: Prisma.UserUncheckedCreateInput[] = [];
   try {
-    users = await prisma.user.findMany();
+    const data = await prisma.user.findMany();
+    const serializableProps = JSON.parse(JSON.stringify(data));
+    users = serializableProps;
   } catch (error) {
     console.error("Can't reach database server");
   }

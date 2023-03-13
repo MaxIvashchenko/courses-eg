@@ -74,7 +74,7 @@ const UsersTable = ({ list }: UsersTableProps) => {
             ? list.slice(page * rowsPerPage, page * rowsPerPage + rowsPerPage)
             : list
           ).map((row) => (
-            <TableRow key={row.name}>
+            <TableRow key={row.email}>
               <TableCell>
                 {row.image ? (
                   <Image
