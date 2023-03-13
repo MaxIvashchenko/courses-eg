@@ -26,7 +26,9 @@ const Admin = ({ users }: AdminProps) => (
       <Grid item xs={12} sx={{ mb: { xs: 2, md: 4 } }}>
         <Stack justifyContent='space-between' flexDirection='row'>
           <Typography variant='h1'>Зарегистрированные пользователи</Typography>
-          <Typography variant='h1' px={2}>{users.length}</Typography>
+          <Typography variant='h1' px={2}>
+            {users.length}
+          </Typography>
         </Stack>
       </Grid>
 

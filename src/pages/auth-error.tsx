@@ -1,4 +1,5 @@
 import { useRouter } from 'next/router';
+import { signIn } from 'next-auth/react';
 import { Button, Typography } from '@mui/material';
 import { IconComponent } from '@src/components';
 import { paths } from 'src/constants';
@@ -10,7 +11,7 @@ const { SignInWrapper } = Auth;
 const AuthError = () => {
   const router = useRouter();
 
-  const toSignIn = () => router.push(paths.signIn);
+  const toSignIn = () => signIn();
   const toMain = () => router.push(paths.main);
 
   return (
