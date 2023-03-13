@@ -15,7 +15,9 @@ const nextConfig = {
     });
     return config;
   },
-  images: {}
+  images: {
+    domains: ['lh3.googleusercontent.com']
+  }
 };
 
 module.exports = nextConfig;

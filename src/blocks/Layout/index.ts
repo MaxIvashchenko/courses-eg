@@ -6,7 +6,8 @@ const AppWrapper = styled(Box)({
   flexDirection: 'column',
   justifyContent: 'space-between',
   overflowX: 'hidden',
-  background: '#f5f7f8'
+  background: '#f5f7f8',
+  minHeight: '100vh'
 });
 
 const ContentWrapper = styled(Box)({

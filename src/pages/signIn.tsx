@@ -1,35 +1,44 @@
 import { ChangeEvent, useEffect, useRef } from 'react';
-import { GetServerSideProps } from 'next';
-import Link from 'next/link';
-import { useRouter } from 'next/router';
-import { Button, IconButton, TextField, Typography } from '@mui/material';
+import { GetServerSidePropsContext } from 'next';
+import Image from 'next/image';
+import { getServerSession } from 'next-auth';
+import { signIn } from 'next-auth/react';
+import {
+  Button,
+  IconButton,
+  Stack,
+  TextField,
+  Typography
+} from '@mui/material';
 import { useFormik } from 'formik';
 import _isEmpty from 'lodash/isEmpty';
 import { paths, signInSchema as validationSchema } from 'src/constants';
 
 import { Auth } from 'blocks';
 import { IconComponent, InputWrapper } from 'components';
+import authOptions from './api/auth/[...nextauth]';
 
-const { SignInWrapper, Wrapper, BodyWrapper, Body, Footer } = Auth;
+const { SignInWrapper, Wrapper, BodyWrapper, Body } = Auth;
 
 interface FormProps {
   email: string;
-  password: string;
 }
 
 const initialValues: FormProps = {
-  email: '',
-  password: ''
+  email: ''
 };
 
 const SignIn = () => {
   const inputRef = useRef<HTMLInputElement | null>(null);
-  const router = useRouter();
 
   const formik = useFormik({
     initialValues,
     validationSchema,
-    onSubmit: () => router.push(paths.profile)
+    onSubmit: async ({ email }) => {
+      await signIn('email', {
+        email
+      });
+    }
   });
 
   const onChange = (e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
@@ -38,10 +47,6 @@ const SignIn = () => {
 
   const clearEmail = () => {
     formik.setFieldValue('email', '');
-  };
-
-  const clearPassword = () => {
-    formik.setFieldValue('password', '');
   };
 
   useEffect(() => {
@@ -57,9 +62,11 @@ const SignIn = () => {
   }, []);
 
   const {
-    values: { email, password }
+    values: { email }
   } = formik;
-  const isButtonDisabled = (!email && !password) || !_isEmpty(formik.errors);
+  const isButtonDisabled = !email || !_isEmpty(formik.errors);
+
+  const loginHandler = (id: string) => () => signIn(id);
 
   return (
     <SignInWrapper>
@@ -69,6 +76,23 @@ const SignIn = () => {
       <Wrapper>
         <Body>
           <BodyWrapper onSubmit={formik.handleSubmit}>
+            <Stack flexDirection='row' justifyContent='center' my={2}>
+              {['google', 'facebook'].map((social) => (
+                <IconButton
+                  key={social}
+                  sx={{ width: 48, height: 48, mx: 1 }}
+                  onClick={loginHandler(social)}
+                >
+                  <Image
+                    src={`/${social}.png`}
+                    alt={social}
+                    width={38}
+                    height={38}
+                  />
+                </IconButton>
+              ))}
+            </Stack>
+
             <InputWrapper
               errorMsg={formik.errors.email}
               isTouched={formik.touched.email}
@@ -92,29 +116,7 @@ const SignIn = () => {
                 sx={{ mb: 3 }}
               />
             </InputWrapper>
-            <InputWrapper
-              errorMsg={formik.errors.password}
-              isTouched={formik.touched.password}
-            >
-              <TextField
-                fullWidth
-                id='password'
-                label='Пароль'
-                variant='standard'
-                type='password'
-                InputProps={{
-                  endAdornment: formik.values.password && (
-                    <IconButton onClick={clearPassword}>
-                      <IconComponent name='close' width={14} height={14} />
-                    </IconButton>
-                  )
-                }}
-                value={formik.values.password}
-                onChange={onChange}
-                onBlur={formik.handleBlur}
-                sx={{ mb: 3 }}
-              />
-            </InputWrapper>
+
             <Button
               size='large'
               disabled={isButtonDisabled}
@@ -122,14 +124,8 @@ const SignIn = () => {
               type='submit'
               sx={{ mt: 1, mb: 3 }}
             >
-              Sign In
+              Войти
             </Button>
-            <Footer>
-              <Typography mr={0.5}>Еще нет аккаунта?</Typography>
-              <Link href={paths.signUp}>
-                <Typography mr={0.5}>Зарегистрироваться</Typography>
-              </Link>
-            </Footer>
           </BodyWrapper>
           {/* {isLoading && (
           <LoaderWrapper background={loaderBackground} color={loaderIconColor}>
@@ -142,22 +138,16 @@ const SignIn = () => {
   );
 };
 
-export const getServerSideProps: GetServerSideProps = async () =>
-  //   const cookies = nookies.get(context);
-  //   const token = _get(cookies, USER_TOKEN, '');
-  //   const isExist = Boolean(token);
+export async function getServerSideProps(context: GetServerSidePropsContext) {
+  const session = await getServerSession(context.req, context.res, authOptions);
 
-  //   if (isExist) {
-  //     return {
-  //       redirect: {
-  //         permanent: false,
-  //         destination: routes.profile
-  //       }
-  //     };
-  //   }
+  if (session) {
+    return { redirect: { destination: paths.profile } };
+  }
 
-  ({
+  return {
     props: {}
-  });
+  };
+}
 
 export default SignIn;

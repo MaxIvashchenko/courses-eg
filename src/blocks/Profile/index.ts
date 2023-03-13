@@ -3,9 +3,11 @@ import { styled } from '@mui/material/styles';
 
 const CenteredWrapper = styled(Box)({
   height: '100%',
+  minHeight: '90vh',
   display: 'flex',
   justifyContent: 'center',
-  flexDirection: 'column'
+  flexDirection: 'column',
+  flex: 1
 });
 
 const CardActionArea = styled(MuiCardActionArea)(({ theme }) => ({

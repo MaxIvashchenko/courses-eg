@@ -1,7 +1,7 @@
 import * as yup from 'yup';
 
 const validation = {
-  email: yup.string().email('Неверный email').required('Обязательное поле'),
+  email: yup.string().email('Неверный email'),
   password: yup
     .string()
     .min(6, 'Должен быть не короче 6 символов')
@@ -13,8 +13,7 @@ const validation = {
 };
 
 export const signInSchema = yup.object({
-  email: validation.email,
-  password: validation.password
+  email: validation.email
 });
 
 export const signUpSchema = yup.object({

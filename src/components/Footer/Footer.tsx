@@ -1,5 +1,6 @@
+import { useRouter } from 'next/router';
 import { Typography } from '@mui/material';
-import { email, phoneNumber } from '@src/constants';
+import { email, paths, phoneNumber } from '@src/constants';
 import {
   redirectToEmail,
   redirectToInstagram,
@@ -36,24 +37,35 @@ const footerContent: { name: string; onClick: () => void }[] = [
   }
 ];
 
-const Footer = () => (
-  <FooterWrapper component='footer'>
-    {footerContent.map(({ name, onClick }) => (
-      <IconButton key={name} onClick={onClick}>
-        <IconComponent fill='#fff' name={name} />
-        {name === 'telephone' && (
-          <Typography color='#fff' ml={2}>
-            {phoneNumber}
-          </Typography>
-        )}
-        {name === 'email' && (
-          <Typography color='#fff' ml={2}>
-            {email}
-          </Typography>
-        )}
-      </IconButton>
-    ))}
-  </FooterWrapper>
-);
+const Footer = () => {
+  const router = useRouter();
+
+  const hideFooter =
+    router.route === paths.signIn ||
+    router.route === paths.verifyRequest ||
+    router.route === paths.authError;
+
+  if (hideFooter) return <></>;
+
+  return (
+    <FooterWrapper component='footer'>
+      {footerContent.map(({ name, onClick }) => (
+        <IconButton key={name} onClick={onClick}>
+          <IconComponent fill='#fff' name={name} />
+          {name === 'telephone' && (
+            <Typography color='#fff' ml={2}>
+              {phoneNumber}
+            </Typography>
+          )}
+          {name === 'email' && (
+            <Typography color='#fff' ml={2}>
+              {email}
+            </Typography>
+          )}
+        </IconButton>
+      ))}
+    </FooterWrapper>
+  );
+};
 
 export default Footer;
