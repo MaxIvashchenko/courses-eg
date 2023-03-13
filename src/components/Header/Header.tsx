@@ -1,13 +1,16 @@
 import React, { useState } from 'react';
 import { Link } from 'react-scroll/modules';
-import { Box, Button, IconButton, Menu } from '@mui/material';
+import { useRouter } from 'next/router';
+import { Box, Button, Menu } from '@mui/material';
+import { paths } from '@src/constants';
 import { useMobile, useScroll } from '@src/hooks';
 
 import { Header as HeadersBlocks } from 'blocks';
 import { IconComponent } from '../Common';
 import { AuthenticationButton } from './components';
 
-const { HeaderWrapper, PaddingWrapper, IconWrapper } = HeadersBlocks;
+const { HeaderWrapper, PaddingWrapper, IconWrapper, IconButton } =
+  HeadersBlocks;
 
 const headerList: { link: string; name: string }[] = [
   {
@@ -21,6 +24,7 @@ const headerList: { link: string; name: string }[] = [
 ];
 
 const Header = () => {
+  const router = useRouter();
   const isScrolled = useScroll();
   const isMobile = useMobile();
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -32,11 +36,10 @@ const Header = () => {
     setAnchorEl(null);
   };
 
+  const toMainPage = () => router.push(paths.main);
+
   return (
     <HeaderWrapper scrolled={Number(isScrolled)} component='header'>
-      <IconWrapper>
-        <IconComponent fill='#404040' name='logo' width={100} height={100} />
-      </IconWrapper>
       <PaddingWrapper>
         {isMobile ? (
           <>
@@ -111,6 +114,11 @@ const Header = () => {
           </>
         )}
       </PaddingWrapper>
+      <IconWrapper>
+        <IconButton onClick={toMainPage}>
+          <IconComponent fill='#404040' name='logo' width={100} height={100} />
+        </IconButton>
+      </IconWrapper>
     </HeaderWrapper>
   );
 };

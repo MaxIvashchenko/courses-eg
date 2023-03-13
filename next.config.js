@@ -18,7 +18,7 @@ const nextConfig = {
     EMAIL_SERVER_PASSWORD: process.env.EMAIL_SERVER_PASSWORD,
     EMAIL_SERVER_HOST: process.env.EMAIL_SERVER_HOST,
     EMAIL_SERVER_PORT: process.env.EMAIL_SERVER_PORT,
-    EMAIL_FROM: process.env.EMAIL_FROM,
+    EMAIL_FROM: process.env.EMAIL_FROM
   },
   eslint: {
     ignoreDuringBuilds: true
@@ -31,7 +31,7 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['lh3.googleusercontent.com']
+    domains: ['lh3.googleusercontent.com', 'platform-lookaside.fbsbx.com']
   }
 };
 

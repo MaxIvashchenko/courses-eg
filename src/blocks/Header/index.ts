@@ -1,4 +1,4 @@
-import { Box } from '@mui/material';
+import { Box, IconButton as MuiIconButton } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const HeaderWrapper = styled(Box)<{ scrolled: number }>(({ scrolled }) => ({
@@ -34,9 +34,10 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   position: 'absolute',
   width: '100%',
   display: 'flex',
-  zIndex: 80,
+
   justifyContent: 'center',
   alignItems: 'center',
+  cursor: 'pointer',
 
   '& path': {
     fill: theme.palette.common.black
@@ -46,10 +47,34 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   }
 }));
 
+const IconButton = styled(MuiIconButton)(() => ({
+  position: 'absolute',
+  zIndex: 91,
+
+  '& svg': {
+    width: 110,
+    height: 110,
+    transition: 'all 0.2s ease-out'
+  },
+
+  '&:hover': {
+    background: 'none',
+    '& svg': {
+      width: 125,
+      height: 125,
+      transition: 'all 0.2s ease-out'
+    },
+    '& path': {
+      fill: '#69381e'
+    }
+  }
+}));
+
 const Header = {
   HeaderWrapper,
   PaddingWrapper,
-  IconWrapper
+  IconWrapper,
+  IconButton
 };
 
 export default Header;
