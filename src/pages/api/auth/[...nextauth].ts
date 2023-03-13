@@ -2,11 +2,11 @@ import NextAuth, { DefaultSession, NextAuthOptions } from 'next-auth';
 import EmailProvider from 'next-auth/providers/email';
 import FacebookProvider from 'next-auth/providers/facebook';
 import GoogleProvider from 'next-auth/providers/google';
-import { PrismaAdapter } from '@next-auth/prisma-adapter';
+// import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { paths } from '@src/constants';
 import { IUserDetails } from '@src/types';
 
-import prisma from '../../../lib/prismadb';
+// import prisma from '../../../lib/prismadb';
 import CustomsendVerificationRequest from './signinemail';
 
 declare module 'next-auth' {
@@ -19,7 +19,7 @@ const authOptions: NextAuthOptions = {
   session: {
     strategy: 'jwt'
   },
-  adapter: PrismaAdapter(prisma),
+  // adapter: PrismaAdapter(prisma),
   providers: [
     FacebookProvider({
       clientId: process.env.FACEBOOK_CLIENT_ID as string,
