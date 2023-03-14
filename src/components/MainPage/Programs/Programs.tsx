@@ -316,6 +316,9 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
 
       <Modal isOpen={Boolean(modalNum)} closeModal={closeModal} isFixedHeight>
         <ModalContent num={modalNum || 1} />
+        <Typography textAlign='center' variant='h2' pb={1}>
+          Цена: 500$
+        </Typography>
         <Contacts modalHandler={submitApp} />
       </Modal>
       <Modal isOpen={Boolean(subModal)} closeModal={closeSubModal}>
