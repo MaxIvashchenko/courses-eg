@@ -12,7 +12,7 @@ interface ICoursesModal {
 const coursesModal: ICoursesModal[] = [
   {
     icon: 'shuttle',
-    title: ' Курс для начинающего бизнеса',
+    title: 'Курс для начинающего бизнеса',
     subTitle: 'Открой свой гастробизнес с нуля',
     startDate: '17 марта 2023',
     content: [

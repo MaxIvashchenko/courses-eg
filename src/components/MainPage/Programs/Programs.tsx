@@ -1,10 +1,17 @@
-import React, { ReactElement, useCallback, useState } from 'react';
-import { Box, Button, Grid, Stack, Typography } from '@mui/material';
+import React, { useCallback, useState } from 'react';
+import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
+import { Box, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { IconComponent, Modal } from '@src/components';
+import { Modal } from '@src/components';
 import { coursesModal } from '@src/content';
 
-import { Contacts, CustomAccordion, Layers, ModalContent } from './components';
+import {
+  Contacts,
+  Layers,
+  ModalContent,
+  ProgramButton,
+  SubModalContent
+} from './components';
 
 const ProgramsContainer = styled(Box)(() => ({
   backgroundImage: 'url(images/layer7.svg)',
@@ -17,154 +24,206 @@ const ProgramsContainer = styled(Box)(() => ({
   overflow: 'hidden'
 }));
 
-const IconWrapper = styled(Box)(({ theme }) => ({
-  marginRight: 24,
-
-  [theme.breakpoints.down('sm')]: {
-    marginRight: 16,
-
-    '& svg': {
-      width: 48,
-      height: 48
-    }
-  }
-}));
-
-const CourseButton = styled(Button)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'start',
-  alignItems: 'center',
-  margin: '8px 0',
-  '&:hover': {
-    // opacity: 0.9,
-    background: '#ffffff4d',
-    '& svg path': {
-      fill: '#a358174d'
-    }
-  },
-
-  [theme.breakpoints.down('sm')]: {
-    padding: 8,
-    justifyContent: 'center'
-  }
-}));
-
-const CoursesGridItem = styled(Grid)(({ theme }) => ({
-  display: 'flex',
-  justifyContent: 'start',
-  flexDirection: 'column',
-
-  [theme.breakpoints.down('sm')]: {
-    justifyContent: 'center'
-  }
-}));
-
-interface IPlan {
+interface IAdditionalBlock {
+  id: string;
   title: string;
-  descriptions: any[];
-  backgroundColor: string;
-  price: ReactElement;
+  description: ReactJSXElement;
+  price: number;
 }
 
-const plans: IPlan[] = [
+const additionalBlocksSB: IAdditionalBlock[] = [
   {
-    title: 'Start',
-    descriptions: [
-      'Один курс',
-      '1 консультация с наставником',
-      'Чат с обратной связью от всех наставников на 3 месяца',
-      'Сообщество единомышленников'
-    ],
-    backgroundColor: '#a35817',
-    price: (
-      <Stack justifyContent='center' direction='row' px={2}>
-        <Typography variant='h4' textAlign='center'>
-          <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
-            750$
-          </span>
-        </Typography>
-        <Typography variant='h4' ml={2} textAlign='center'>
-          <span style={{ fontSize: 34, color: '#5e9b0d', padding: '14px 0' }}>
-            {` 500$ `}
-          </span>
-        </Typography>
-      </Stack>
+    id: 'course-1/additional-block-1',
+    title: 'Идея и анализ',
+    price: 80,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        Всё начинается с идеи. В этом блоке вы пройдете самый творческий и
+        приятный этап открытия бизнеса. Создадите <strong>идею</strong>,
+        сформулируете <strong>концепцию, цель</strong> и
+        <strong> ценность</strong>. Определите свою{' '}
+        <strong>уникальность</strong>. И как настоящий, начинающий,
+        предприниматель по всем законам бизнеса проведете{' '}
+        <strong>анализ целевой аудитории</strong> и
+        <strong> анализ конкурентов</strong>. Без которых выходить на рынок
+        будет грубой ошибкой.
+      </Typography>
     )
   },
   {
-    title: 'Duet',
-    descriptions: [
-      'Два курса',
-      '2 консультации с наставником',
-      'Чат с обратной связью от всех наставников на 6 месяцев',
-      'Сообщество единомышленников'
-    ],
-    backgroundColor: '#5b6b46',
-    price: (
-      <Stack justifyContent='center' direction='row' px={2}>
-        <Typography variant='h4' textAlign='center'>
-          <span style={{ fontSize: 24, textDecoration: 'line-through' }}>
-            1250$
-          </span>
-        </Typography>
-        <Typography variant='h4' ml={2} textAlign='center'>
-          <span style={{ fontSize: 34, color: '#5e9b0d', padding: '14px 0' }}>
-            {` 950$ `}
-          </span>
-        </Typography>
-      </Stack>
+    id: 'course-1/additional-block-2',
+    title: 'Разработка меню',
+    price: 60,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        Меню должно быть вкусным, красивым, продаваемым, а так же правильно
+        технически составленным. В этом блоке вы узнаете как составить
+        <strong> ТТК карты</strong>, как <strong>сформировать цену </strong>
+        продута, что такое <strong>себестоимость</strong> и
+        <strong> средний чек</strong> и оформите{' '}
+        <strong>вкусный визуал </strong>
+        своего меню.
+      </Typography>
     )
   },
   {
-    title: 'Mentor',
-    descriptions: [],
-    backgroundColor: '#99c8dc',
-    price: (
-      <>
-        <Typography variant='h4' textAlign='center'>
-          Консультация наставника
-        </Typography>
-        <Typography variant='h4' textAlign='center'>
-          <span style={{ fontSize: 28 }}>{` 1 час `}</span>
-          <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
-            {` 50$ `}
-          </span>
-        </Typography>
-        <Typography pt={1} variant='h4' textAlign='center'>
-          Индивидуальное наставничество
-        </Typography>
-        <Typography variant='h4' textAlign='center'>
-          <span style={{ fontSize: 28 }}>{` 30 часов `}</span>
-          <span style={{ fontSize: 28, color: '#5e9b0d', padding: '14px 0' }}>
-            {` 700$ `}
-          </span>
-        </Typography>
-      </>
+    id: 'course-1/additional-block-3',
+    title: 'Открытие фирмы и пакет документов',
+    price: 130,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        Открывая свой бизнес, не удаться избежать бюрократических вопросов.
+        Самый популярный вопрос «Как открыть свою фирму и какой пакет документов
+        необходим для открытия»? В этом блоке, вы получите подробную информацию
+        о том,{' '}
+        <strong>
+          какие этапы открытия фирмы, виды налогообложения, пакет документов и
+          шаблоны
+        </strong>{' '}
+        для открытия гастробизнеса под ключ вам понадобятся.
+      </Typography>
+    )
+  },
+  {
+    id: 'course-1/additional-block-4',
+    title: 'Помещение и локация',
+    price: 100,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        Успех вашего заведения напрямую зависит от местонахождения, то есть
+        локации. В этом блоке, мы подробно расскажем, как{' '}
+        <strong>выбирать локации</strong>, какие{' '}
+        <strong>виды помещений бывают</strong>, на какие{' '}
+        <strong>технические требования</strong> обязательно обращать внимание,
+        чтобы избежать дополнительных затрат. А так-же, покажем примеры,{' '}
+        <strong>как бюджетно оформить стильный и модный интерьер</strong>.
+      </Typography>
     )
   }
 ];
-
+const additionalBlocksEB: IAdditionalBlock[] = [
+  {
+    id: 'course-2/additional-block-1',
+    title: 'Финансовая грамотность',
+    price: 120,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        Основа любого бизнеса, <strong>это цифры</strong>. В этом блоке, вы
+        научитесь
+        <strong>контролировать</strong> и <strong>анализировать цифры</strong>,
+        получите все необходимые <strong>шаблоны и таблицы</strong> для простого
+        ведения финансового учета в гастрономии.
+      </Typography>
+    )
+  },
+  {
+    id: 'course-2/additional-block-2',
+    title: 'Маркетинг',
+    price: 140,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        В наше время ни один бизнес не может существовать без грамотной
+        <strong>маркетинговой стратегии</strong>. В этом блоке, мы дадим вам все
+        современные инструменты для <strong>продвижения</strong> и{' '}
+        <strong>развития</strong> своего гастробизнеса.
+      </Typography>
+    )
+  },
+  {
+    id: 'course-2/additional-block-3',
+    title: 'Продажи и сервис',
+    price: 100,
+    description: (
+      <Typography
+        sx={{
+          pb: { xs: 1, md: 3 },
+          color: 'black',
+          fontSize: 20
+        }}
+        textAlign='center'
+        pb={1}
+      >
+        <strong>Уровень сервиса</strong> напрямую влияет на прибыль заведения. В
+        этом блоке мы расскажем,{' '}
+        <strong>как работать с командой, повышать лояльность</strong> и{' '}
+        <strong>возвращаемость клиента</strong>, а так же{' '}
+        <strong>увеличивать средний чек</strong>.
+      </Typography>
+    )
+  }
+];
 interface ProgramsProps {
   modalHandler: () => void;
 }
 
 const Programs = ({ modalHandler }: ProgramsProps) => {
-  const [currentBlockOpen, setCurrentBlockOpen] = useState<number | null>(null);
-
   const [modalNum, setModalNum] = useState<number | null>(null);
-
-  const switchHandler = useCallback(
-    (num: number) => () => {
-      setCurrentBlockOpen(num === currentBlockOpen ? null : num);
-    },
-    [currentBlockOpen]
-  );
+  const [subModal, setSubModal] = useState<IAdditionalBlock | null>(null);
 
   const courseHandler = useCallback((num: number) => {
     setModalNum(num);
   }, []);
 
+  const additionalBlockHandler = useCallback((block: IAdditionalBlock) => {
+    setSubModal(block);
+  }, []);
+
   const closeModal = () => setModalNum(null);
+  const closeSubModal = () => setSubModal(null);
+
+  const submitApp = () => {
+    modalHandler();
+    setModalNum(null);
+    setSubModal(null);
+  };
 
   return (
     <ProgramsContainer id='courses'>
@@ -179,67 +238,82 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
           pb: { xs: 2, sm: 4 }
         }}
       >
-        <Grid container justifyContent='start' mb={4}>
-          <CoursesGridItem item xs={12} md={8}>
-            {coursesModal.map(({ icon, title, subTitle }, idx) => (
-              <CourseButton
-                onClick={() => courseHandler(idx + 1)}
-                key={title}
-                variant='text'
-              >
-                <IconWrapper>
-                  <IconComponent
-                    fill='#a25919'
-                    name={icon}
-                    width={80}
-                    height={80}
+        <Grid container>
+          <Grid item xs={12} lg={6}>
+            <Grid container justifyContent='space-around'>
+              <Grid item xs={12} xl={10}>
+                <ProgramButton
+                  iconName={coursesModal[0].icon}
+                  title={coursesModal[0].title}
+                  subTitle={coursesModal[0].subTitle}
+                  clickHandler={() => courseHandler(1)}
+                />
+              </Grid>
+            </Grid>
+            <Grid container justifyContent='space-around' mb={4}>
+              {additionalBlocksSB.map((block) => (
+                <Grid key={block.id} item xs={11} sm={6} md={6} lg={9} xl={6}>
+                  <ProgramButton
+                    subTitle={block.title}
+                    title='Блок'
+                    clickHandler={() => additionalBlockHandler(block)}
                   />
-                </IconWrapper>
-                <Box textAlign='left'>
-                  <Typography variant='h1' py={1}>
-                    {title}
-                  </Typography>
-                  <Typography variant='h3' py={1}>
-                    {subTitle}
-                  </Typography>
-                  {/* <Typography variant='h5'>{`Старт: ${startDate}`}</Typography> */}
-                </Box>
-              </CourseButton>
-            ))}
-          </CoursesGridItem>
-        </Grid>
-
-        <Grid container my={7}>
-          <Grid item xs={12} justifyContent='center'>
-            <Typography
-              textAlign='center'
-              fontWeight='700'
-              color='primary.black'
-              variant='h1'
-              fontSize={56}
-              sx={{ position: 'sticky' }}
-            >
-              ТАРИФЫ
-            </Typography>
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
-          <Grid item xs={12} sm={2} md={3} lg={4} />
-          <Grid item xs={12} sm={8} md={6} lg={4} sx={{ p: { xs: 0, md: 2 } }}>
-            {plans.map((plan, idx) => (
-              <CustomAccordion
-                switchHandler={switchHandler(idx)}
-                checked={currentBlockOpen === idx}
-                key={plan.title}
-                {...plan}
-              />
-            ))}
+          <Grid item xs={12} lg={6}>
+            <Grid container justifyContent='space-around'>
+              <Grid item xs={12} xl={10}>
+                <ProgramButton
+                  iconName={coursesModal[1].icon}
+                  title={coursesModal[1].title}
+                  subTitle={coursesModal[1].subTitle}
+                  clickHandler={() => courseHandler(2)}
+                />
+              </Grid>
+            </Grid>
+            <Grid container justifyContent='space-around' mb={4}>
+              {additionalBlocksEB.map((block) => (
+                <Grid key={block.id} item xs={11} sm={6} md={6} lg={9} xl={6}>
+                  <ProgramButton
+                    subTitle={block.title}
+                    title='Блок'
+                    clickHandler={() => additionalBlockHandler(block)}
+                  />
+                </Grid>
+              ))}
+            </Grid>
           </Grid>
         </Grid>
 
-        <Contacts modalHandler={modalHandler} />
+        <Grid container my={3}>
+          <Grid item xs={12} md={3} lg={4} />
+          <Grid
+            item
+            xs={12}
+            md={6}
+            lg={4}
+            sx={{
+              textAlign: 'center',
+              my: { xs: 3, md: 2, lg: 0 }
+            }}
+          >
+            <Contacts modalHandler={submitApp} />
+          </Grid>
+        </Grid>
       </Box>
 
-      <Modal isOpen={Boolean(modalNum)} closeModal={closeModal}>
+      <Modal isOpen={Boolean(modalNum)} closeModal={closeModal} isFixedHeight>
         <ModalContent num={modalNum || 1} />
+        <Contacts modalHandler={submitApp} />
+      </Modal>
+      <Modal isOpen={Boolean(subModal)} closeModal={closeSubModal}>
+        <SubModalContent {...subModal} />
+        <Typography textAlign='center' variant='h2' pb={1}>
+          Цена: {subModal?.price}$
+        </Typography>
+        <Contacts modalHandler={submitApp} />
       </Modal>
     </ProgramsContainer>
   );

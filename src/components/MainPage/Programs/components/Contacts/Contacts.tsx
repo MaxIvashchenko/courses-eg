@@ -1,4 +1,4 @@
-import { Button, Grid } from '@mui/material';
+import { Button } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 const ContactButtons = styled(Button)<{ background: string }>(
@@ -22,23 +22,9 @@ interface ContactsProps {
 }
 
 const Contacts = ({ modalHandler }: ContactsProps) => (
-  <Grid container my={3}>
-    <Grid item xs={12} md={3} lg={4} />
-    <Grid
-      item
-      xs={12}
-      md={6}
-      lg={4}
-      sx={{
-        textAlign: 'center',
-        my: { xs: 3, md: 2, lg: 0 }
-      }}
-    >
-      <ContactButtons onClick={modalHandler} background='#524a49'>
-        Оставить заявку
-      </ContactButtons>
-    </Grid>
-  </Grid>
+  <ContactButtons onClick={modalHandler} background='#524a49'>
+    Оставить заявку
+  </ContactButtons>
 );
 
 export default Contacts;
