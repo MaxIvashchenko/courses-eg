@@ -27,6 +27,7 @@ const ProgramsContainer = styled(Box)(() => ({
 interface IAdditionalBlock {
   id: string;
   title: string;
+  icon: string;
   description: ReactJSXElement;
   price: number;
 }
@@ -36,6 +37,7 @@ const additionalBlocksSB: IAdditionalBlock[] = [
     id: 'course-1/additional-block-1',
     title: 'Идея и анализ',
     price: 80,
+    icon: 'bulb',
     description: (
       <Typography
         sx={{
@@ -62,6 +64,7 @@ const additionalBlocksSB: IAdditionalBlock[] = [
     id: 'course-1/additional-block-2',
     title: 'Разработка меню',
     price: 60,
+    icon: 'menuBook',
     description: (
       <Typography
         sx={{
@@ -86,6 +89,7 @@ const additionalBlocksSB: IAdditionalBlock[] = [
     id: 'course-1/additional-block-3',
     title: 'Открытие фирмы и пакет документов',
     price: 130,
+    icon: 'paper',
     description: (
       <Typography
         sx={{
@@ -112,6 +116,7 @@ const additionalBlocksSB: IAdditionalBlock[] = [
     id: 'course-1/additional-block-4',
     title: 'Помещение и локация',
     price: 100,
+    icon: 'home',
     description: (
       <Typography
         sx={{
@@ -138,6 +143,7 @@ const additionalBlocksEB: IAdditionalBlock[] = [
     id: 'course-2/additional-block-1',
     title: 'Финансовая грамотность',
     price: 120,
+    icon: 'finance',
     description: (
       <Typography
         sx={{
@@ -160,6 +166,7 @@ const additionalBlocksEB: IAdditionalBlock[] = [
     id: 'course-2/additional-block-2',
     title: 'Маркетинг',
     price: 140,
+    icon: 'megaphone',
     description: (
       <Typography
         sx={{
@@ -181,6 +188,7 @@ const additionalBlocksEB: IAdditionalBlock[] = [
     id: 'course-2/additional-block-3',
     title: 'Продажи и сервис',
     price: 100,
+    icon: 'customerService',
     description: (
       <Typography
         sx={{
@@ -255,6 +263,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                 <Grid key={block.id} item xs={11} sm={6} md={6} lg={9} xl={6}>
                   <ProgramButton
                     subTitle={block.title}
+                    iconName={block.icon}
                     title='Блок'
                     clickHandler={() => additionalBlockHandler(block)}
                   />
@@ -278,6 +287,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                 <Grid key={block.id} item xs={11} sm={6} md={6} lg={9} xl={6}>
                   <ProgramButton
                     subTitle={block.title}
+                    iconName={block.icon}
                     title='Блок'
                     clickHandler={() => additionalBlockHandler(block)}
                   />

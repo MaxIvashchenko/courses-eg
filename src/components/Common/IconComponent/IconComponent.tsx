@@ -1,14 +1,17 @@
 import { ElementType } from 'react';
 
 import arrow from 'public/icons/arrow.svg';
+import bulb from 'public/icons/bulb.svg';
 import cafe from 'public/icons/cafe.svg';
 import circle from 'public/icons/circle.svg';
 import close from 'public/icons/close.svg';
 import cube from 'public/icons/cube.svg';
+import customerService from 'public/icons/customerService.svg';
 import doubleRight from 'public/icons/doubleRight.svg';
 import downArrow from 'public/icons/down-arrow.svg';
 import email from 'public/icons/email.svg';
 import facebook from 'public/icons/facebook.svg';
+import finance from 'public/icons/finance.svg';
 import group from 'public/icons/group.svg';
 import home from 'public/icons/home.svg';
 import image from 'public/icons/image.svg';
@@ -17,8 +20,11 @@ import loader from 'public/icons/loader.svg';
 import loop from 'public/icons/loop.svg';
 import man from 'public/icons/man.svg';
 import marketing from 'public/icons/marketing.svg';
+import megaphone from 'public/icons/megaphone.svg';
 import menu from 'public/icons/menu.svg';
+import menuBook from 'public/icons/menuBook.svg';
 import notVisible from 'public/icons/notVisible.svg';
+import paper from 'public/icons/paper.svg';
 import planning from 'public/icons/planning.svg';
 import repeat from 'public/icons/repeat.svg';
 import restaurant from 'public/icons/restaurant.svg';
@@ -77,6 +83,12 @@ const iconTypes: IconTypes = {
   settings,
   right,
   doubleRight,
+  bulb,
+  customerService,
+  finance,
+  paper,
+  megaphone,
+  menuBook,
   home
 };
 
