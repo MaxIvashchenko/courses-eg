@@ -3,6 +3,7 @@ import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
 import { Box, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { Modal } from '@src/components';
+import { imagesUrls } from '@src/constants';
 import { coursesModal } from '@src/content';
 
 import {
@@ -14,7 +15,7 @@ import {
 } from './components';
 
 const ProgramsContainer = styled(Box)(() => ({
-  backgroundImage: 'url(images/layer7.svg)',
+  backgroundImage: `url(${imagesUrls.layer7})`,
   backgroundColor: '#fff',
   backgroundRepeat: 'no-repeat',
   backgroundSize: 'contain',
@@ -155,9 +156,10 @@ const additionalBlocksEB: IAdditionalBlock[] = [
         pb={1}
       >
         Основа любого бизнеса, <strong>это цифры</strong>. В этом блоке, вы
-        научитесь <strong>контролировать</strong> и <strong>анализировать цифры</strong>,
-        получите все необходимые <strong>шаблоны и таблицы</strong> для простого
-        ведения финансового учета в гастрономии.
+        научитесь <strong>контролировать</strong> и{' '}
+        <strong>анализировать цифры</strong>, получите все необходимые{' '}
+        <strong>шаблоны и таблицы</strong> для простого ведения финансового
+        учета в гастрономии.
       </Typography>
     )
   },
@@ -177,8 +179,8 @@ const additionalBlocksEB: IAdditionalBlock[] = [
         pb={1}
       >
         В наше время ни один бизнес не может существовать без грамотной
-        <strong> маркетинговой стратегии</strong>. В этом блоке, мы дадим вам все
-        современные инструменты для <strong>продвижения</strong> и
+        <strong> маркетинговой стратегии</strong>. В этом блоке, мы дадим вам
+        все современные инструменты для <strong>продвижения</strong> и
         <strong> развития</strong> своего гастробизнеса.
       </Typography>
     )

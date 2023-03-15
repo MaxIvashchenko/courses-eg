@@ -9,7 +9,7 @@ import {
   Typography
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import { speakersList } from '@src/constants';
+import { imagesUrls, speakersList } from '@src/constants';
 import { getSpeakerImageById } from '@src/utils';
 
 import { IconComponent } from 'components';
@@ -95,7 +95,7 @@ const SpeakersSlider = () => {
     <Box
       sx={{
         background: '#fff',
-        backgroundImage: 'url(images/layer5.svg)',
+        backgroundImage: `url(${imagesUrls.layer5})`,
         backgroundPosition: 'bottom',
         backgroundSize: 'cover',
         position: 'relative',

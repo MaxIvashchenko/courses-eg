@@ -31,7 +31,11 @@ const nextConfig = {
     return config;
   },
   images: {
-    domains: ['lh3.googleusercontent.com', 'platform-lookaside.fbsbx.com', 'txdqbvqdpkcgyndeltej.supabase.co']
+    domains: [
+      'lh3.googleusercontent.com',
+      'platform-lookaside.fbsbx.com',
+      'txdqbvqdpkcgyndeltej.supabase.co'
+    ]
   }
 };
 

@@ -1,12 +1,14 @@
 import Image from 'next/image';
 import { Box, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { imagesUrls } from '@src/constants';
+import { imgLoader } from '@src/utils';
 
 import { TextWithIcon } from './components';
 
 const CourseTargetContainer = styled(Box)(({ theme }) => ({
   background: '#fff',
-  backgroundImage: 'url(images/layer4.svg)',
+  backgroundImage: `url(${imagesUrls.layer4})`,
   backgroundPosition: 'bottom',
   position: 'relative',
   backgroundRepeat: 'no-repeat',
@@ -66,9 +68,11 @@ const CourseTarget = () => (
       <SmallGreyLayer>
         <Image
           priority
-          src='/images/layer3.svg'
+          src={imagesUrls.layer3}
           height={300}
           width={500}
+          blurDataURL={imagesUrls.layer3}
+          loader={imgLoader}
           alt='grey layer small'
         />
       </SmallGreyLayer>
@@ -79,7 +83,7 @@ const CourseTarget = () => (
         md={4}
         sx={{
           position: 'sticky',
-          backgroundImage: 'url(/images/image2.svg)',
+          backgroundImage: `url(${imagesUrls.table})`,
           backgroundPosition: 'inherit',
           backgroundRepeat: 'no-repeat',
           backgroundSize: 'contain'

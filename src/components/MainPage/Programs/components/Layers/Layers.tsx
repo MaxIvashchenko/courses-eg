@@ -1,6 +1,8 @@
 import Image from 'next/image';
 import { Box } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { imagesUrls } from '@src/constants';
+import { imgLoader } from '@src/utils';
 
 const GirlsLayer = styled(Box)(({ theme }) => ({
   '& img': {
@@ -111,15 +113,31 @@ const Layers = () => (
       <Image
         width={400}
         height={400}
-        src='/images/layer6.svg'
+        src={imagesUrls.layer6}
+        blurDataURL={imagesUrls.layer6}
+        loader={imgLoader}
         alt='grey layer'
       />
     </GreyLayer>
     <VerandaLayer>
-      <Image width={400} height={800} src='/images/veranda.svg' alt='veranda' />
+      <Image
+        width={400}
+        height={800}
+        src={imagesUrls.veranda}
+        blurDataURL={imagesUrls.veranda}
+        loader={imgLoader}
+        alt='veranda'
+      />
     </VerandaLayer>
     <GirlsLayer>
-      <Image width={400} height={800} src='/images/girls.svg' alt='girls' />
+      <Image
+        width={400}
+        height={800}
+        src={imagesUrls.girls}
+        blurDataURL={imagesUrls.girls}
+        loader={imgLoader}
+        alt='girls'
+      />
     </GirlsLayer>
   </>
 );

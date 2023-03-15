@@ -2,6 +2,7 @@ import React from 'react';
 import { Box, IconButton, Modal as MuiModal } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
+import { imagesUrls } from '@src/constants';
 
 const ModalWrapper = styled(Box)<{ isFixedHeight: boolean }>(
   ({ theme, isFixedHeight }) => ({
@@ -12,7 +13,7 @@ const ModalWrapper = styled(Box)<{ isFixedHeight: boolean }>(
     maxHeight: '70%',
     margin: '10% auto 10%',
     background: '#fff',
-    backgroundImage: 'url(images/modalLayer.svg)',
+    backgroundImage: `url(${imagesUrls.modalLayer})`,
     backgroundPosition: 'bottom',
     backgroundSize: 'cover',
     backgroundRepeat: 'no-repeat',

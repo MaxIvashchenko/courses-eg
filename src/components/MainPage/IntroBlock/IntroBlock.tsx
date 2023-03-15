@@ -3,8 +3,9 @@ import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { Box, Button, Grid } from '@mui/material';
 import { styled } from '@mui/material/styles';
+import { imagesUrls } from '@src/constants';
 import { useMobile, useScreenHeight } from '@src/hooks';
-import { redirectToTelegramPrivateLink } from '@src/utils';
+import { imgLoader, redirectToTelegramPrivateLink } from '@src/utils';
 
 const Title = dynamic(() => import('./components/Title/Title'), { ssr: false });
 
@@ -26,8 +27,7 @@ const GridContainer = styled(Grid)<{ minHeight: string | number }>(
     margin: '0 auto',
     minHeight,
     position: 'relative',
-
-    backgroundImage: 'url(/images/image1.svg)',
+    backgroundImage: `url(${imagesUrls.street})`,
     backgroundRepeat: 'no-repeat',
     backgroundPosition: 'right',
     backgroundSize: 'contain',
@@ -65,7 +65,9 @@ const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
         <SmallLayer>
           <Image
             priority
-            src='/images/layer1.svg'
+            src={imagesUrls.layer1}
+            blurDataURL={imagesUrls.layer1}
+            loader={imgLoader}
             height={600}
             width={600}
             alt='blue layer small'
