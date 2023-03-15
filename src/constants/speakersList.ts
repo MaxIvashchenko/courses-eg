@@ -1,21 +1,12 @@
-import speaker1 from 'public/images/speakers/speaker1.jpg';
-import speaker2 from 'public/images/speakers/speaker2.jpg';
-import speaker3 from 'public/images/speakers/speaker3.jpg';
-import speaker5 from 'public/images/speakers/speaker4.jpg';
-import speaker4 from 'public/images/speakers/speaker5.jpg';
-import speaker6 from 'public/images/speakers/speaker6.jpg';
-
 type ISpeaker = {
   id: string;
-  photo: string;
   name: string;
   description: string[];
 };
 
 const speakersList: ISpeaker[] = [
   {
-    id: 'speaker-1',
-    photo: speaker1.src,
+    id: 'speaker1',
     name: 'Милена Иващенко',
     description: [
       'В лидирующей компании на рынке Ed Tech выросла с менеджера до директора коммерческого центра',
@@ -25,8 +16,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker-2',
-    photo: speaker2.src,
+    id: 'speaker2',
     name: 'Владислав Ястремский',
     description: [
       'Помогаю предпринимателям с менеджментом, маркетингом и финансами',
@@ -35,8 +25,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker-3',
-    photo: speaker3.src,
+    id: 'speaker3',
     name: 'Александра Сепсяк',
     description: [
       'Предприниматель. Создатель и управляющая ресторана итальянский кухни PLAN A в Гданьске',
@@ -45,8 +34,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker-4',
-    photo: speaker4.src,
+    id: 'speaker4',
     name: 'Ольга Жбанкова',
     description: [
       'Специалист по легализации и трудоустройству в Польше',
@@ -55,8 +43,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker-5',
-    photo: speaker5.src,
+    id: 'speaker5',
     name: 'Анастасия Свистунова',
     description: [
       'Специалист по разработке ТТК и закупкам',
@@ -64,8 +51,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker-6',
-    photo: speaker6.src,
+    id: 'speaker6',
     name: 'Антон Сепсяк',
     description: [
       'Создатель и шеф-повар ресторана итальянской кухни PLAN A в Гданьске',

@@ -15,6 +15,8 @@ import { IconComponent } from 'components';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
+import Image from 'next/image';
+import { getSpeakerImageById, imgLoader } from '@src/utils';
 
 const settings = {
   infinite: true,
@@ -147,7 +149,7 @@ const SpeakersSlider = () => {
             <IconComponent width={30} height={90} name='triangle' />
           </IconButtonWrapper>
           <IconButtonWrapper onClick={goBack} position='left'>
-            <IconComponent width={30} height={90} name='triangle' />
+            <IconComponent isMirror width={30} height={90} name='triangle' />
           </IconButtonWrapper>
           <Slider
             ref={slider}
@@ -170,9 +172,9 @@ const SpeakersSlider = () => {
                 >
                   <CardMedia
                     component='img'
-                    alt='green iguana'
+                    alt={item.id}
                     height='280'
-                    image={item.photo}
+                    image={getSpeakerImageById(item.id)}
                     sx={{ objectPosition: 'top' }}
                   />
                   <CardContent
