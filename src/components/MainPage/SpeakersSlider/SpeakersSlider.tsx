@@ -10,13 +10,12 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { speakersList } from '@src/constants';
+import { getSpeakerImageById } from '@src/utils';
 
 import { IconComponent } from 'components';
 
 import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
-import Image from 'next/image';
-import { getSpeakerImageById, imgLoader } from '@src/utils';
 
 const settings = {
   infinite: true,
