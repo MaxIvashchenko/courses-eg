@@ -54,17 +54,6 @@ const settings = {
   ]
 };
 
-// const Video = () => (
-//   <iframe
-//     width='700'
-//     height='350'
-//     src='https://www.youtube.com/embed/SAxe3xunxLk'
-//     title='YouTube video player'
-//     frameBorder='0'
-//     allowFullScreen
-//   ></iframe>
-// );
-
 const IconButtonWrapper = styled(IconButton)<{ position: string }>(
   ({ theme, position }) => ({
     position: 'absolute',
@@ -112,18 +101,6 @@ const SpeakersSlider = () => {
           margin: '0 auto'
         }}
       >
-        {/* <Box
-          sx={{
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            mt: { xs: 3, md: 6 },
-            mb: { xs: 3, md: 10 }
-          }}
-        >
-          <Video />
-        </Box> */}
-
         <Typography
           id='speakers'
           sx={{

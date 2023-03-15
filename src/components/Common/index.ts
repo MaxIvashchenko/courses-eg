@@ -7,3 +7,4 @@ export { InputWrapper } from './InputWrapper';
 export { Loader } from './Loader';
 export { Modal } from './Modal';
 export { ToTopButton } from './ToTopButton';
+export { VideoPlayer } from './VideoPlayer';
