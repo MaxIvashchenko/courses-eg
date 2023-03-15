@@ -1,6 +1,6 @@
 import React, { ForwardedRef } from 'react';
 import { Box, Typography } from '@mui/material';
-import { coursesModal } from '@src/content';
+import { EXIST_BUSINESS_COURSE, START_BUSINESS_COURSE } from '@src/content';
 import _isArray from 'lodash/isArray';
 
 interface ModalContent {
@@ -8,8 +8,10 @@ interface ModalContent {
   forwardedRef?: ForwardedRef<unknown>;
 }
 
+const content = [START_BUSINESS_COURSE, EXIST_BUSINESS_COURSE];
+
 const ModalContent = ({ num = 1 }: ModalContent) => {
-  const course = coursesModal[num - 1];
+  const course = content[num - 1];
 
   return (
     <>
@@ -36,11 +38,10 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
       <Box
         sx={{
           overflow: 'scroll',
-
           flex: 1
         }}
       >
-        {course.content.map(({ title, subBlocks }) => (
+        {Object.values(course.blocks).map(({ title, subBlocks }) => (
           <Box
             key={title}
             sx={{
