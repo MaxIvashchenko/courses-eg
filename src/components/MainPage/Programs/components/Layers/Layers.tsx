@@ -101,7 +101,7 @@ const GreyLayer = styled(Box)(({ theme }) => ({
       width: 1536
     },
     [theme.breakpoints.up('xl')]: {
-      top: -300,
+      top: -550,
       width: '100%',
       height: '100%'
     }
