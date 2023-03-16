@@ -7,7 +7,7 @@ const SubTitle = styled('div')(({ theme }) => ({
   fontWeight: 400,
   fontSize: 72,
   lineHeight: 1,
-  marginBottom: 16,
+  marginBottom: 32,
 
   [theme.breakpoints.down('sm')]: {
     fontSize: 32,
@@ -21,7 +21,6 @@ const BigTitle = styled('div')(({ theme }) => ({
     fontWeight: 600,
     fontSize: 72,
     lineHeight: 0,
-    marginBottom: 16,
 
     [theme.breakpoints.down('sm')]: {
       fontSize: 32
@@ -69,7 +68,7 @@ const Title = () => (
         animationType='float'
         interval={0.06}
         duration={0.8}
-        tag='p'
+        tag='span'
         className='animated'
         includeWhiteSpaces
         threshold={0.1}

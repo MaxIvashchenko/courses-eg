@@ -48,8 +48,8 @@ interface IntroBlockProps {
 const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
   const screenHeight: number = useScreenHeight();
   const isMobile = useMobile();
-  const smallScreen = screenHeight < 900;
-  const minHeight = !isMobile && smallScreen ? 915 : '100vh';
+  const smallScreen = screenHeight < 850;
+  const minHeight = !isMobile && smallScreen ? 835 : '100vh';
 
   return (
     <Box
@@ -88,7 +88,11 @@ const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
           <Box
             sx={{
               display: 'flex',
-              flexDirection: 'column',
+              justifyContent: 'space-between',
+              flexDirection: {
+                xs: 'column',
+                md: smallScreen ? 'row' : 'column'
+              },
               width: { xs: '100%', sm: 400 }
             }}
           >
@@ -98,7 +102,8 @@ const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
               onClick={modalHandler}
               sx={{
                 minWidth: { xs: 0, md: 450 },
-                my: 1,
+                mr: { xs: 0, md: 1 },
+                my: { xs: 1, md: 1 },
                 fontSize: 24,
                 textTransform: 'uppercase'
               }}
@@ -111,7 +116,8 @@ const IntroBlock = ({ modalHandler }: IntroBlockProps) => {
               onClick={redirectToTelegramPrivateLink}
               sx={{
                 minWidth: { xs: 0, md: 450 },
-                my: 1,
+                mr: { xs: 0, md: 1 },
+                my: { xs: 1, md: 1 },
                 fontSize: 24,
                 textTransform: 'uppercase'
               }}
