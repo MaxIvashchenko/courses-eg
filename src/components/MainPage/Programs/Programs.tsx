@@ -30,6 +30,46 @@ const ProgramsContainer = styled(Box)(() => ({
   overflow: 'hidden'
 }));
 
+const TopGridContainer = styled(Grid)(({ theme }) => ({
+  '&::after': {
+    content: '""',
+    position: 'absolute',
+    right: -8,
+    top: -14,
+    background: '#78390e',
+    width: 10,
+    height: 16,
+    borderRadius: '50%'
+  },
+  [theme.breakpoints.down('md')]: {
+    '&::after': {
+      display: 'none'
+    }
+  }
+}));
+
+const GridItem = styled(Grid)<{ border: string }>(({ theme, border }) => ({
+  [`border${border}`]: '3px solid #78390e',
+  paddingTop: 32,
+  position: 'relative',
+  '&::after': {
+    content: '""',
+    height: '100%',
+    position: 'absolute',
+    top: 0,
+    [border.toLowerCase()]: -6,
+    width: 3,
+    background: '#78390e'
+  },
+
+  [theme.breakpoints.down('md')]: {
+    border: 'none',
+    '&::after': {
+      background: 'none'
+    }
+  }
+}));
+
 interface IAdditionalBlock {
   id: string;
   title: string;
@@ -72,75 +112,74 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
           margin: '0 auto',
           zIndex: 20,
           px: { xs: 1, sm: 8 },
-          pt: { xs: 2, sm: 4 },
-          pb: { xs: 2, sm: 4 }
+          pt: { xs: 2, sm: 8 }
         }}
       >
         <Grid container>
-          <Grid item xs={12} lg={6}>
-            <Grid container justifyContent='space-around'>
-              <Grid item xs={12} xl={10}>
+          <GridItem item xs={12} md={6} lg={6} border='Right'>
+            <TopGridContainer container justifyContent='flex-end'>
+              <Grid item xs={12} md={12} lg={10} pb={1}>
                 <ProgramButton
+                  background='#624e2d'
                   iconName={START_BUSINESS_COURSE.icon}
                   title={START_BUSINESS_COURSE.title}
                   subTitle={START_BUSINESS_COURSE.subTitle}
                   clickHandler={() => courseHandler(1)}
                 />
               </Grid>
-            </Grid>
-            <Grid container justifyContent='space-around' mb={4}>
               {Object.values(ADDITIONAL_BLOCKS_START_BUSINESS).map((block) => (
-                <Grid key={block.id} item xs={11} sm={6} md={6} lg={9} xl={6}>
+                <Grid key={block.id} item xs={12} md={12} lg={8} py={2}>
                   <ProgramButton
-                    subTitle={block.title}
+                    isBlock
+                    title={block.title}
                     iconName={block.icon}
-                    title='Блок'
+                    background={block.buttonBackground}
                     clickHandler={() => additionalBlockHandler(block)}
                   />
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
-          <Grid item xs={12} lg={6}>
-            <Grid container justifyContent='space-around'>
-              <Grid item xs={12} xl={10}>
+            </TopGridContainer>
+          </GridItem>
+        </Grid>
+
+        <Grid container justifyContent='flex-end'>
+          <GridItem item xs={12} md={6} lg={6} border='Left'>
+            <Grid container mb={2}>
+              <Grid item xs={12} md={12} lg={10} pb={1}>
                 <ProgramButton
+                  position='Right'
+                  background='#bf8747'
                   iconName={EXIST_BUSINESS_COURSE.icon}
                   title={EXIST_BUSINESS_COURSE.title}
                   subTitle={EXIST_BUSINESS_COURSE.subTitle}
                   clickHandler={() => courseHandler(2)}
                 />
               </Grid>
-            </Grid>
-            <Grid container justifyContent='space-around' mb={4}>
               {Object.values(ADDITIONAL_BLOCKS_EXIST_BUSINESS).map((block) => (
-                <Grid key={block.id} item xs={11} sm={6} md={6} lg={9} xl={6}>
+                <Grid key={block.id} item xs={12} md={12} lg={8} py={2}>
                   <ProgramButton
-                    subTitle={block.title}
+                    isBlock
+                    position='Right'
+                    title={block.title}
                     iconName={block.icon}
-                    title='Блок'
+                    background={block.buttonBackground}
                     clickHandler={() => additionalBlockHandler(block)}
                   />
                 </Grid>
               ))}
-            </Grid>
-          </Grid>
-        </Grid>
 
-        <Grid container my={3}>
-          <Grid item xs={12} md={3} lg={4} />
-          <Grid
-            item
-            xs={12}
-            md={6}
-            lg={4}
-            sx={{
-              textAlign: 'center',
-              my: { xs: 3, md: 2, lg: 0 }
-            }}
-          >
-            <Contacts modalHandler={submitApp} />
-          </Grid>
+              {/* <Grid item xs={12} py={2}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'flex-start',
+                  }}
+                >
+                  <Contacts modalHandler={submitApp} />
+                </Box>
+              </Grid> */}
+            </Grid>
+          </GridItem>
         </Grid>
       </Box>
 

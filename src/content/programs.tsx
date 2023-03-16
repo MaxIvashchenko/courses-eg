@@ -6,6 +6,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     title: 'Идея и анализ',
     price: 80,
     icon: 'bulb',
+    buttonBackground: '#352012',
     description: (
       <Typography
         sx={{
@@ -33,6 +34,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     title: 'Разработка меню',
     price: 60,
     icon: 'menuBook',
+    buttonBackground: '#6c6730',
     description: (
       <Typography
         sx={{
@@ -58,6 +60,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     title: 'Открытие фирмы и пакет документов',
     price: 130,
     icon: 'paper',
+    buttonBackground: '#596c45',
     description: (
       <Typography
         sx={{
@@ -85,6 +88,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     title: 'Помещение и локация',
     price: 100,
     icon: 'home',
+    buttonBackground: '#98cadb',
     description: (
       <Typography
         sx={{
@@ -113,6 +117,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
     title: 'Финансовая грамотность',
     price: 120,
     icon: 'finance',
+    buttonBackground: '#89513a',
     description: (
       <Typography
         sx={{
@@ -136,6 +141,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
     title: 'Маркетинг',
     price: 140,
     icon: 'megaphone',
+    buttonBackground: '#a35919',
     description: (
       <Typography
         sx={{
@@ -158,6 +164,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
     title: 'Продажи и сервис',
     price: 100,
     icon: 'customerService',
+    buttonBackground: '#a07040',
     description: (
       <Typography
         sx={{

@@ -28,6 +28,7 @@ const ToTopButton = () => {
           cursor: 'pointer',
           display: 'flex',
           alignItems: 'center',
+          zIndex: 90,
 
           '&:hover': {
             backgroundColor: '#ad733ac4'
