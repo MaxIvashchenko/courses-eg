@@ -33,7 +33,7 @@ const GridContainer = styled(Grid)<{ minHeight: string | number }>(
     backgroundSize: 'contain',
 
     [theme.breakpoints.up('xl')]: {
-      minHeight: 900
+      minHeight: 1000
     },
     [theme.breakpoints.down('md')]: {
       backgroundPosition: 'inherit'
