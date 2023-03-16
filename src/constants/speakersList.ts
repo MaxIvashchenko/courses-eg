@@ -34,7 +34,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker4',
+    id: 'speaker5',
     name: 'Ольга Жбанкова',
     description: [
       'Специалист по легализации и трудоустройству в Польше',
@@ -43,7 +43,7 @@ const speakersList: ISpeaker[] = [
     ]
   },
   {
-    id: 'speaker5',
+    id: 'speaker4',
     name: 'Анастасия Свистунова',
     description: [
       'Специалист по разработке ТТК и закупкам',
