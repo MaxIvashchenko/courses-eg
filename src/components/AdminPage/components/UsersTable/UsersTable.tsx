@@ -1,5 +1,6 @@
 import React, { ChangeEvent, MouseEvent, useState } from 'react';
 import Image from 'next/image';
+import { useRouter } from 'next/router';
 import {
   IconButton,
   Paper,
@@ -15,6 +16,7 @@ import { TableHead } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { tableCellClasses } from '@mui/material/TableCell';
 import { IconComponent } from '@src/components';
+import { paths } from '@src/constants';
 import { IUserDetails } from '@src/types';
 
 import { TablePaginationActions } from '../TablePaginationActions';
@@ -34,6 +36,7 @@ interface UsersTableProps {
 }
 
 const UsersTable = ({ list }: UsersTableProps) => {
+  const router = useRouter();
   const [page, setPage] = useState(0);
   const [rowsPerPage, setRowsPerPage] = useState(5);
 
@@ -55,6 +58,9 @@ const UsersTable = ({ list }: UsersTableProps) => {
     setRowsPerPage(parseInt(event.target.value, 10));
     setPage(0);
   };
+
+  const toUserInfoPage = (id: string) => () =>
+    router.push(`${paths.admin}/${id}`);
 
   return (
     <TableContainer component={Paper}>
@@ -92,7 +98,7 @@ const UsersTable = ({ list }: UsersTableProps) => {
               <TableCell>{row.email}</TableCell>
               <TableCell align='center'>{row.role}</TableCell>
               <TableCell>
-                <IconButton>
+                <IconButton onClick={toUserInfoPage(row.id)}>
                   <IconComponent name='settings' />
                 </IconButton>
               </TableCell>

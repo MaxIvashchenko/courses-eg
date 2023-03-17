@@ -8,7 +8,7 @@ import { UsersTable } from '@src/components';
 import { paths } from '@src/constants';
 import { IUserDetails } from '@src/types';
 
-import prisma from '../lib/prismadb';
+import prisma from '../../lib/prismadb';
 
 interface AdminProps {
   users: IUserDetails[];
@@ -41,7 +41,7 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   const session = await getSession(context);
   const isAdmin = session?.user?.role === 'ADMIN';
 
-  if (!session && isAdmin) {
+  if (!session || !isAdmin) {
     return { redirect: { destination: paths.main } };
   }
 

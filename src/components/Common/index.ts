@@ -1,4 +1,3 @@
-export { ClickableCard } from './ClickableCard';
 export { ContactForm } from './ContactForm';
 export { CookiesAlert } from './CookiesAlert';
 export { EmptyPageMessage } from './EmptyPageMessage';

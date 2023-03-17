@@ -1,27 +1,32 @@
-export interface IModuleRow {
+import { ReactJSXElement } from '@emotion/react/types/jsx-namespace';
+
+export interface IAdditionalBlock {
   id: string;
   title: string;
+  price: number;
   icon: string;
-  list: IBlock[];
-}
-
-export interface ICourses {
-  id: string;
-  title: string;
-  img?: string;
-  list: IModuleRow[];
-}
-
-export interface IBlockTheme {
-  id: string;
-  title: string;
-  videoLink: string;
-  description: string[];
+  buttonBackground: string;
+  type: string;
+  description: ReactJSXElement;
 }
 
 export interface IBlock {
   id: string;
   title: string;
-  img?: string;
-  themes: IBlockTheme[];
+  subBlocks: (string | string[])[];
+}
+
+export interface ICourse {
+  id: string;
+  icon: string;
+  title: string;
+  subTitle: string;
+  type: string;
+  blocks: {
+    [key: string]: IBlock;
+  };
+}
+
+export interface IAppPrograms {
+  [key: string]: IAdditionalBlock | ICourse;
 }

@@ -7,4 +7,5 @@ export interface IUserDetails extends DefaultUser {
   emailVerified: string;
   image: string;
   role: string;
+  available_courses: string[];
 }

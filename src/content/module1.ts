@@ -1,12 +1,10 @@
-import { IBlock } from '@src/types';
-
 import block1 from 'public/images/gastro/module1/block1.jpg';
 import block2 from 'public/images/gastro/module1/block2.jpg';
 import block3 from 'public/images/gastro/module1/block3.jpg';
 import block4 from 'public/images/gastro/module1/block4.jpg';
 import block5 from 'public/images/gastro/module1/block5.jpg';
 
-const module1: IBlock[] = [
+const module1 = [
   {
     id: 'gastro-module-1-block-1',
     title: 'Идея',

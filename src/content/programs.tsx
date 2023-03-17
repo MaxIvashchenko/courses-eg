@@ -1,12 +1,16 @@
 import { Typography } from '@mui/material';
+import { IAdditionalBlock, IAppPrograms, ICourse } from '@src/types';
 
-export const ADDITIONAL_BLOCKS_START_BUSINESS = {
+export const ADDITIONAL_BLOCKS_START_BUSINESS: {
+  [key: string]: IAdditionalBlock;
+} = {
   asb1: {
     id: 'asb1',
     title: 'Идея и анализ',
     price: 80,
     icon: 'bulb',
     buttonBackground: '#352012',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -35,6 +39,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     price: 60,
     icon: 'menuBook',
     buttonBackground: '#6c6730',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -61,6 +66,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     price: 130,
     icon: 'paper',
     buttonBackground: '#596c45',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -89,6 +95,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
     price: 100,
     icon: 'home',
     buttonBackground: '#98cadb',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -111,13 +118,16 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS = {
   }
 };
 
-export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
+export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
+  [key: string]: IAdditionalBlock;
+} = {
   aeb1: {
     id: 'aeb1',
     title: 'Финансовая грамотность',
     price: 120,
     icon: 'finance',
     buttonBackground: '#89513a',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -142,6 +152,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
     price: 140,
     icon: 'megaphone',
     buttonBackground: '#a35919',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -165,6 +176,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
     price: 100,
     icon: 'customerService',
     buttonBackground: '#a07040',
+    type: 'block',
     description: (
       <Typography
         sx={{
@@ -185,11 +197,12 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS = {
   }
 };
 
-export const START_BUSINESS_COURSE = {
+export const START_BUSINESS_COURSE: ICourse = {
   id: 'sb',
   icon: 'shuttle',
   title: 'Курс для начинающего бизнеса',
   subTitle: 'Открой свой гастробизнес с нуля',
+  type: 'course',
   blocks: {
     b1: {
       id: 'sb.b1',
@@ -285,11 +298,12 @@ export const START_BUSINESS_COURSE = {
   }
 };
 
-export const EXIST_BUSINESS_COURSE = {
+export const EXIST_BUSINESS_COURSE: ICourse = {
   id: 'eb',
   icon: 'suitcase',
   title: 'Курс для действующего бизнеса',
   subTitle: 'Развивай и масштабируй',
+  type: 'course',
   blocks: {
     b1: {
       id: 'eb.b1',
@@ -347,9 +361,19 @@ export const EXIST_BUSINESS_COURSE = {
   }
 };
 
-export const APP_PROGRAMS = {
-  asb: ADDITIONAL_BLOCKS_START_BUSINESS,
-  aeb: ADDITIONAL_BLOCKS_EXIST_BUSINESS,
-  ...START_BUSINESS_COURSE,
-  ...EXIST_BUSINESS_COURSE
+export const APP_COURSES: { [key: string]: ICourse } = {
+  sb: START_BUSINESS_COURSE,
+  eb: EXIST_BUSINESS_COURSE
+};
+
+export const APP_ADDITIONAL_BLOCKS: { [key: string]: IAdditionalBlock } = {
+  ...ADDITIONAL_BLOCKS_START_BUSINESS,
+  ...ADDITIONAL_BLOCKS_EXIST_BUSINESS
+};
+
+export const APP_PROGRAMS: IAppPrograms = {
+  sb: START_BUSINESS_COURSE,
+  ...ADDITIONAL_BLOCKS_START_BUSINESS,
+  eb: EXIST_BUSINESS_COURSE,
+  ...ADDITIONAL_BLOCKS_EXIST_BUSINESS
 };
