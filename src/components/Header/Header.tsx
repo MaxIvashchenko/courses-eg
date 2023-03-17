@@ -38,15 +38,52 @@ const Header = () => {
 
   const toMainPage = () => router.push(paths.main);
 
+  const showMobileMenu = () => {
+    if (router.route === paths.main) {
+      return (
+        <MuiIconButton sx={{ p: 2 }} onClick={handleClick}>
+          <IconComponent name='menu' />
+        </MuiIconButton>
+      );
+    }
+  };
+
+  const showMenu = () => {
+    if (router.route === paths.main) {
+      return headerList.map(({ link, name }) => (
+        <Box
+          key={link}
+          sx={{
+            marginRight: { xs: 1, md: 2 },
+            textTransform: 'uppercase',
+            cursor: 'pointer',
+            textAlign: 'center'
+          }}
+        >
+          <Button variant='text'>
+            <Link
+              activeClass='active'
+              to={link}
+              spy={true}
+              smooth={true}
+              offset={-88}
+              duration={500}
+            >
+              {name}
+            </Link>
+          </Button>
+        </Box>
+      ));
+    }
+  };
+
   return (
     <HeaderWrapper scrolled={Number(isScrolled)} component='header'>
       <PaddingWrapper>
         {isMobile ? (
           <>
             <AuthenticationButton />
-            <MuiIconButton sx={{ p: 2 }} onClick={handleClick}>
-              <IconComponent name='menu' />
-            </MuiIconButton>
+            {showMobileMenu()}
             <Menu
               id='links-menu'
               anchorEl={anchorEl}
@@ -83,32 +120,7 @@ const Header = () => {
           </>
         ) : (
           <>
-            <Box sx={{ display: 'flex' }}>
-              {headerList.map(({ link, name }) => (
-                <Box
-                  key={link}
-                  sx={{
-                    marginRight: { xs: 1, md: 2 },
-                    textTransform: 'uppercase',
-                    cursor: 'pointer',
-                    textAlign: 'center'
-                  }}
-                >
-                  <Button variant='text'>
-                    <Link
-                      activeClass='active'
-                      to={link}
-                      spy={true}
-                      smooth={true}
-                      offset={-88}
-                      duration={500}
-                    >
-                      {name}
-                    </Link>
-                  </Button>
-                </Box>
-              ))}
-            </Box>
+            <Box sx={{ display: 'flex' }}>{showMenu()}</Box>
             {/* <AccessToken /> */}
             <AuthenticationButton />
           </>
