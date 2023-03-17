@@ -45,7 +45,7 @@ const IconWrapper = styled(Box)(({ theme }) => ({
 const Paper = styled(MuiPaper)<{ background: string; position: string }>(
   ({ theme, background, position }) => ({
     width: '100%',
-    padding: position === 'Left' ? '32px 0 32px 32px' : '32px 32px 32px 0',
+    padding: position === 'Left' ? '16px 8px 16px 16px' : '16px 16px 16px 8px',
     borderRadius: 0,
     [`borderTop${position}Radius`]: 16,
     [`borderBottom${position}Radius`]: 16,
@@ -80,8 +80,6 @@ interface ProgramButtonProps {
   clickHandler: () => void;
 }
 
-const clickText = 'ОПИИСАНЕИ ПРОГРАММЫ: СОДЕРЖАНИИЕ КУРСА';
-
 const ProgramButton = ({
   iconName = 'cube',
   title,
@@ -108,9 +106,9 @@ const ProgramButton = ({
       >
         <IconWrapper>
           {isBlock ? (
-            <IconComponent fill='#fff' name={iconName} width={60} height={60} />
+            <IconComponent fill='#fff' name={iconName} width={40} height={40} />
           ) : (
-            <IconComponent fill='#fff' name={iconName} width={90} height={90} />
+            <IconComponent fill='#fff' name={iconName} width={72} height={72} />
           )}
         </IconWrapper>
         <Typography
@@ -142,18 +140,6 @@ const ProgramButton = ({
           }}
         >
           {subTitle}
-        </Typography>
-      )}
-      {!isBlock && (
-        <Typography
-          color='#fff'
-          variant='h4'
-          textAlign='left'
-          pt={1}
-          pl={2}
-          sx={{ textTransform: 'uppercase' }}
-        >
-          {clickText}
         </Typography>
       )}
     </Paper>
