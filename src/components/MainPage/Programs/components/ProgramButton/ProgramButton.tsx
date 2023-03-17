@@ -42,6 +42,26 @@ const IconWrapper = styled(Box)(({ theme }) => ({
   }
 }));
 
+const ArrowWrapper = styled(Box)<{ direction: string }>(
+  ({ theme, direction }) => ({
+    position: 'absolute',
+    height: '100%',
+    display: 'flex',
+    alignItems: 'center',
+    [direction.toLowerCase()]: 4,
+    top: 0,
+
+    [theme.breakpoints.down('sm')]: {
+      [direction.toLowerCase()]: 8,
+
+      '& svg': {
+        width: 24,
+        height: 24
+      }
+    }
+  })
+);
+
 const Paper = styled(MuiPaper)<{ background: string; position: string }>(
   ({ theme, background, position }) => ({
     width: '100%',
@@ -56,7 +76,6 @@ const Paper = styled(MuiPaper)<{ background: string; position: string }>(
     position: 'relative',
     background,
 
-    
     [theme.breakpoints.up('md')]: {
       '&:hover': {
         transition: 'all 0.2s ease-out',
@@ -93,6 +112,14 @@ const ProgramButton = ({
 }: ProgramButtonProps) => (
   <Button variant='text' onClick={clickHandler}>
     <Paper background={background} position={position}>
+      <ArrowWrapper direction={position}>
+        <IconComponent
+          isMirror={position === 'Left'}
+          fill='#fff'
+          name='right'
+        />
+      </ArrowWrapper>
+
       <Stack
         alignItems='center'
         sx={{
