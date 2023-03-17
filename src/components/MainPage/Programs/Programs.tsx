@@ -128,7 +128,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                 />
               </Grid>
               {Object.values(ADDITIONAL_BLOCKS_START_BUSINESS).map((block) => (
-                <Grid key={block.id} item xs={12} md={12} lg={8} py={2}>
+                <Grid key={block.id} item xs={12} md={12} lg={8} py={0.5}>
                   <ProgramButton
                     isBlock
                     title={block.title}
@@ -156,7 +156,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                 />
               </Grid>
               {Object.values(ADDITIONAL_BLOCKS_EXIST_BUSINESS).map((block) => (
-                <Grid key={block.id} item xs={12} md={12} lg={8} py={2}>
+                <Grid key={block.id} item xs={12} md={12} lg={8} py={0.5}>
                   <ProgramButton
                     isBlock
                     position='Right'

@@ -56,13 +56,15 @@ const Paper = styled(MuiPaper)<{ background: string; position: string }>(
     position: 'relative',
     background,
 
-    '&:hover': {
-      transition: 'all 0.2s ease-out',
-      boxShadow: '0 6px 20px rgb(0 0 0 / 50%)',
-      transform: 'scale(1.05)',
-      borderRadius: 16
+    
+    [theme.breakpoints.up('md')]: {
+      '&:hover': {
+        transition: 'all 0.2s ease-out',
+        boxShadow: '0 6px 20px rgb(0 0 0 / 50%)',
+        transform: 'scale(1.05)',
+        borderRadius: 16
+      }
     },
-
     [theme.breakpoints.down('md')]: {
       borderRadius: 16,
       padding: 16
