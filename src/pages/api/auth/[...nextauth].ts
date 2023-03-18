@@ -5,6 +5,7 @@ import GoogleProvider from 'next-auth/providers/google';
 import { PrismaAdapter } from '@next-auth/prisma-adapter';
 import { paths } from '@src/constants';
 import { IUserDetails } from '@src/types';
+import { cloneDeep } from 'lodash';
 
 import prisma from '../../../lib/prismadb';
 import CustomsendVerificationRequest from './signinemail';
@@ -56,7 +57,7 @@ const authOptions: NextAuthOptions = {
     },
     session: async ({ session, token }) => {
       if (session?.user) {
-        const user = token.user;
+        const user = cloneDeep(token.user);
         // @ts-ignore
         session.user = user;
       }

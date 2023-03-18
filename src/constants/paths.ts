@@ -6,6 +6,8 @@ interface IPaths {
   verifyRequest: string;
   authError: string;
   admin: string;
+  program: string;
+  lesson: string;
 }
 
 const paths: IPaths = {
@@ -15,7 +17,9 @@ const paths: IPaths = {
   signIn: '/signIn',
   verifyRequest: '/verify-request',
   authError: '/auth-error',
-  admin: '/admin'
+  admin: '/admin',
+  program: '/program',
+  lesson: '/lesson'
 };
 
 export default paths;

@@ -7,6 +7,7 @@ export interface IAdditionalBlock {
   icon: string;
   buttonBackground: string;
   type: string;
+  cover: string;
   description: ReactJSXElement;
 }
 
@@ -22,6 +23,7 @@ export interface ICourse {
   title: string;
   subTitle: string;
   type: string;
+  cover: string;
   blocks: {
     [key: string]: IBlock;
   };
