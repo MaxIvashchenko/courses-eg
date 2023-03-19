@@ -1,5 +1,4 @@
 import { GetServerSidePropsContext } from 'next';
-import { useRouter } from 'next/router';
 import { getSession } from 'next-auth/react';
 import { Grid, Typography } from '@mui/material';
 import { Layout } from '@src/blocks';
@@ -15,46 +14,36 @@ interface ProgramStageViewProps {
   isNotAllowed: boolean;
 }
 
-const ProgramStageView = ({ blocks, isNotAllowed }: ProgramStageViewProps) => {
-  const router = useRouter();
-  const setBlockId = () => router.push(router.asPath);
-
-  return (
-    <Layout.PageContainer sx={{ minHeight: '100%' }}>
-      <Grid
-        container
-        sx={{
-          marginTop: '100px',
-          justifyContent: { xs: 'center', lg: 'space-around' }
-        }}
-      >
-        {isNotAllowed ? (
-          <EmptyPageMessage message='Данного курса нет или он не существует' />
-        ) : (
-          <>
-            <Grid item xs={12} lg={10} sx={{ mb: { xs: 2, md: 2 } }}>
-              <Typography variant='h2'>{`Блоки:  `}</Typography>
-            </Grid>
-            <Grid
-              item
-              xs={12}
-              lg={10}
-              sx={{ mb: { xs: 2, md: 4 }, borderTop: '1px solid #69381e' }}
-            >
-              {blocks.map((block) => (
-                <BlockButton
-                  key={block.id}
-                  clickHandler={setBlockId}
-                  {...block}
-                />
-              ))}
-            </Grid>
-          </>
-        )}
-      </Grid>
-    </Layout.PageContainer>
-  );
-};
+const ProgramStageView = ({ blocks, isNotAllowed }: ProgramStageViewProps) => (
+  <Layout.PageContainer sx={{ minHeight: '100%' }}>
+    <Grid
+      container
+      sx={{
+        marginTop: '100px',
+        justifyContent: { xs: 'center', lg: 'space-around' }
+      }}
+    >
+      {isNotAllowed ? (
+        <EmptyPageMessage message='Данного курса нет или он не существует' />
+      ) : (
+        <>
+          <Grid item xs={12} lg={10} sx={{ mb: { xs: 2, md: 2 } }}>
+            <Typography variant='h2'>{`Блоки:  `}</Typography>
+          </Grid>
+          <Grid item xs={12} lg={10} sx={{ mb: { xs: 2, md: 4 } }}>
+            {blocks.map((block) => (
+              <BlockButton
+                activeBlockId={blocks[0].id}
+                key={block.id}
+                {...block}
+              />
+            ))}
+          </Grid>
+        </>
+      )}
+    </Grid>
+  </Layout.PageContainer>
+);
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { query } = context;
