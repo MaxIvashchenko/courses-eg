@@ -4,40 +4,40 @@ import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
 import { imagesUrls } from '@src/constants';
 
-const ModalWrapper = styled(Box)<{ isFixedHeight: boolean }>(
-  ({ theme, isFixedHeight }) => ({
-    backgroundColor: '#fff',
-    maxWidth: '600px',
-    width: '60%',
-    minHeight: isFixedHeight ? '70%' : 0,
-    maxHeight: '70%',
-    margin: '10% auto 10%',
-    background: '#fff',
-    backgroundImage: `url(${imagesUrls.modalLayer})`,
-    backgroundPosition: 'bottom',
-    backgroundSize: 'cover',
-    backgroundRepeat: 'no-repeat',
-    padding: 32,
-    borderRadius: 10,
-    position: 'relative',
-    overflow: 'hidden',
-    display: 'flex',
-    flexDirection: 'column',
+const ModalWrapper = styled(Box, {
+  shouldForwardProp: (prop) => prop !== 'isFixedHeight'
+})<{ isFixedHeight: boolean }>(({ theme, isFixedHeight }) => ({
+  backgroundColor: '#fff',
+  maxWidth: '600px',
+  width: '60%',
+  minHeight: isFixedHeight ? '70%' : 0,
+  maxHeight: '70%',
+  margin: '10% auto 10%',
+  background: '#fff',
+  backgroundImage: `url(${imagesUrls.modalLayer})`,
+  backgroundPosition: 'bottom',
+  backgroundSize: 'cover',
+  backgroundRepeat: 'no-repeat',
+  padding: 32,
+  borderRadius: 10,
+  position: 'relative',
+  overflow: 'hidden',
+  display: 'flex',
+  flexDirection: 'column',
 
-    [theme.breakpoints.down('md')]: {
-      marginTop: '25%',
-      width: '95%',
-      padding: 24
-    },
-    [theme.breakpoints.down('sm')]: {
-      marginTop: '15%',
-      width: '95%',
-      padding: 24,
-      minHeight: isFixedHeight ? '80%' : 0,
-      maxHeight: '80%'
-    }
-  })
-);
+  [theme.breakpoints.down('md')]: {
+    marginTop: '25%',
+    width: '95%',
+    padding: 24
+  },
+  [theme.breakpoints.down('sm')]: {
+    marginTop: '15%',
+    width: '95%',
+    padding: 24,
+    minHeight: isFixedHeight ? '80%' : 0,
+    maxHeight: '80%'
+  }
+}));
 
 interface ModalProps {
   isOpen: boolean;
