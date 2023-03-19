@@ -1,7 +1,7 @@
 import React, { ForwardedRef } from 'react';
 import { Box, Typography } from '@mui/material';
 import { EXIST_BUSINESS_COURSE, START_BUSINESS_COURSE } from '@src/content';
-import _isArray from 'lodash/isArray';
+import _isEmpty from 'lodash/isEmpty';
 
 interface ModalContent {
   num?: number;
@@ -12,6 +12,8 @@ const content = [START_BUSINESS_COURSE, EXIST_BUSINESS_COURSE];
 
 const ModalContent = ({ num = 1 }: ModalContent) => {
   const course = content[num - 1];
+  const renderName = (type: string, idx: number, name: string) =>
+    type === 'video' ? `Урок ${idx + 1} - ${name}` : name;
 
   return (
     <>
@@ -41,7 +43,7 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
           flex: 1
         }}
       >
-        {Object.values(course.blocks).map(({ title, subBlocks }) => (
+        {Object.values(course.blocks).map(({ title, lessons }) => (
           <Box
             key={title}
             sx={{
@@ -51,21 +53,21 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
             <Typography variant='h3' sx={{ mb: 1 }}>
               {title}
             </Typography>
-            {subBlocks.map((text, idx) =>
-              _isArray(text) ? (
-                <ul key={`subBlocks=${idx}`} style={{ margin: '0 12px' }}>
-                  {text.map((subText) => (
-                    <li key={subText}>
-                      <Typography variant='h5'>{subText}</Typography>
-                    </li>
-                  ))}
-                </ul>
-              ) : (
-                <Typography key={text} variant='h5'>
-                  {text}
+            {Object.values(lessons).map((lesson, idx) => (
+              <Box key={lesson.id}>
+                <Typography variant='h5'>
+                  {renderName(lesson.type, idx, lesson.name)}
                 </Typography>
-              )
-            )}
+                <ul style={{ margin: '0 12px' }}>
+                  {!_isEmpty(lesson.subparagraphs) &&
+                    (lesson.subparagraphs || []).map((subText) => (
+                      <li key={subText}>
+                        <Typography variant='h5'>{subText}</Typography>
+                      </li>
+                    ))}
+                </ul>
+              </Box>
+            ))}
           </Box>
         ))}
       </Box>

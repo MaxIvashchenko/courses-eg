@@ -6,6 +6,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
 } = {
   asb1: {
     id: 'asb1',
+    program: 'asb',
     title: 'Идея и анализ',
     price: 80,
     icon: 'bulb',
@@ -33,10 +34,41 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         <strong> анализ конкурентов</strong>. Без которых выходить на рынок
         будет грубой ошибкой.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'asb',
+        block: 'asb1',
+        type: 'video',
+        name: 'Lesson 1 :=> block asb1'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'asb',
+        block: 'asb1',
+        type: 'video',
+        name: 'Lesson 2 :=> block asb1'
+      },
+      lesson_3: {
+        id: 'lesson_3',
+        program: 'asb',
+        block: 'asb1',
+        type: 'video',
+        name: 'Lesson 3 :=> block asb1'
+      },
+      lesson_4: {
+        id: 'lesson_4',
+        program: 'asb',
+        block: 'asb1',
+        type: 'video',
+        name: 'Lesson 4 :=> block asb1'
+      }
+    }
   },
   asb2: {
     id: 'asb2',
+    program: 'asb',
     title: 'Разработка меню',
     price: 60,
     icon: 'menuBook',
@@ -62,10 +94,34 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         <strong>вкусный визуал </strong>
         своего меню.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'asb',
+        block: 'asb2',
+        type: 'video',
+        name: 'Lesson 1 :=> block asb2'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'asb',
+        block: 'asb2',
+        type: 'video',
+        name: 'Lesson 2 :=> block asb2'
+      },
+      lesson_3: {
+        id: 'lesson_3',
+        program: 'asb',
+        block: 'asb2',
+        type: 'video',
+        name: 'Lesson 3 :=> block asb2'
+      }
+    }
   },
   asb3: {
     id: 'asb3',
+    program: 'asb',
     title: 'Открытие фирмы и пакет документов',
     price: 130,
     icon: 'paper',
@@ -93,10 +149,48 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         </strong>{' '}
         для открытия гастробизнеса под ключ вам понадобятся.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'asb',
+        block: 'asb3',
+        type: 'video',
+        name: 'Lesson 1 :=> block asb3'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'asb',
+        block: 'asb3',
+        type: 'video',
+        name: 'Lesson 2 :=> block asb3'
+      },
+      lesson_3: {
+        id: 'lesson_3',
+        program: 'asb',
+        block: 'asb3',
+        type: 'video',
+        name: 'Lesson 3 :=> block asb3'
+      },
+      lesson_4: {
+        id: 'lesson_4',
+        program: 'asb',
+        block: 'asb3',
+        type: 'video',
+        name: 'Lesson 4 :=> block asb3'
+      },
+      lesson_5: {
+        id: 'lesson_5',
+        program: 'asb',
+        block: 'asb3',
+        type: 'video',
+        name: 'Lesson 5 :=> block asb3'
+      }
+    }
   },
   asb4: {
     id: 'asb4',
+    program: 'asb',
     title: 'Помещение и локация',
     price: 100,
     icon: 'home',
@@ -122,7 +216,23 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         чтобы избежать дополнительных затрат. А так же, покажем примеры,{' '}
         <strong>как бюджетно оформить стильный и модный интерьер</strong>.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'asb',
+        block: 'asb4',
+        type: 'video',
+        name: 'Lesson 1 :=> block asb4'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'asb',
+        block: 'asb4',
+        type: 'video',
+        name: 'Lesson 2 :=> block asb4'
+      }
+    }
   }
 };
 
@@ -131,6 +241,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
 } = {
   aeb1: {
     id: 'aeb1',
+    program: 'aeb',
     title: 'Финансовая грамотность',
     price: 120,
     icon: 'finance',
@@ -154,10 +265,48 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
         <strong>шаблоны и таблицы</strong> для простого ведения финансового
         учета в гастрономии.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'aeb',
+        block: 'aeb1',
+        type: 'video',
+        name: 'Lesson 1 :=> block aeb1'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'aeb',
+        block: 'aeb1',
+        type: 'video',
+        name: 'Lesson 2 :=> block aeb1'
+      },
+      lesson_3: {
+        id: 'lesson_3',
+        program: 'aeb',
+        block: 'aeb1',
+        type: 'video',
+        name: 'Lesson 3 :=> block aeb1'
+      },
+      lesson_4: {
+        id: 'lesson_4',
+        program: 'aeb',
+        block: 'aeb1',
+        type: 'video',
+        name: 'Lesson 4 :=> block aeb1'
+      },
+      lesson_5: {
+        id: 'lesson_5',
+        program: 'aeb',
+        block: 'aeb1',
+        type: 'video',
+        name: 'Lesson 5 :=> block aeb1'
+      }
+    }
   },
   aeb2: {
     id: 'aeb2',
+    program: 'aeb',
     title: 'Маркетинг',
     price: 140,
     icon: 'megaphone',
@@ -180,10 +329,34 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
         все современные инструменты для <strong>продвижения</strong> и
         <strong> развития</strong> своего гастробизнеса.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'aeb',
+        block: 'aeb2',
+        type: 'video',
+        name: 'Lesson 1 :=> block aeb2'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'aeb',
+        block: 'aeb2',
+        type: 'video',
+        name: 'Lesson 2 :=> block aeb2'
+      },
+      lesson_3: {
+        id: 'lesson_3',
+        program: 'aeb',
+        block: 'aeb2',
+        type: 'video',
+        name: 'Lesson 3 :=> block aeb2'
+      }
+    }
   },
   aeb3: {
     id: 'aeb3',
+    program: 'aeb',
     title: 'Продажи и сервис',
     price: 100,
     icon: 'customerService',
@@ -207,7 +380,37 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
         <strong>возвращаемость клиента</strong>, а так же{' '}
         <strong>увеличивать средний чек</strong>.
       </Typography>
-    )
+    ),
+    lessons: {
+      lesson_1: {
+        id: 'lesson_1',
+        program: 'aeb',
+        block: 'aeb3',
+        type: 'video',
+        name: 'Lesson 1 :=> block aeb3'
+      },
+      lesson_2: {
+        id: 'lesson_2',
+        program: 'aeb',
+        block: 'aeb3',
+        type: 'video',
+        name: 'Lesson 2 :=> block aeb3'
+      },
+      lesson_3: {
+        id: 'lesson_3',
+        program: 'aeb',
+        block: 'aeb3',
+        type: 'video',
+        name: 'Lesson 3 :=> block aeb3'
+      },
+      lesson_4: {
+        id: 'lesson_4',
+        program: 'aeb',
+        block: 'aeb3',
+        type: 'video',
+        name: 'Lesson 4 :=> block aeb3'
+      }
+    }
   }
 };
 
@@ -220,96 +423,297 @@ export const START_BUSINESS_COURSE: ICourse = {
   cover:
     'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
   blocks: {
-    b1: {
-      id: 'sb.b1',
+    sb1: {
+      id: 'sb1',
+      program: 'sb',
       title: 'Блок 1 Идея',
-      subBlocks: [
-        'Урок 1 - Идея, концепция, цель, миссия, уникальность',
-        'Урок 2 - Целевая аудитория',
-        'Урок 3 - Анализ конкурентов и рынка',
-        'Урок 4 - Прогрев аудитории, реклама',
-        'Таблица -  SWOT анализ'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb1',
+          type: 'video',
+          name: 'Идея, концепция, цель, миссия, уникальность'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb1',
+          type: 'video',
+          name: 'Целевая аудитория'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'sb',
+          block: 'sb1',
+          type: 'video',
+          name: 'Анализ конкурентов и рынка'
+        },
+        lesson_4: {
+          id: 'lesson_4',
+          program: 'sb',
+          block: 'sb1',
+          type: 'video',
+          name: 'Прогрев аудитории, реклама'
+        },
+        lesson_5: {
+          id: 'lesson_5',
+          program: 'sb',
+          block: 'sb1',
+          type: 'text',
+          name: 'Таблица -  SWOT анализ'
+        }
+      }
     },
-    b2: {
-      id: 'sb.b2',
+    sb2: {
+      id: 'sb2',
+      program: 'sb',
       title: 'Блок 2 Меню и ТТК',
-      subBlocks: [
-        'Урок 1 - Этапы создания меню',
-        'Урок 2 - Формирование цен',
-        'Урок 3 - Что такое ТТК и как их составить',
-        'Урок 4 - Расчет себестоимости и среднего чека',
-        'Гайд - Дизайн проект меню',
-        'Составляем меню, которое будет продавать'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb2',
+          type: 'video',
+          name: 'Этапы создания меню'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb2',
+          type: 'video',
+          name: 'Формирование цен'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'sb',
+          block: 'sb2',
+          type: 'video',
+          name: 'Что такое ТТК и как их составить'
+        },
+        lesson_4: {
+          id: 'lesson_4',
+          program: 'sb',
+          block: 'sb2',
+          type: 'video',
+          name: 'Расчет себестоимости и среднего чека'
+        },
+        lesson_5: {
+          id: 'lesson_5',
+          program: 'sb',
+          block: 'sb2',
+          type: 'text',
+          name: 'Гайд - Дизайн проект меню'
+        },
+        lesson_6: {
+          id: 'lesson_6',
+          program: 'sb',
+          block: 'sb2',
+          type: 'text',
+          name: 'Составляем меню, которое будет продавать'
+        }
+      }
     },
-    b3: {
-      id: 'sb.b3',
+    sb3: {
+      id: 'sb3',
+      program: 'sb',
       title: 'Блок 3 Регистрация фирмы',
-      subBlocks: [
-        'Урок 1 - Как открыть фирму в Польше',
-        'Урок 2 - Налогообложение'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb3',
+          type: 'video',
+          name: 'Как открыть фирму в Польше'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb3',
+          block: 'sb2',
+          type: 'video',
+          name: 'Налогообложение'
+        }
+      }
     },
-    b4: {
-      id: 'sb.b4',
+    sb4: {
+      id: 'sb4',
+      program: 'sb',
       title: 'Блок 4 Пакет документов для открытия',
-      subBlocks: [
-        'Урок 1 - Весь список документов для открытия гастробизнеса',
-        '+ Шаблоны документов'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb4',
+          type: 'video',
+          name: 'Весь список документов для открытия гастробизнеса'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb4',
+          type: 'file',
+          name: 'Шаблоны документов'
+        }
+      }
     },
-    b5: {
-      id: 'sb.b5',
+    sb5: {
+      id: 'sb5',
+      program: 'sb',
       title: 'Блок 5 Локация',
-      subBlocks: [
-        'Урок 1 - Поиск локации основываясь на концепцию бизнеса',
-        'Урок 2 - Виды помещений под гастробизнес',
-        'Урок 3 - Техническое состояние помещений',
-        'Урок 4 - География локации',
-        'Урок 5 - Договор аренды. Разбор по пунктам',
-        'Гайд - Дизайн помещения. Где брать идеи. Бюджетные варианты',
-        'Конспект - Где искать помещения'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb5',
+          type: 'video',
+          name: 'Поиск локации основываясь на концепцию бизнеса'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb5',
+          type: 'video',
+          name: 'Виды помещений под гастробизнес'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'sb',
+          block: 'sb5',
+          type: 'video',
+          name: 'Техническое состояние помещений'
+        },
+        lesson_4: {
+          id: 'lesson_4',
+          program: 'sb',
+          block: 'sb5',
+          type: 'video',
+          name: 'География локации'
+        },
+        lesson_5: {
+          id: 'lesson_5',
+          program: 'sb',
+          block: 'sb5',
+          type: 'video',
+          name: 'Договор аренды. Разбор по пунктам'
+        },
+        lesson_6: {
+          id: 'lesson_6',
+          program: 'sb',
+          block: 'sb5',
+          type: 'text',
+          name: 'Гайд - Дизайн помещения. Где брать идеи. Бюджетные варианты'
+        },
+        lesson_7: {
+          id: 'lesson_7',
+          program: 'sb',
+          block: 'sb5',
+          type: 'text',
+          name: 'Конспект - Где искать помещения'
+        }
+      }
     },
-    b6: {
-      id: 'sb.b6',
+    sb6: {
+      id: 'sb6',
+      program: 'sb',
       title: 'Блок 6 Поставщики/Оборудование',
-      subBlocks: [
-        'Урок 1 - Как работать с поставщиками',
-        'Урок 2 - Виды оборудования'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb6',
+          type: 'video',
+          name: 'Как работать с поставщиками'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb6',
+          type: 'video',
+          name: 'Виды оборудования'
+        }
+      }
     },
-    b7: {
-      id: 'sb.b7',
+    sb7: {
+      id: 'sb7',
+      program: 'sb',
       title: 'Блок 7 Найм сотрудников',
-      subBlocks: [
-        'Урок 1 - Подбор команды, Какие люди дадут результат бизнесу',
-        'Урок 2 - Продуктивное собеседование'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb7',
+          type: 'video',
+          name: 'Подбор команды, Какие люди дадут результат бизнесу'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb7',
+          type: 'video',
+          name: 'Продуктивное собеседование'
+        }
+      }
     },
-    b8: {
-      id: 'sb.b8',
+    sb8: {
+      id: 'sb8',
+      program: 'sb',
       title: 'Блок 8 Бюджет',
-      subBlocks: [
-        'Урок 1 - Как составить и рассчитать бюджет на открытие',
-        [
-          'Бизнес план',
-          'Инструменты контроля бюджета',
-          'Ошибки при планировании бюджета'
-        ],
-        'Урок 2 -  Варианты привлечения инвестиций',
-        'Гайд - Расчет точки безубыточности и окупаемости',
-        'Шаблон - Бизнес плана'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb8',
+          type: 'video',
+          name: 'Как составить и рассчитать бюджет на открытие',
+          subparagraphs: [
+            'Бизнес план',
+            'Инструменты контроля бюджета',
+            'Ошибки при планировании бюджета'
+          ]
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb8',
+          type: 'video',
+          name: 'Варианты привлечения инвестиций'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'sb',
+          block: 'sb8',
+          type: 'text',
+          name: 'Гайд - Расчет точки безубыточности и окупаемости'
+        },
+        lesson_4: {
+          id: 'lesson_4',
+          program: 'sb',
+          block: 'sb8',
+          type: 'text',
+          name: 'Шаблон - Бизнес плана'
+        }
+      }
     },
-    b9: {
-      id: 'sb.b9',
+    sb9: {
+      id: 'sb9',
+      program: 'sb',
       title: 'Блок 9 Открытие',
-      subBlocks: [
-        'Урок 1 Как подготовится к открытию психологически и технически',
-        'ИТОГ по модулю: Что делать и каких ошибок не совершать'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'sb',
+          block: 'sb9',
+          type: 'video',
+          name: 'Как подготовится к открытию психологически и технически'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'sb',
+          block: 'sb9',
+          type: 'text',
+          name: 'ИТОГ по модулю: Что делать и каких ошибок не совершать'
+        }
+      }
     }
   }
 };
@@ -323,58 +727,157 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
   cover:
     'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/cover.jpg',
   blocks: {
-    b1: {
-      id: 'eb.b1',
+    eb1: {
+      id: 'eb1',
+      program: 'eb',
       title: 'Блок 1  Финансовая грамотность',
-      subBlocks: [
-        'Урок 1 - Базовые понятия в фин учете и обзор 3 ех инструментов',
-        'Урок 2 - Финансовая модель гастробизнеса (разбор таблицы ДДС +ОПУ)',
-        'Урок 3 - Как поделить прибыль. Сколько оставить себе',
-        'Урок 4 - Финансовый анализ и как и пользоваться',
-        'Урок 5 - Ежедневный фин учет',
-        'Гайд : Что такое чистая прибыль, выручка, маржинальность, фудкост',
-        'Шаблон: ДДС+ОПУ'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'eb',
+          block: 'eb1',
+          type: 'video',
+          name: 'Основы финансового учёта и обзор 3х инструментов'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'eb',
+          block: 'eb1',
+          type: 'video',
+          name: 'Структура финансов в гастробизнесе (разбор таблицы ДДС +ОПУ)'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'eb',
+          block: 'eb1',
+          type: 'video',
+          name: 'Система фондов и распределения прибыли'
+        },
+        lesson_4: {
+          id: 'lesson_4',
+          program: 'eb',
+          block: 'eb1',
+          type: 'video',
+          name: 'Финансовый анализ и как и пользоваться'
+        },
+        lesson_5: {
+          id: 'lesson_5',
+          program: 'eb',
+          block: 'eb1',
+          type: 'video',
+          name: 'Ежедневный фин учет'
+        },
+        lesson_6: {
+          id: 'lesson_6',
+          program: 'eb',
+          block: 'eb1',
+          type: 'text',
+          name: 'Гайд : Что такое: чистая прибыль, выручка, маржинальность, фудкост'
+        },
+        lesson_7: {
+          id: 'lesson_7',
+          program: 'eb',
+          block: 'eb1',
+          type: 'text',
+          name: 'Шаблон: ДДС+ОПУ'
+        }
+      }
     },
-    b2: {
-      id: 'eb.b2',
+    eb2: {
+      id: 'eb2',
+      program: 'eb',
       title: 'Блок 2  Маркетинг',
-      subBlocks: [
-        'Урок 1 -  CRM маркетинг',
-        [
-          'как собирать данные клиентов',
-          'как сегментировать клиентов',
-          'как работать с LTV',
-          'как понимать структуру'
-        ],
-        'Урок 2 - NPS. Учимся держать руку на пульсе по качеству своего заведения/продукта',
-        ['+ шаблон анкеты ОС'],
-        'Урок 3 - Маркетинговая воронка продвижения',
-        'Урок 4 -  Маркетинговые гипотезы, как их проверить и применить'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'eb',
+          block: 'eb2',
+          type: 'video',
+          name: 'CRM-маркетинг. Как управлять клиентской базой и делать сегментацию'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'eb',
+          block: 'eb2',
+          type: 'video',
+          name: 'NPS. Учимся держать руку на пульсе по качеству своего заведения/продукта + шаблон анкеты ОС'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'eb',
+          block: 'eb2',
+          type: 'video',
+          name: 'Ключевые бизнес-показатели. Что замерять, чтобы расти уверенно и быстро'
+        },
+        lesson_4: {
+          id: 'lesson_4',
+          program: 'eb',
+          block: 'eb2',
+          type: 'video',
+          name: 'Маркетинговая воронка.Волшебный способ заполучить максимум клиентов'
+        }
+      }
     },
-    b3: {
-      id: 'eb.b3',
+    eb3: {
+      id: 'eb3',
+      program: 'eb',
       title: 'Блок 3 Продажи и сервис',
-      subBlocks: [
-        'Урок 1 - Структура команды в гастробизнесе',
-        'Урок 2 - Мотивация и контроль сотрудников',
-        ['+ Шаблоны регламентов'],
-        'Урок 3 - Искренний сервис. Про сотрудников на которых возвращаются гости',
-        [
-          'Как повышать LTV',
-          'Как повышать средний чек благодаря работе с сотрудниками'
-        ]
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'eb',
+          block: 'eb3',
+          type: 'video',
+          name: 'Структура команды в гастробизнесе'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'eb',
+          block: 'eb3',
+          type: 'video',
+          name: 'Мотивация и контроль сотрудников',
+          subparagraphs: ['Шаблоны регламентов']
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'eb',
+          block: 'eb3',
+          type: 'video',
+          name: 'Искренний сервис. Про сотрудников на которых возвращаются гости',
+          subparagraphs: [
+            'Как повышать LTV',
+            'Как повышать средний чек благодаря работе с сотрудниками'
+          ]
+        }
+      }
     },
-    b4: {
-      id: 'eb.b4',
+    eb4: {
+      id: 'eb4',
+      program: 'eb',
       title: 'Блок 4 Развитие',
-      subBlocks: [
-        'Урок 1 - Работа с посредниками',
-        'Урок 2 - Продвижение и визуализация соц. сетей',
-        'Урок 3 - Рентабельность вложений в развитие. Как находить идеи?'
-      ]
+      lessons: {
+        lesson_1: {
+          id: 'lesson_1',
+          program: 'eb',
+          block: 'eb4',
+          type: 'video',
+          name: 'Работа с посредниками'
+        },
+        lesson_2: {
+          id: 'lesson_2',
+          program: 'eb',
+          block: 'eb4',
+          type: 'video',
+          name: 'Продвижение и визуализация соц. сетей'
+        },
+        lesson_3: {
+          id: 'lesson_3',
+          program: 'eb',
+          block: 'eb4',
+          type: 'video',
+          name: 'Рентабельность вложений в развитие. Как находить идеи?'
+        }
+      }
     }
   }
 };
