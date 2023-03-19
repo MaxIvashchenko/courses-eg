@@ -420,6 +420,7 @@ export const START_BUSINESS_COURSE: ICourse = {
   title: 'Курс для начинающего бизнеса',
   subTitle: 'Открой свой гастробизнес с нуля',
   type: 'course',
+  price: 500,
   cover:
     'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
   blocks: {
@@ -724,6 +725,7 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
   title: 'Курс для действующего бизнеса',
   subTitle: 'Развивай и масштабируй',
   type: 'course',
+  price: 500,
   cover:
     'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/cover.jpg',
   blocks: {

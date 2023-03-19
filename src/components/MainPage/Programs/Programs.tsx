@@ -7,6 +7,7 @@ import { imagesUrls } from '@src/constants';
 import {
   ADDITIONAL_BLOCKS_EXIST_BUSINESS,
   ADDITIONAL_BLOCKS_START_BUSINESS,
+  APP_COURSES,
   EXIST_BUSINESS_COURSE,
   START_BUSINESS_COURSE
 } from '@src/content';
@@ -83,23 +84,23 @@ interface ProgramsProps {
 }
 
 const Programs = ({ modalHandler }: ProgramsProps) => {
-  const [modalNum, setModalNum] = useState<number | null>(null);
+  const [courseId, setCourseId] = useState<string | null>(null);
   const [subModal, setSubModal] = useState<IAdditionalBlock | null>(null);
 
-  const courseHandler = useCallback((num: number) => {
-    setModalNum(num);
+  const courseHandler = useCallback((id: string) => {
+    setCourseId(id);
   }, []);
 
   const additionalBlockHandler = useCallback((block: IAdditionalBlock) => {
     setSubModal(block);
   }, []);
 
-  const closeModal = () => setModalNum(null);
+  const closeModal = () => setCourseId(null);
   const closeSubModal = () => setSubModal(null);
 
   const submitApp = () => {
     modalHandler();
-    setModalNum(null);
+    setCourseId(null);
     setSubModal(null);
   };
 
@@ -124,7 +125,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                   iconName={START_BUSINESS_COURSE.icon}
                   title={START_BUSINESS_COURSE.title}
                   subTitle={START_BUSINESS_COURSE.subTitle}
-                  clickHandler={() => courseHandler(1)}
+                  clickHandler={() => courseHandler(START_BUSINESS_COURSE.id)}
                 />
               </Grid>
               {Object.values(ADDITIONAL_BLOCKS_START_BUSINESS).map((block) => (
@@ -152,7 +153,7 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                   iconName={EXIST_BUSINESS_COURSE.icon}
                   title={EXIST_BUSINESS_COURSE.title}
                   subTitle={EXIST_BUSINESS_COURSE.subTitle}
-                  clickHandler={() => courseHandler(2)}
+                  clickHandler={() => courseHandler(EXIST_BUSINESS_COURSE.id)}
                 />
               </Grid>
               {Object.values(ADDITIONAL_BLOCKS_EXIST_BUSINESS).map((block) => (
@@ -167,26 +168,15 @@ const Programs = ({ modalHandler }: ProgramsProps) => {
                   />
                 </Grid>
               ))}
-
-              {/* <Grid item xs={12} py={2}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'flex-start',
-                  }}
-                >
-                  <Contacts modalHandler={submitApp} />
-                </Box>
-              </Grid> */}
             </Grid>
           </GridItem>
         </Grid>
       </Box>
 
-      <Modal isOpen={Boolean(modalNum)} closeModal={closeModal} isFixedHeight>
-        <ModalContent num={modalNum || 1} />
+      <Modal isOpen={Boolean(courseId)} closeModal={closeModal} isFixedHeight>
+        <ModalContent courseId={courseId || 'sb'} />
         <Typography textAlign='center' variant='h2' pb={1}>
-          Цена: 500$
+          {`Цена: ${APP_COURSES[courseId || 0]?.price}$`}
         </Typography>
         <Contacts modalHandler={submitApp} />
       </Modal>

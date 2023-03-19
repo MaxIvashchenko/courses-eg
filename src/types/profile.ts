@@ -40,6 +40,7 @@ export interface ICourse {
   subTitle: string;
   type: string;
   cover: string;
+  price: number;
   blocks: {
     [key: string]: IBlock;
   };

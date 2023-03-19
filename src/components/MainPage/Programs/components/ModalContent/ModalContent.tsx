@@ -1,18 +1,17 @@
 import React, { ForwardedRef } from 'react';
 import { Box, Stack, Typography } from '@mui/material';
 import { IconComponent } from '@src/components/Common';
-import { EXIST_BUSINESS_COURSE, START_BUSINESS_COURSE } from '@src/content';
+import { APP_COURSES } from '@src/content';
 import _isEmpty from 'lodash/isEmpty';
 
 interface ModalContent {
-  num?: number;
+  courseId: string;
   forwardedRef?: ForwardedRef<unknown>;
 }
 
-const content = [START_BUSINESS_COURSE, EXIST_BUSINESS_COURSE];
+const ModalContent = ({ courseId }: ModalContent) => {
+  const course = APP_COURSES[courseId];
 
-const ModalContent = ({ num = 1 }: ModalContent) => {
-  const course = content[num - 1];
   const renderName = (type: string, idx: number, name: string) =>
     type === 'lesson' ? `Урок ${idx + 1} - ${name}` : name;
 
