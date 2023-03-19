@@ -40,28 +40,28 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         id: 'lesson_1',
         program: 'asb',
         block: 'asb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block asb1'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'asb',
         block: 'asb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block asb1'
       },
       lesson_3: {
         id: 'lesson_3',
         program: 'asb',
         block: 'asb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 3 :=> block asb1'
       },
       lesson_4: {
         id: 'lesson_4',
         program: 'asb',
         block: 'asb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 4 :=> block asb1'
       }
     }
@@ -100,21 +100,21 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         id: 'lesson_1',
         program: 'asb',
         block: 'asb2',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block asb2'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'asb',
         block: 'asb2',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block asb2'
       },
       lesson_3: {
         id: 'lesson_3',
         program: 'asb',
         block: 'asb2',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 3 :=> block asb2'
       }
     }
@@ -155,35 +155,35 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         id: 'lesson_1',
         program: 'asb',
         block: 'asb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block asb3'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'asb',
         block: 'asb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block asb3'
       },
       lesson_3: {
         id: 'lesson_3',
         program: 'asb',
         block: 'asb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 3 :=> block asb3'
       },
       lesson_4: {
         id: 'lesson_4',
         program: 'asb',
         block: 'asb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 4 :=> block asb3'
       },
       lesson_5: {
         id: 'lesson_5',
         program: 'asb',
         block: 'asb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 5 :=> block asb3'
       }
     }
@@ -222,14 +222,14 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
         id: 'lesson_1',
         program: 'asb',
         block: 'asb4',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block asb4'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'asb',
         block: 'asb4',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block asb4'
       }
     }
@@ -271,35 +271,35 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
         id: 'lesson_1',
         program: 'aeb',
         block: 'aeb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block aeb1'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'aeb',
         block: 'aeb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block aeb1'
       },
       lesson_3: {
         id: 'lesson_3',
         program: 'aeb',
         block: 'aeb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 3 :=> block aeb1'
       },
       lesson_4: {
         id: 'lesson_4',
         program: 'aeb',
         block: 'aeb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 4 :=> block aeb1'
       },
       lesson_5: {
         id: 'lesson_5',
         program: 'aeb',
         block: 'aeb1',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 5 :=> block aeb1'
       }
     }
@@ -335,21 +335,21 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
         id: 'lesson_1',
         program: 'aeb',
         block: 'aeb2',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block aeb2'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'aeb',
         block: 'aeb2',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block aeb2'
       },
       lesson_3: {
         id: 'lesson_3',
         program: 'aeb',
         block: 'aeb2',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 3 :=> block aeb2'
       }
     }
@@ -386,28 +386,28 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
         id: 'lesson_1',
         program: 'aeb',
         block: 'aeb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 1 :=> block aeb3'
       },
       lesson_2: {
         id: 'lesson_2',
         program: 'aeb',
         block: 'aeb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 2 :=> block aeb3'
       },
       lesson_3: {
         id: 'lesson_3',
         program: 'aeb',
         block: 'aeb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 3 :=> block aeb3'
       },
       lesson_4: {
         id: 'lesson_4',
         program: 'aeb',
         block: 'aeb3',
-        type: 'video',
+        type: 'lesson',
         name: 'Lesson 4 :=> block aeb3'
       }
     }
@@ -432,35 +432,35 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Идея, концепция, цель, миссия, уникальность'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'sb',
           block: 'sb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Целевая аудитория'
         },
         lesson_3: {
           id: 'lesson_3',
           program: 'sb',
           block: 'sb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Анализ конкурентов и рынка'
         },
         lesson_4: {
           id: 'lesson_4',
           program: 'sb',
           block: 'sb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Прогрев аудитории, реклама'
         },
         lesson_5: {
           id: 'lesson_5',
           program: 'sb',
           block: 'sb1',
-          type: 'text',
+          type: 'file',
           name: 'Таблица -  SWOT анализ'
         }
       }
@@ -474,28 +474,28 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Этапы создания меню'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'sb',
           block: 'sb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Формирование цен'
         },
         lesson_3: {
           id: 'lesson_3',
           program: 'sb',
           block: 'sb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Что такое ТТК и как их составить'
         },
         lesson_4: {
           id: 'lesson_4',
           program: 'sb',
           block: 'sb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Расчет себестоимости и среднего чека'
         },
         lesson_5: {
@@ -523,14 +523,14 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb3',
-          type: 'video',
+          type: 'lesson',
           name: 'Как открыть фирму в Польше'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'sb3',
           block: 'sb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Налогообложение'
         }
       }
@@ -544,7 +544,7 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb4',
-          type: 'video',
+          type: 'lesson',
           name: 'Весь список документов для открытия гастробизнеса'
         },
         lesson_2: {
@@ -565,35 +565,35 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb5',
-          type: 'video',
+          type: 'lesson',
           name: 'Поиск локации основываясь на концепцию бизнеса'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'sb',
           block: 'sb5',
-          type: 'video',
+          type: 'lesson',
           name: 'Виды помещений под гастробизнес'
         },
         lesson_3: {
           id: 'lesson_3',
           program: 'sb',
           block: 'sb5',
-          type: 'video',
+          type: 'lesson',
           name: 'Техническое состояние помещений'
         },
         lesson_4: {
           id: 'lesson_4',
           program: 'sb',
           block: 'sb5',
-          type: 'video',
+          type: 'lesson',
           name: 'География локации'
         },
         lesson_5: {
           id: 'lesson_5',
           program: 'sb',
           block: 'sb5',
-          type: 'video',
+          type: 'lesson',
           name: 'Договор аренды. Разбор по пунктам'
         },
         lesson_6: {
@@ -621,14 +621,14 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb6',
-          type: 'video',
+          type: 'lesson',
           name: 'Как работать с поставщиками'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'sb',
           block: 'sb6',
-          type: 'video',
+          type: 'lesson',
           name: 'Виды оборудования'
         }
       }
@@ -642,14 +642,14 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb7',
-          type: 'video',
+          type: 'lesson',
           name: 'Подбор команды, Какие люди дадут результат бизнесу'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'sb',
           block: 'sb7',
-          type: 'video',
+          type: 'lesson',
           name: 'Продуктивное собеседование'
         }
       }
@@ -663,7 +663,7 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb8',
-          type: 'video',
+          type: 'lesson',
           name: 'Как составить и рассчитать бюджет на открытие',
           subparagraphs: [
             'Бизнес план',
@@ -675,7 +675,7 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_2',
           program: 'sb',
           block: 'sb8',
-          type: 'video',
+          type: 'lesson',
           name: 'Варианты привлечения инвестиций'
         },
         lesson_3: {
@@ -689,7 +689,7 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_4',
           program: 'sb',
           block: 'sb8',
-          type: 'text',
+          type: 'file',
           name: 'Шаблон - Бизнес плана'
         }
       }
@@ -703,7 +703,7 @@ export const START_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'sb',
           block: 'sb9',
-          type: 'video',
+          type: 'lesson',
           name: 'Как подготовится к открытию психологически и технически'
         },
         lesson_2: {
@@ -736,35 +736,35 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'eb',
           block: 'eb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Основы финансового учёта и обзор 3х инструментов'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'eb',
           block: 'eb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Структура финансов в гастробизнесе (разбор таблицы ДДС +ОПУ)'
         },
         lesson_3: {
           id: 'lesson_3',
           program: 'eb',
           block: 'eb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Система фондов и распределения прибыли'
         },
         lesson_4: {
           id: 'lesson_4',
           program: 'eb',
           block: 'eb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Финансовый анализ и как и пользоваться'
         },
         lesson_5: {
           id: 'lesson_5',
           program: 'eb',
           block: 'eb1',
-          type: 'video',
+          type: 'lesson',
           name: 'Ежедневный фин учет'
         },
         lesson_6: {
@@ -778,7 +778,7 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
           id: 'lesson_7',
           program: 'eb',
           block: 'eb1',
-          type: 'text',
+          type: 'file',
           name: 'Шаблон: ДДС+ОПУ'
         }
       }
@@ -792,28 +792,28 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'eb',
           block: 'eb2',
-          type: 'video',
+          type: 'lesson',
           name: 'CRM-маркетинг. Как управлять клиентской базой и делать сегментацию'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'eb',
           block: 'eb2',
-          type: 'video',
+          type: 'lesson',
           name: 'NPS. Учимся держать руку на пульсе по качеству своего заведения/продукта + шаблон анкеты ОС'
         },
         lesson_3: {
           id: 'lesson_3',
           program: 'eb',
           block: 'eb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Ключевые бизнес-показатели. Что замерять, чтобы расти уверенно и быстро'
         },
         lesson_4: {
           id: 'lesson_4',
           program: 'eb',
           block: 'eb2',
-          type: 'video',
+          type: 'lesson',
           name: 'Маркетинговая воронка.Волшебный способ заполучить максимум клиентов'
         }
       }
@@ -827,14 +827,14 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'eb',
           block: 'eb3',
-          type: 'video',
+          type: 'lesson',
           name: 'Структура команды в гастробизнесе'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'eb',
           block: 'eb3',
-          type: 'video',
+          type: 'lesson',
           name: 'Мотивация и контроль сотрудников',
           subparagraphs: ['Шаблоны регламентов']
         },
@@ -842,7 +842,7 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
           id: 'lesson_3',
           program: 'eb',
           block: 'eb3',
-          type: 'video',
+          type: 'lesson',
           name: 'Искренний сервис. Про сотрудников на которых возвращаются гости',
           subparagraphs: [
             'Как повышать LTV',
@@ -860,21 +860,21 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
           id: 'lesson_1',
           program: 'eb',
           block: 'eb4',
-          type: 'video',
+          type: 'lesson',
           name: 'Работа с посредниками'
         },
         lesson_2: {
           id: 'lesson_2',
           program: 'eb',
           block: 'eb4',
-          type: 'video',
+          type: 'lesson',
           name: 'Продвижение и визуализация соц. сетей'
         },
         lesson_3: {
           id: 'lesson_3',
           program: 'eb',
           block: 'eb4',
-          type: 'video',
+          type: 'lesson',
           name: 'Рентабельность вложений в развитие. Как находить идеи?'
         }
       }

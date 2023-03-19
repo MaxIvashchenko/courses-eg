@@ -1,5 +1,6 @@
 import React, { ForwardedRef } from 'react';
-import { Box, Typography } from '@mui/material';
+import { Box, Stack, Typography } from '@mui/material';
+import { IconComponent } from '@src/components/Common';
 import { EXIST_BUSINESS_COURSE, START_BUSINESS_COURSE } from '@src/content';
 import _isEmpty from 'lodash/isEmpty';
 
@@ -13,7 +14,7 @@ const content = [START_BUSINESS_COURSE, EXIST_BUSINESS_COURSE];
 const ModalContent = ({ num = 1 }: ModalContent) => {
   const course = content[num - 1];
   const renderName = (type: string, idx: number, name: string) =>
-    type === 'video' ? `Урок ${idx + 1} - ${name}` : name;
+    type === 'lesson' ? `Урок ${idx + 1} - ${name}` : name;
 
   return (
     <>
@@ -54,10 +55,13 @@ const ModalContent = ({ num = 1 }: ModalContent) => {
               {title}
             </Typography>
             {Object.values(lessons).map((lesson, idx) => (
-              <Box key={lesson.id}>
-                <Typography variant='h5'>
-                  {renderName(lesson.type, idx, lesson.name)}
-                </Typography>
+              <Box key={lesson.id} py={0.5}>
+                <Stack direction='row'>
+                  <IconComponent name={lesson.type} />
+                  <Typography ml={1} variant='h5'>
+                    {renderName(lesson.type, idx, lesson.name)}
+                  </Typography>
+                </Stack>
                 <ul style={{ margin: '0 12px' }}>
                   {!_isEmpty(lesson.subparagraphs) &&
                     (lesson.subparagraphs || []).map((subText) => (

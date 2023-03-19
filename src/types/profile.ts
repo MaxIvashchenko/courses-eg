@@ -5,7 +5,7 @@ export interface ILesson {
   name: string;
   program: string;
   block: string;
-  type: 'file' | 'video' | 'text';
+  type: 'file' | 'lesson' | 'text';
   subparagraphs?: string[];
 }
 

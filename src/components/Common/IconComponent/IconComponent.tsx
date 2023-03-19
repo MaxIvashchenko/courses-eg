@@ -11,11 +11,13 @@ import doubleRight from 'public/icons/doubleRight.svg';
 import downArrow from 'public/icons/down-arrow.svg';
 import email from 'public/icons/email.svg';
 import facebook from 'public/icons/facebook.svg';
+import file from 'public/icons/file.svg';
 import finance from 'public/icons/finance.svg';
 import group from 'public/icons/group.svg';
 import home from 'public/icons/home.svg';
 import image from 'public/icons/image.svg';
 import instagram from 'public/icons/instagram.svg';
+import lesson from 'public/icons/lesson.svg';
 import loader from 'public/icons/loader.svg';
 import loop from 'public/icons/loop.svg';
 import man from 'public/icons/man.svg';
@@ -37,6 +39,7 @@ import stats from 'public/icons/stats.svg';
 import suitcase from 'public/icons/suitcase.svg';
 import telegram from 'public/icons/telegram.svg';
 import telephone from 'public/icons/telephone.svg';
+import text from 'public/icons/text.svg';
 import triangle from 'public/icons/triangle.svg';
 import user from 'public/icons/user.svg';
 import visible from 'public/icons/visible.svg';
@@ -89,6 +92,9 @@ const iconTypes: IconTypes = {
   paper,
   megaphone,
   menuBook,
+  text,
+  lesson,
+  file,
   home
 };
 
