@@ -4,12 +4,15 @@ import { useRouter } from 'next/router';
 import { signIn, signOut, useSession } from 'next-auth/react';
 import { Box, Button, IconButton, Menu } from '@mui/material';
 import { paths } from '@src/constants';
+import { useLoaderContext } from '@src/hooks';
 
 import { IconComponent } from 'components';
 
 const AuthenticationButton = () => {
   const router = useRouter();
   const { data, status } = useSession();
+  const { setLoading } = useLoaderContext();
+
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
 
   const open = Boolean(anchorEl);
@@ -20,9 +23,15 @@ const AuthenticationButton = () => {
     setAnchorEl(null);
   };
 
-  const signInHandler = () => signIn();
+  const signInHandler = () => {
+    setLoading(true);
+    signIn();
+  };
   const signOutHandler = () => signOut();
-  const toAdmminPanel = useCallback(() => router.push(paths.admin), [router]);
+  const toAdmminPanel = useCallback(() => {
+    setLoading(true);
+    router.push(paths.admin);
+  }, [router]);
   const toProfile = () => router.push(paths.profile);
 
   const renderAdmminButton = useCallback(

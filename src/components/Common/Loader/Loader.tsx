@@ -5,7 +5,8 @@ import { styled } from '@mui/material/styles';
 import { IconComponent } from '../IconComponent';
 
 const FullPageWrapper = styled(Box)({
-  position: 'absolute',
+  position: 'fixed',
+  overflow: 'hidden',
   top: 0,
   left: 0,
   display: 'flex',

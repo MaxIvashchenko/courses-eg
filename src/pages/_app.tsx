@@ -3,6 +3,7 @@ import Head from 'next/head';
 import { SessionProvider } from 'next-auth/react';
 import CssBaseline from '@mui/material/CssBaseline';
 import { ThemeProvider } from '@mui/material/styles';
+import { LoaderProvider } from '@src/context';
 
 import { Layout as LayoutBlocks } from 'blocks';
 import { Footer, Header, Layout } from 'components';
@@ -19,14 +20,16 @@ const App = ({ Component, pageProps: { session, ...pageProps } }: AppProps) => (
     <ThemeProvider theme={theme}>
       <SessionProvider session={session}>
         <CssBaseline />
-        <AppWrapper component='main'>
-          <Header />
-          <ContentWrapper>
-            <Layout Component={Component} pageProps={pageProps} />
-          </ContentWrapper>
-          <Footer />
-          {/* <CookiesAlert /> */}
-        </AppWrapper>
+        <LoaderProvider>
+          <AppWrapper component='main'>
+            <Header />
+            <ContentWrapper>
+              <Layout Component={Component} pageProps={pageProps} />
+            </ContentWrapper>
+            <Footer />
+            {/* <CookiesAlert /> */}
+          </AppWrapper>
+        </LoaderProvider>
       </SessionProvider>
     </ThemeProvider>
   </>
