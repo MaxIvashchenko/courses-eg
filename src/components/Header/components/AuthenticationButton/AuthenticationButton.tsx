@@ -31,7 +31,8 @@ const AuthenticationButton = () => {
   const toAdmminPanel = useCallback(() => {
     setLoading(true);
     router.push(paths.admin);
-  }, [router]);
+  }, [router, setLoading]);
+
   const toProfile = () => router.push(paths.profile);
 
   const renderAdmminButton = useCallback(

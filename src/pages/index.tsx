@@ -21,9 +21,9 @@ const Home = () => {
     setLoading(false);
 
     return () => {
-      setLoading(false)
-    }
-  }, []);
+      setLoading(false);
+    };
+  }, [setLoading]);
 
   return (
     <>

@@ -6,8 +6,7 @@ interface LoginProviderProps {
 
 export const LoaderContext = createContext({
   isLoading: false,
-  //  @ts-ignore
-  setLoading: (isLoading: boolean) => {}
+  setLoading: (_isLoading: boolean): void => {}
 });
 
 export const LoaderProvider = ({ children }: LoginProviderProps) => {
