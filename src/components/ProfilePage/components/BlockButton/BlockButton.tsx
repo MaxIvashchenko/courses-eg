@@ -16,7 +16,6 @@ import {
 } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import { IconComponent } from '@src/components/Common';
-import { paths } from '@src/constants';
 import { ILesson } from '@src/types/profile';
 
 const Accordion = styled(MuiAccordion)(({ theme }) => ({
@@ -104,8 +103,8 @@ const BlockButton = ({
     []
   );
 
-  const lessonHandler = () =>
-    router.push(`${router.asPath}${paths.lesson}/${id}`);
+  const lessonHandler = (lesson_id: string) => () =>
+    router.push(`${router.asPath}/${id}/${lesson_id}`);
 
   const renderName = useCallback(
     (type: string, idx: number, name: string) =>
@@ -132,7 +131,7 @@ const BlockButton = ({
       <AccordionDetails sx={{ px: { xs: 3, md: 4 }, pb: { xs: 2, md: 2 } }}>
         {Object.values(lessons).map((lesson, idx) => (
           <Button
-            onClick={lessonHandler}
+            onClick={lessonHandler(lesson.id)}
             key={lesson.id}
             fullWidth
             variant='text'

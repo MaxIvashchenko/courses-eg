@@ -23,10 +23,10 @@ const AuthenticationButton = () => {
     setAnchorEl(null);
   };
 
-  const signInHandler = () => {
+  const signInHandler = useCallback(() => {
     setLoading(true);
     signIn();
-  };
+  }, [setLoading]);
   const signOutHandler = () => signOut();
   const toAdmminPanel = useCallback(() => {
     setLoading(true);
@@ -75,7 +75,13 @@ const AuthenticationButton = () => {
         Вход
       </Button>
     );
-  }, [status, data?.user?.image, data?.user?.role, renderAdmminButton]);
+  }, [
+    status,
+    data?.user?.image,
+    data?.user?.role,
+    renderAdmminButton,
+    signInHandler
+  ]);
 
   return (
     <>

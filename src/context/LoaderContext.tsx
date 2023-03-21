@@ -13,6 +13,7 @@ export const LoaderProvider = ({ children }: LoginProviderProps) => {
   const [isLoading, setLoading] = useState<boolean>(false);
 
   return (
+    // @ts-ignore
     <LoaderContext.Provider value={{ isLoading, setLoading }}>
       {children}
     </LoaderContext.Provider>

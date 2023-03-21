@@ -24,7 +24,7 @@ const ProgramStageView = ({ blocks, isNotAllowed }: ProgramStageViewProps) => (
       }}
     >
       {isNotAllowed ? (
-        <EmptyPageMessage message='Данного курса нет или он не существует' />
+        <EmptyPageMessage message='Данного курса нет или у вас нет доступа' />
       ) : (
         <>
           <Grid item xs={12} lg={10} sx={{ mb: { xs: 2, md: 2 } }}>
