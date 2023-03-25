@@ -19,7 +19,8 @@ const ProgramStageView = ({ blocks, isNotAllowed }: ProgramStageViewProps) => (
     <Grid
       container
       sx={{
-        marginTop: '100px',
+        marginTop: '80px',
+        px: 1,
         justifyContent: { xs: 'center', lg: 'space-around' }
       }}
     >

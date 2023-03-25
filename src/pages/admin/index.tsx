@@ -20,6 +20,7 @@ const Admin = ({ users }: AdminProps) => (
       container
       sx={{
         marginTop: '60px',
+        px: 1,
         justifyContent: { xs: 'center', lg: 'space-around' }
       }}
     >

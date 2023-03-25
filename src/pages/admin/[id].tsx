@@ -51,6 +51,7 @@ const UserInfoPage = ({ user }: UserInfoPage) => {
         container
         sx={{
           marginTop: '60px',
+          px: 1,
           justifyContent: { xs: 'center', md: 'flex-start' },
           alignItems: 'center'
         }}
@@ -94,6 +95,7 @@ const UserInfoPage = ({ user }: UserInfoPage) => {
       <Grid
         container
         sx={{
+          px: 1,
           marginTop: 2,
           justifyContent: { xs: 'center', md: 'flex-start' }
         }}

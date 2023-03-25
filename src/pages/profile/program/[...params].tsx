@@ -1,8 +1,8 @@
 import { GetServerSidePropsContext } from 'next';
 import { getSession } from 'next-auth/react';
-import { Grid, Typography } from '@mui/material';
+import { Grid, Stack, Typography } from '@mui/material';
 import { Layout } from '@src/blocks';
-import { EmptyPageMessage } from '@src/components';
+import { EmptyPageMessage, LessonNavButton } from '@src/components';
 import { paths } from '@src/constants';
 import { APP_ADDITIONAL_BLOCKS, APP_COURSES } from '@src/content';
 import { ILesson } from '@src/types/profile';
@@ -10,11 +10,17 @@ import { getIsProgramType } from '@src/utils';
 import _get from 'lodash/get';
 import _isEmpty from 'lodash/isEmpty';
 
+const getProgramLessons = (program_id: string, block_id: string) =>
+  APP_COURSES[program_id]?.blocks[block_id]?.lessons || {};
+
 const getProgramLesson = (
   program_id: string,
   block_id: string,
   lesson_id: string
 ) => APP_COURSES[program_id]?.blocks[block_id]?.lessons[lesson_id];
+
+const getBlockLessons = (block_id: string) =>
+  APP_ADDITIONAL_BLOCKS[block_id]?.lessons || {};
 
 const getBlockLesson = (block_id: string, lesson_id: string) =>
   block_id && lesson_id && APP_ADDITIONAL_BLOCKS[block_id]?.lessons[lesson_id];
@@ -22,27 +28,47 @@ const getBlockLesson = (block_id: string, lesson_id: string) =>
 interface LessonPageProps {
   isNotAllowed?: boolean;
   lesson: ILesson;
+  buttons: {
+    left: {
+      href: string | null;
+      name: string;
+    };
+    right: {
+      href: string | null;
+      name: string;
+    };
+  };
 }
 
-const LessonPage = ({ isNotAllowed = false, lesson }: LessonPageProps) => (
+const LessonPage = ({
+  isNotAllowed = false,
+  lesson,
+  buttons
+}: LessonPageProps) => (
   <Layout.PageContainer sx={{ minHeight: '100%' }}>
     <Grid
       container
       sx={{
-        marginTop: '100px',
+        marginTop: '80px',
         justifyContent: { xs: 'center', lg: 'space-around' }
       }}
     >
       {isNotAllowed ? (
         <EmptyPageMessage message='Данного урока нет или у вас нет доступа' />
       ) : (
-        <>
-          <Grid item xs={12} lg={10} sx={{ mb: { xs: 2, md: 2 } }}>
-            <Typography textAlign='center' variant='h1'>
-              {lesson.name}
-            </Typography>
-          </Grid>
-        </>
+        <Grid item xs={12}>
+          <Typography textAlign='center' variant='h3' mb={1}>
+            {lesson.name}
+          </Typography>
+          <Stack
+            direction='row'
+            justifyContent='space-between'
+            alignItems='center'
+          >
+            <LessonNavButton isMirror {...buttons.left} />
+            <LessonNavButton {...buttons.right} />
+          </Stack>
+        </Grid>
       )}
     </Grid>
   </Layout.PageContainer>
@@ -81,6 +107,41 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
   }
 
   if (program_id && block_id && lesson_id) {
+    const lessonsObject = isProgram
+      ? getProgramLessons(program_id as string, block_id as string)
+      : getBlockLessons(block_id as string);
+
+    const lessons = Object.values(lessonsObject).map(({ id }) => id);
+
+    const currentIdx = lessons.indexOf(lesson_id as string);
+
+    const buttons = {
+      left: {
+        href:
+          !!lessons[currentIdx - 1] && currentIdx === 0
+            ? null
+            : `${paths.profile}${paths.program}/${program_id}/${block_id}/${
+                lessons[currentIdx - 1]
+              }`,
+        name:
+          !!lessons[currentIdx - 1] && currentIdx === 0
+            ? ''
+            : Object.values(lessonsObject)[currentIdx - 1]?.name || ''
+      },
+      right: {
+        href:
+          !!lessons[currentIdx + 1] && currentIdx === lessons.length - 1
+            ? null
+            : `${paths.profile}${paths.program}/${program_id}/${block_id}/${
+                lessons[currentIdx + 1]
+              }`,
+        name:
+          !!lessons[currentIdx + 1] && currentIdx === lessons.length - 1
+            ? ''
+            : Object.values(lessonsObject)[currentIdx + 1]?.name || ''
+      }
+    };
+
     const lesson = isProgram
       ? getProgramLesson(
           program_id as string,
@@ -92,7 +153,8 @@ export async function getServerSideProps(context: GetServerSidePropsContext) {
     return {
       props: {
         isNotAllowed: _isEmpty(lesson) ? true : false,
-        lesson: _isEmpty(lesson) ? {} : lesson
+        lesson: _isEmpty(lesson) ? {} : lesson,
+        buttons
       }
     };
   }

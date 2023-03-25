@@ -27,7 +27,8 @@ const Profile = ({ user }: ProfileProps) => {
       <Grid
         container
         sx={{
-          marginTop: '100px',
+          px: 1,
+          marginTop: '80px',
           justifyContent: { xs: 'center', lg: 'space-around' }
         }}
       >

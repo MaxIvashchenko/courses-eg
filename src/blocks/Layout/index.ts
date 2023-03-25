@@ -33,7 +33,7 @@ const PageContainer = styled(Box)(({ theme }) => ({
     padding: '24px 32px'
   },
   [theme.breakpoints.down('sm')]: {
-    padding: '8px 16px'
+    padding: '8px'
   }
 }));
 
