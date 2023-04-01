@@ -7,7 +7,7 @@ import createEmotionCache from 'theme/createEmotionCache';
 const title = 'Emi Grant';
 const description =
   'Онлайн курс Гастробизнес под ключ в Польше. С нами ты получишь все инструменты, как открыть свой гастробизнес любого формата и концепции, а так же поймешь, как развивать и масштабировать свой бизнес, чтобы увеличивать прибыль и узнаваемость. Переходи на сайт за подробной информацией.';
-const image = ``;
+const image = `https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/liknTemplate.png`;
 const keywords =
   'Открыть кофейню, открыть кафе , открыть ресторан, открыть фудтрак, гастробинес с нуля , гастробизнес, масштабировать бизнес , развивать бизнес, как увеличить прибыть в гастрономии, открыть бизнес в польше, открыть свое заведение, гастрономия в польше, куда сходить в польше, лучшие заведения польши, бизнес в польше, открыть фирму в польше, запустить бизнес в польше';
 
@@ -39,11 +39,11 @@ export default class MyDocument extends Document {
           <meta property='og:image:width' content='1200' />
 
           {/* Twitter */}
-          {/* <meta name='twitter:card' content='summary_large_image' />
-          <meta name='twitter:creator' content='@cryptobiz' />
+          <meta name='twitter:card' content='summary_large_image' />
+          <meta name='twitter:creator' content='@business-emigrant' />
           <meta name='twitter:title' content={title} />
           <meta name='twitter:description' content={description} />
-          <meta name='twitter:image' content={image} /> */}
+          <meta name='twitter:image' content={image} />
 
           <link rel='preconnect' href='https://fonts.googleapis.com' />
           <link rel='preconnect' href='https://fonts.gstatic.com' />
