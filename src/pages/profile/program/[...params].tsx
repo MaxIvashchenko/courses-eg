@@ -2,7 +2,12 @@ import { GetServerSidePropsContext } from 'next';
 import { getSession } from 'next-auth/react';
 import { Grid, Stack, Typography } from '@mui/material';
 import { Layout } from '@src/blocks';
-import { EmptyPageMessage, LessonNavButton } from '@src/components';
+import {
+  EmptyPageMessage,
+  LessonNavButton,
+  PdfViewer,
+  VideoPlayer
+} from '@src/components';
 import { paths } from '@src/constants';
 import { APP_ADDITIONAL_BLOCKS, APP_COURSES } from '@src/content';
 import { ILesson } from '@src/types/profile';
@@ -44,35 +49,52 @@ const LessonPage = ({
   isNotAllowed = false,
   lesson,
   buttons
-}: LessonPageProps) => (
-  <Layout.PageContainer sx={{ minHeight: '100%' }}>
-    <Grid
-      container
-      sx={{
-        marginTop: '80px',
-        justifyContent: { xs: 'center', lg: 'space-around' }
-      }}
-    >
-      {isNotAllowed ? (
-        <EmptyPageMessage message='Данного урока нет или у вас нет доступа' />
-      ) : (
-        <Grid item xs={12}>
-          <Typography textAlign='center' variant='h3' mb={1}>
-            {lesson.name}
-          </Typography>
-          <Stack
-            direction='row'
-            justifyContent='space-between'
-            alignItems='center'
-          >
-            <LessonNavButton isMirror {...buttons.left} />
-            <LessonNavButton {...buttons.right} />
-          </Stack>
-        </Grid>
-      )}
-    </Grid>
-  </Layout.PageContainer>
-);
+}: LessonPageProps) => {
+  const renderLessonType = () => {
+    switch (lesson.type) {
+      case 'lesson':
+        return <VideoPlayer id={'203108612'} />;
+      case 'file':
+        return (
+          <PdfViewer file_url='https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/pdf-template.pdf' />
+        );
+      case 'text':
+        break;
+      default:
+        break;
+    }
+  };
+  return (
+    <Layout.PageContainer sx={{ minHeight: '100%' }}>
+      <Grid
+        container
+        sx={{
+          marginTop: '80px',
+          justifyContent: { xs: 'center', lg: 'space-around' }
+        }}
+      >
+        {isNotAllowed ? (
+          <EmptyPageMessage message='Данного урока нет или у вас нет доступа' />
+        ) : (
+          <Grid item xs={12}>
+            <Typography textAlign='center' variant='h3' mb={1}>
+              {lesson.name}
+            </Typography>
+            <Stack
+              direction='row'
+              justifyContent='space-between'
+              alignItems='center'
+            >
+              <LessonNavButton isMirror {...buttons.left} />
+              <LessonNavButton {...buttons.right} />
+            </Stack>
+            {renderLessonType()}
+          </Grid>
+        )}
+      </Grid>
+    </Layout.PageContainer>
+  );
+};
 
 export async function getServerSideProps(context: GetServerSidePropsContext) {
   const { query } = context;

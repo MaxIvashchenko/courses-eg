@@ -14,6 +14,7 @@ const VideoWrapper = styled(Box)(({ theme }) => ({
   width: 880,
   height: 500,
   margin: '0 auto',
+  backgroundColor: 'grey',
 
   '& iframe': {
     width: 880,
@@ -30,9 +31,9 @@ const VideoWrapper = styled(Box)(({ theme }) => ({
   }
 }));
 
-const VideoPlayer: NextPage = () => (
+const VideoPlayer: NextPage<{ id: string }> = ({ id }) => (
   <VideoWrapper>
-    <KinescopePlayer videoId='203108612' />
+    <KinescopePlayer videoId={id} />
   </VideoWrapper>
 );
 

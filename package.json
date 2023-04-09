@@ -44,6 +44,7 @@
     "react": "18.2.0",
     "react-animated-text-content": "^1.0.1",
     "react-dom": "18.2.0",
+    "react-pdf": "^6.2.2",
     "react-scroll": "^1.8.9",
     "react-slick": "^0.29.0",
     "slick-carousel": "^1.8.1",
@@ -54,6 +55,7 @@
   "devDependencies": {
     "@svgr/webpack": "^6.5.1",
     "@types/nodemailer": "^6.4.7",
+    "@types/react-pdf": "^6.2.0",
     "@types/react-scroll": "^1.8.6",
     "@types/react-slick": "^0.23.10",
     "husky": "^8.0.3"

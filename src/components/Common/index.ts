@@ -5,5 +5,6 @@ export { IconComponent } from './IconComponent';
 export { InputWrapper } from './InputWrapper';
 export { Loader } from './Loader';
 export { Modal } from './Modal';
+export { PdfViewer } from './PdfViewer';
 export { ToTopButton } from './ToTopButton';
 export { VideoPlayer } from './VideoPlayer';
