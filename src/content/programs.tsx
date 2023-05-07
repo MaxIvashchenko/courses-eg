@@ -12,8 +12,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
     icon: 'bulb',
     buttonBackground: '#352012',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -74,8 +73,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
     icon: 'menuBook',
     buttonBackground: '#6c6730',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -127,8 +125,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
     icon: 'paper',
     buttonBackground: '#596c45',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -196,8 +193,7 @@ export const ADDITIONAL_BLOCKS_START_BUSINESS: {
     icon: 'home',
     buttonBackground: '#98cadb',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -247,8 +243,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
     icon: 'finance',
     buttonBackground: '#89513a',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -312,8 +307,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
     icon: 'megaphone',
     buttonBackground: '#a35919',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -362,8 +356,7 @@ export const ADDITIONAL_BLOCKS_EXIST_BUSINESS: {
     icon: 'customerService',
     buttonBackground: '#a07040',
     type: 'block',
-    cover:
-      'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+    cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
     description: (
       <Typography
         sx={{
@@ -421,8 +414,7 @@ export const START_BUSINESS_COURSE: ICourse = {
   subTitle: 'Открой свой гастробизнес с нуля',
   type: 'course',
   price: 500,
-  cover:
-    'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/course-sb.jpg',
+  cover: process.env.STORAGE_URL + '/public/common/courses/course-sb.jpg',
   blocks: {
     sb1: {
       id: 'sb1',
@@ -726,8 +718,7 @@ export const EXIST_BUSINESS_COURSE: ICourse = {
   subTitle: 'Развивай и масштабируй',
   type: 'course',
   price: 500,
-  cover:
-    'https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/cover.jpg',
+  cover: process.env.STORAGE_URL + '/public/common/courses/cover.jpg',
   blocks: {
     eb1: {
       id: 'eb1',

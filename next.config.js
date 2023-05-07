@@ -5,6 +5,7 @@ const nextConfig = {
     TELEGRAM_TOKEN: process.env.TELEGRAM_TOKEN,
     TELEGRAM_CHAD_ID: process.env.TELEGRAM_CHAD_ID,
     DATABASE_URL: process.env.DATABASE_URL,
+    STORAGE_URL: process.env.STORAGE_URL,
     NEXTAUTH_URL: process.env.NEXTAUTH_URL,
     SECRET: process.env.SECRET,
     NEXTAUTH_SECRET: process.env.NEXTAUTH_SECRET,
@@ -34,7 +35,7 @@ const nextConfig = {
     domains: [
       'lh3.googleusercontent.com',
       'platform-lookaside.fbsbx.com',
-      'txdqbvqdpkcgyndeltej.supabase.co'
+      'yrqdkirxngwaoaokptea.supabase.co'
     ]
   }
 };

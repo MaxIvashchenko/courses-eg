@@ -1,7 +1,4 @@
-export type {
-  IUserDetails,
-  ISnackbarState
-} from './common';
+export type { ISnackbarState, IUserDetails } from './common';
 export type { IRequestFormState } from './form';
 export type {
   IAdditionalBlock,

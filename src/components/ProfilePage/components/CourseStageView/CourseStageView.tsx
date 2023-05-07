@@ -45,7 +45,7 @@ const CourseStageView = ({
           clickHandler={clickHandler}
           id='asb'
           title='Дополнительные блоки для курса начинающего бизнеса'
-          cover='https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/cover.jpg'
+          cover={process.env.STORAGE_URL + '/public/common/courses/cover.jpg'}
         />
       );
     }
@@ -60,7 +60,7 @@ const CourseStageView = ({
           clickHandler={clickHandler}
           id='aeb'
           title='Дополнительные блоки для курса действующего бизнеса'
-          cover='https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/courses/cover.jpg'
+          cover={process.env.STORAGE_URL + '/public/common/courses/cover.jpg'}
         />
       );
     }

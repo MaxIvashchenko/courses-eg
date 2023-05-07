@@ -56,7 +56,7 @@ const LessonPage = ({
         return <VideoPlayer id={'203108612'} />;
       case 'file':
         return (
-          <PdfViewer file_url='https://txdqbvqdpkcgyndeltej.supabase.co/storage/v1/object/public/common/pdf-template.pdf' />
+          <PdfViewer file_url='https://yrqdkirxngwaoaokptea.supabase.co/storage/v1/object/public/common/pdf-template.pdf' />
         );
       case 'text':
         break;
