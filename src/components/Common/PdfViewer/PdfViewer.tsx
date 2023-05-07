@@ -4,10 +4,10 @@ import { Box, IconButton, Stack, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 
 import { IconComponent } from '../IconComponent';
+import { Loader } from '../Loader';
 
 import 'react-pdf/dist/esm/Page/AnnotationLayer.css';
 import 'react-pdf/dist/esm/Page/TextLayer.css';
-import { Loader } from '../Loader';
 
 pdfjs.GlobalWorkerOptions.workerSrc = `//unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.js`;
 
@@ -50,7 +50,9 @@ const PdfViewer = ({ file_url }: PdfViewerProps) => {
     <PdfWrapper>
       <Document
         loading={<Loader isFullPage />}
-        file={file_url} onLoadSuccess={onDocumentLoadSuccess}>
+        file={file_url}
+        onLoadSuccess={onDocumentLoadSuccess}
+      >
         <Page pageNumber={pageNumber} />
       </Document>
       <Stack

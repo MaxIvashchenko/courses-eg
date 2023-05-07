@@ -10,6 +10,7 @@ import customerService from 'public/icons/customerService.svg';
 import doubleRight from 'public/icons/doubleRight.svg';
 import downArrow from 'public/icons/down-arrow.svg';
 import email from 'public/icons/email.svg';
+import error from 'public/icons/error.svg';
 import facebook from 'public/icons/facebook.svg';
 import file from 'public/icons/file.svg';
 import finance from 'public/icons/finance.svg';
@@ -36,6 +37,7 @@ import scaleup from 'public/icons/scaleup.svg';
 import settings from 'public/icons/settings.svg';
 import shuttle from 'public/icons/shuttle.svg';
 import stats from 'public/icons/stats.svg';
+import success from 'public/icons/success.svg';
 import suitcase from 'public/icons/suitcase.svg';
 import telegram from 'public/icons/telegram.svg';
 import telephone from 'public/icons/telephone.svg';
@@ -95,7 +97,9 @@ const iconTypes: IconTypes = {
   text,
   lesson,
   file,
-  home
+  home,
+  error,
+  success
 };
 
 type IconComponentProps = {

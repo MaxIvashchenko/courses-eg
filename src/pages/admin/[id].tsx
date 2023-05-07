@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useReducer, useState } from 'react';
 import { GetServerSidePropsContext } from 'next';
 import Image from 'next/image';
 import { getSession } from 'next-auth/react';
@@ -12,10 +12,15 @@ import {
 } from '@mui/material';
 import { Prisma } from '@prisma/client';
 import { Layout } from '@src/blocks';
-import { IconComponent, Loader, ProgramsCheckBoxList } from '@src/components';
+import {
+  IconComponent,
+  Loader,
+  ProgramsCheckBoxList,
+  Snackbar
+} from '@src/components';
 import { paths } from '@src/constants';
 import { APP_ADDITIONAL_BLOCKS, APP_COURSES } from '@src/content';
-import { IUserDetails } from '@src/types';
+import { ISnackbarState, IUserDetails } from '@src/types';
 import axios from 'axios';
 import _isEmpty from 'lodash/isEmpty';
 
@@ -25,8 +30,20 @@ interface UserInfoPage {
   user: IUserDetails;
 }
 
+const initialState = {
+  message: '',
+  isError: false
+};
+
+function reducerFn(state: ISnackbarState, action: ISnackbarState) {
+  return { ...state, ...action };
+}
+
 const UserInfoPage = ({ user }: UserInfoPage) => {
   const [isLoading, setIsLoading] = useState<boolean>(false);
+
+  const [snackbarState, setSnackbarState] = useReducer(reducerFn, initialState);
+
   const [showSwitcher, setShowSwitcher] = useState<boolean>(false);
 
   const switchHandler = () => setShowSwitcher((prev) => !prev);
@@ -37,15 +54,28 @@ const UserInfoPage = ({ user }: UserInfoPage) => {
     try {
       setIsLoading(true);
       await axios.post('/api/user/update', updateUser);
+      setSnackbarState({ message: 'Изменения сохранены', isError: false });
+      setShowSwitcher(false);
     } catch (error) {
+      setSnackbarState({
+        message: 'Не удалось сохранить изменения',
+        isError: true
+      });
       console.error(error);
     } finally {
       setIsLoading(false);
     }
   };
 
+  const closeSnackbar = () => setSnackbarState(initialState);
+
   return (
     <Layout.PageContainer sx={{ minHeight: '100%' }}>
+      <Snackbar
+        isError={snackbarState.isError}
+        message={snackbarState.message}
+        closeSnackbar={closeSnackbar}
+      />
       {isLoading && <Loader fill='#fff' isFullPage />}
       <Grid
         container

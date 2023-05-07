@@ -9,3 +9,8 @@ export interface IUserDetails extends DefaultUser {
   role: string;
   available_courses: string[];
 }
+
+export type ISnackbarState = {
+  message: string;
+  isError?: boolean;
+};
